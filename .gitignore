@@ -216,3 +216,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project-specific: model checkpoints & run artifacts (keep small JSON/TSV results)
+*.pt
+*.bin
+*.safetensors
+wandb/
+results/**/*.pt

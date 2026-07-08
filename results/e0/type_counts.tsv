@@ -1,0 +1,3460 @@
+location	8123
+person	6255
+organization	5345
+scientific concept	2923
+date	2402
+cultural reference	1771
+product	1460
+quantity	1162
+event	1145
+technology	1141
+concept	1085
+medical condition	985
+time period	863
+measurement	668
+statistic	328
+group	309
+species	301
+disease	294
+country	246
+animal	224
+work of art	209
+year	204
+adult	194
+material	194
+object	191
+media	184
+leader	181
+organism	173
+male	167
+place	163
+profession	158
+chemical compound	158
+publication	150
+economic concept	150
+biological concept	145
+industry	130
+historical event	129
+health condition	129
+cultural concept	124
+politician	122
+area	122
+title	118
+percentage	116
+anatomical structure	116
+language	115
+program	114
+field of study	114
+administration	110
+journal	110
+man	109
+medical procedure	108
+region	107
+legislation	107
+demographic	106
+chemical element	100
+demographic group	100
+biological entity	100
+official	99
+company	97
+literary work	93
+time	92
+brand	91
+institution	90
+activity	89
+social issue	88
+celestial body	88
+government	86
+book	85
+virus	85
+social concept	84
+ethnic group	84
+biological structure	83
+element	82
+legal concept	82
+medication	80
+business	79
+nation	79
+occupation	77
+infrastructure	77
+geographical feature	77
+state	76
+legal document	75
+professional	73
+educational concept	73
+programming language	73
+food	72
+city	71
+athlete	70
+drug	69
+social_group	68
+document	66
+medical concept	65
+spokesperson	64
+environmental concept	64
+authority	63
+female	63
+acronym	63
+website	63
+player	62
+corporation	60
+idea	60
+protein	60
+religious text	58
+energy source	58
+project	57
+plant species	57
+woman	55
+plant	55
+currency	54
+substance	54
+psychological concept	54
+health concept	52
+enterprise	51
+team	51
+government organization	51
+biological process	50
+nutrient	50
+geographical location	50
+medical symptom	49
+award	48
+position	48
+religion	48
+genus	48
+environmental issue	48
+geographic location	48
+firm	47
+agency	47
+academic discipline	47
+biological molecule	46
+symptom	45
+political entity	45
+food product	44
+scientific species	44
+religious figure	44
+performer	43
+course	43
+hormone	43
+president	42
+expert	41
+regulation	40
+chemical	40
+representative	39
+report	39
+river	39
+philosophical concept	39
+cultural group	39
+measurement unit	39
+deity	38
+contestant	38
+medical treatment	38
+geographical region	38
+cryptocurrency	38
+communicator	37
+spokesman	37
+municipality	36
+nationality	35
+political concept	35
+financial concept	35
+town	34
+scientific name	34
+worker	33
+policy	33
+day	32
+film	32
+artist	32
+duration	32
+natural resource	32
+legal term	32
+mythological figure	32
+businessperson	31
+businessman	31
+building	31
+writer	31
+serviceman	31
+planet	31
+abbreviation	31
+medical term	31
+criminal	30
+township	30
+structure	30
+song	30
+star	30
+party	29
+field	29
+historical period	29
+common name	29
+operating system	29
+consequence	28
+space	28
+unit	28
+actor	28
+season	28
+persons	28
+biological substance	28
+mental health condition	28
+technological concept	28
+natural disaster	28
+period	27
+localization	27
+role	27
+month	27
+architectural style	27
+anatomical location	27
+speaker	26
+practice	26
+chemical substance	26
+medical device	26
+financial instrument	26
+social group	26
+scientific theory	26
+scientist	25
+action	25
+invention	25
+association	25
+population	25
+service	25
+educational institution	25
+general concept	25
+cell type	25
+currency/quantity	25
+technique	25
+financial term	25
+naval vessel	25
+software	24
+musician	24
+age	24
+scientific field	24
+scientific discipline	24
+citizen	23
+military	23
+entertainer	23
+sport	23
+database	23
+statistics	23
+religious concept	23
+reporter	22
+administrator	22
+spacecraft	22
+dietary concept	22
+medical product	22
+biological category	22
+economic measure	22
+employee	21
+entity	21
+point	21
+celebrity	21
+director	21
+conflict	21
+process	21
+character	21
+aircraft	21
+insect	21
+age range	21
+genre	21
+academic subject	21
+health issue	21
+club	20
+gathering	20
+skill	20
+medical test	20
+ecological concept	20
+academic degree	20
+biological system	20
+population group	20
+political organization	20
+musical instrument	20
+force	19
+army	19
+individual	19
+game	19
+officer	19
+geological feature	19
+methodology	19
+educational program	19
+astronomical object	19
+scholar	18
+analyst	18
+weapon	18
+arrangement	18
+family	18
+transportation	18
+component	18
+agricultural product	18
+space mission	18
+master	17
+law	17
+act	17
+writing	17
+meeting	17
+commodity	17
+committee	17
+contest	17
+scientific method	17
+educational method	17
+historical entity	17
+natural phenomenon	17
+dataset	17
+mental health disorder	17
+job title	17
+group of persons	17
+statistical measure	17
+aircraft model	17
+entertainment	16
+show	16
+happening	16
+home	16
+land	16
+information	16
+tool	16
+research method	16
+government agency	16
+media organization	16
+medication class	16
+government body	16
+animal species	16
+economic sector	16
+statistical measurement	16
+body part	16
+legal regulation	16
+plant group	16
+placement	15
+legislator	15
+assembly	15
+military_service	15
+friend	15
+message	15
+subject	15
+record	15
+music	15
+soldier	15
+agreement	15
+creator	15
+holiday	15
+artifact	15
+mineral	15
+educational level	15
+anatomy	15
+publisher	15
+academic field	15
+title/position	15
+framework	15
+performance level	15
+historical group	15
+professional title	15
+general item	15
+exoplanet	15
+person/group	15
+assessment tool	15
+religious office	15
+system	14
+coach	14
+prisoner	14
+student	14
+district	14
+actress	14
+community	14
+defendant	14
+degree	14
+policeman	14
+university	14
+territory	14
+organ	14
+vaccine	14
+resource	14
+political ideology	14
+environmental phenomenon	14
+ingredient	14
+biological group	14
+contact information	14
+political party	14
+education level	14
+biological measurement	14
+constellation	14
+social media platform	14
+biological agent	14
+bird species	14
+currency amount	14
+religious group	14
+scientific classification	14
+chemical formula	14
+text/religious text	14
+site	13
+diplomat	13
+condition	13
+medical practice	13
+nickname	13
+historical document	13
+legal case	13
+age group	13
+quantity/measurement	13
+distance	13
+military unit	13
+statistical data	13
+scientific journal	13
+media outlet	13
+historical figure	13
+social movement	13
+scientific study	13
+architectural feature	13
+fossil fuel	13
+social category	13
+plant variety	13
+educational framework	13
+cognitive skill	13
+climate phenomenon	13
+geological period	13
+traveler	12
+movie	12
+spouse	12
+candidate	12
+victim	12
+match	12
+situation	12
+doctor	12
+instrument	12
+bird	12
+journalist	12
+officeholder	12
+movement	12
+artwork	12
+vessel	12
+device	12
+facility	12
+platform	12
+date range	12
+biological material	12
+government position	12
+food/ingredient	12
+economic activity	12
+health metric	12
+geopolitical entity	12
+nutritional component	12
+document type	12
+cultural practice	12
+political term	12
+calendar	12
+geographical area	12
+manufacturer	11
+squad	11
+wife	11
+ruler	11
+statement	11
+development	11
+market	11
+ballplayer	11
+religious_leader	11
+battle	11
+agent	11
+suspect	11
+conference	11
+culture	11
+color	11
+historical concept	11
+art movement	11
+crop	11
+social class	11
+weather phenomenon	11
+laboratory equipment	11
+botanical entity	11
+geological concept	11
+health symptom	11
+mental disorder	11
+biological component	11
+compound	11
+physiological process	11
+biochemical compound	11
+literary character	11
+taxonomic family	11
+food/product	11
+patent	11
+trainer	10
+football_player	10
+money	10
+child	10
+negotiator	10
+winner	10
+issue	10
+investor	10
+script	10
+operation	10
+spectator	10
+decision	10
+teacher	10
+competition	10
+executive	10
+plan	10
+academician	10
+congressman	10
+catastrophe	10
+term	10
+educator	10
+vehicle	10
+tournament	10
+standard	10
+treatment	10
+continent	10
+microorganism	10
+physiological concept	10
+fictional character	10
+age/measurement	10
+quantities	10
+bacterium	10
+meteorological phenomenon	10
+energy technology	10
+economic metric	10
+religious title	10
+geographic region	10
+political position	10
+board game	10
+military technology	10
+astronomical event	10
+calendar system	10
+food group	10
+economic indicator	10
+educational standard	10
+bacteria	10
+mathematical concept	10
+acronym for medical condition	10
+physiological measurement	10
+medical measurement	10
+music group	10
+subject matter	10
+martial arts style	10
+fruit	10
+religious authority	10
+military decoy	10
+synthetic dna base	10
+minister	9
+politics	9
+landmark	9
+son	9
+name	9
+advocate	9
+author	9
+change	9
+fund	9
+discussion	9
+convict	9
+sector	9
+rule	9
+crowd	9
+disaster	9
+singer	9
+band	9
+ship	9
+war	9
+story	9
+decade	9
+amount	9
+union	9
+campaigner	9
+study	9
+prey	9
+research study	9
+academic journal	9
+satellite	9
+program/project	9
+natural feature	9
+agricultural practice	9
+scientific activity	9
+galaxy	9
+file format	9
+medical technology	9
+gas	9
+monetary value	9
+cognitive concept	9
+economic term	9
+time duration	9
+literary format	9
+economic policy	9
+financial product	9
+material property	9
+assessment program	9
+contact number	9
+ecosystem	9
+quantitative measure	9
+environmental factor	9
+technical concept	9
+biological class	9
+data source	9
+government program	9
+regulatory concept	9
+coffee bean variety	9
+person group	9
+dosage	9
+sociological concept	9
+governor	8
+aim	8
+maker	8
+head	8
+village	8
+lady	8
+girl	8
+art	8
+council	8
+occurrence	8
+communication	8
+theme	8
+motion	8
+attack	8
+producer	8
+data	8
+corporate_executive	8
+head_of_state	8
+engineer	8
+proposal	8
+struggle	8
+article	8
+campaign	8
+trouble	8
+treaty	8
+mother	8
+professor	8
+loss	8
+address	8
+capitalist	8
+newspaper	8
+code	8
+symbol	8
+procedure	8
+organization type	8
+biological classification	8
+health treatment	8
+virus strain	8
+literary concept	8
+political affiliation	8
+scientific technique	8
+psychological condition	8
+blockchain platform	8
+scientific measurement	8
+weather event	8
+quantity/statistic	8
+economic theory	8
+vehicle type	8
+cultural period	8
+technology/framework	8
+celestial object	8
+genetic marker	8
+statistical concept	8
+health practice	8
+fauna	8
+geographic feature	8
+surname	8
+program/initiative	8
+legal agreement	8
+enzyme	8
+therapeutic technique	8
+acronym/abbreviation	8
+group - gender	8
+historical location	8
+culinary cut	8
+educational resource	8
+research project	8
+cognitive ability	8
+product category	8
+herb/medicinal plant	8
+evangelist	8
+historical region	8
+legislative proposal	8
+environmental concern	8
+construction material	8
+virtual machine	8
+statesman	7
+terrorist	7
+status	7
+police	7
+play	7
+relative	7
+function	7
+performance	7
+application	7
+negotiation	7
+topic	7
+part	7
+observer	7
+supporter	7
+description	7
+education	7
+championship	7
+province	7
+calamity	7
+crisis	7
+contract	7
+patient	7
+foundation	7
+history	7
+rival	7
+affiliation	7
+dispute	7
+kingdom	7
+body_part	7
+driver	7
+phenomenon	7
+charwoman	7
+department	7
+island	7
+score	7
+audience	7
+herb	7
+survey	7
+animal breed	7
+military organization	7
+political movement	7
+cultural artifact	7
+psychological phenomenon	7
+energy concept	7
+ranking	7
+economic entity	7
+surgical technique	7
+genetic mutation	7
+fuel	7
+behavioral concept	7
+cultural movement	7
+energy	7
+occupational group	7
+organization/group	7
+writing system	7
+mythological creature	7
+general group	7
+medical technique	7
+cancer type	7
+program/intervention	7
+research grant number	7
+climate zone	7
+acronym/organization	7
+physical phenomenon	7
+mineral resource	7
+natural hazard	7
+risk category	7
+religious symbol	7
+pharmaceutical product	7
+person/indigenous group	7
+technology/organization	7
+food/type	7
+acronym/term	7
+therapeutic method	7
+educational curriculum standard	7
+political faction	7
+cultural value	7
+named entity - rover	7
+body	6
+weekday	6
+articulator	6
+investigator	6
+spokeswoman	6
+fight	6
+management	6
+concern	6
+content	6
+composition	6
+finance	6
+economy	6
+construction	6
+exchange	6
+deal	6
+commentator	6
+conclusion	6
+beverage	6
+staff	6
+stock	6
+illness	6
+demonstrator	6
+approach	6
+goal	6
+news	6
+work	6
+narrative	6
+collection	6
+improvement	6
+juvenile	6
+misfortune	6
+result	6
+parent	6
+league	6
+medicine	6
+belief	6
+opinion	6
+difficulty	6
+champion	6
+bill	6
+customer	6
+method	6
+solution	6
+literary genre	6
+linguistic concept	6
+financial figure	6
+data type	6
+agricultural concept	6
+media format	6
+other	6
+drug-resistant bacteria	6
+flora	6
+judicial body	6
+meteorological event	6
+conservation status	6
+gene	6
+theological concept	6
+historical empire	6
+food type	6
+nuclear submarine class	6
+entity type	6
+medical abbreviation	6
+initiative	6
+fishing technique	6
+technology/service model	6
+resource type	6
+organism group	6
+organism classification	6
+bacterial pathogen	6
+weight measurement	6
+business model	6
+architectural structure	6
+acronym for cortical spreading depression	6
+coral disease	6
+research initiative	6
+astronomical feature	6
+international treaty	6
+health behavior	6
+market segment	6
+historical civilization	6
+military rank	6
+legal process	6
+artistic expression	6
+musical genre	6
+ai model architecture	6
+uav	6
+nutritional substance	6
+financial institution	6
+educational outcome	6
+health event	6
+astronomical concept	6
+observational technique	6
+prize	5
+commander	5
+number	5
+legislature	5
+racer	5
+wrongdoer	5
+control	5
+railway	5
+negative	5
+property	5
+financier	5
+medium	5
+musical	5
+witness	5
+daughter	5
+equipment	5
+attempt	5
+conversation	5
+talk	5
+division	5
+success	5
+road	5
+vote	5
+election	5
+affair	5
+celebration	5
+troop	5
+accused	5
+creation	5
+economist	5
+studio	5
+school	5
+college	5
+member	5
+lawman	5
+magazine	5
+spiritual_leader	5
+faction	5
+opposition	5
+capital	5
+weather	5
+cost	5
+class	5
+alliance	5
+senator	5
+problem	5
+clubhouse	5
+source	5
+machine	5
+social_scientist	5
+adviser	5
+ending	5
+advancement	5
+temperature	5
+board	5
+principle	5
+series	5
+experiment	5
+instruction	5
+explosive	5
+hardware	5
+progress	5
+historical reference	5
+medical process	5
+scientific discovery	5
+statistical value	5
+currency/amount	5
+cultural reference/product	5
+geographical concept	5
+mythical creature	5
+economic event	5
+biochemical substance	5
+pharmaceutical form	5
+literary form	5
+cultural institution	5
+technological artifact	5
+martial art	5
+economic system	5
+geological entity	5
+group/religion	5
+sports team	5
+animal/species	5
+scriptural reference	5
+currency/statistic	5
+technology/product	5
+astronomical telescope	5
+health factor	5
+technology concept	5
+pharmaceutical	5
+symptoms	5
+political event	5
+nutritional measurement	5
+moon	5
+drug class	5
+cultural landmark	5
+food item	5
+mythological location	5
+biological term	5
+speed measurement	5
+natural substance	5
+genetic location	5
+humanoid race	5
+medical professional	5
+cognitive area	5
+stage of dementia	5
+biological compound	5
+medical field	5
+anatomical feature	5
+biological species	5
+military formation	5
+healthcare concept	5
+edition	5
+music recording	5
+medical statistic	5
+identity	5
+patient group	5
+work of literature	5
+ecoregion	5
+doi	5
+research methodology	5
+military concept	5
+model/prototype	5
+currency/measurement	5
+database management system	5
+symbolic animal	5
+physical trait	5
+literary device	5
+natural element	5
+media type	5
+industry/field	5
+time reference	5
+drug/monoclonal antibody	5
+person/family name	5
+dinosaur	5
+quantum feature	5
+facility type	5
+quantitative figure	5
+family/group	5
+indigenous nationality	5
+mythical character	5
+contraceptive programme	5
+biological unit	5
+radical	4
+era	4
+county	4
+place_name	4
+idol	4
+stadium	4
+race	4
+tennis_player	4
+leadership	4
+growth	4
+house	4
+custodian	4
+job	4
+dame	4
+opera	4
+share	4
+case	4
+ambassador	4
+achiever	4
+volume	4
+income	4
+choice	4
+weaponry	4
+bargain	4
+store	4
+ally	4
+colleague	4
+intellectual	4
+lover	4
+civilian	4
+pair	4
+move	4
+way	4
+womanhood	4
+gang	4
+acquaintance	4
+matter	4
+principal	4
+section	4
+fiction	4
+owner	4
+emergence	4
+combatant	4
+chancellor	4
+spot	4
+announcer	4
+investigation	4
+detainee	4
+domain	4
+memorial	4
+stock_exchange	4
+ill_health	4
+populace	4
+dissenter	4
+speech	4
+ethnic_group	4
+protest	4
+clergyman	4
+tourist	4
+geographical_area	4
+living_thing	4
+calendar_month	4
+piece	4
+fighter	4
+sister	4
+hour	4
+conductor	4
+conglomerate	4
+adolescent	4
+coalition	4
+fan	4
+constitution	4
+incident	4
+golfer	4
+national	4
+soccer_player	4
+lawsuit	4
+order	4
+impression	4
+mishap	4
+failure	4
+phrase	4
+path	4
+power	4
+computer	4
+church	4
+airline	4
+lawyer	4
+law_enforcement	4
+republican	4
+participant	4
+judge	4
+judgment	4
+economic_growth	4
+emperor	4
+vicinity	4
+bank	4
+inhabitant	4
+bishop	4
+film_maker	4
+feeling	4
+supervisor	4
+evidence	4
+transport	4
+ceremony	4
+medium_of_exchange	4
+monetary_unit	4
+runner	4
+investment	4
+civil_law	4
+consumer	4
+composer	4
+design	4
+workplace	4
+associate	4
+partner	4
+specialist	4
+establishment	4
+text	4
+ideology	4
+scientific project	4
+demographic concept	4
+common substance	4
+organization abbreviation	4
+artistic movement	4
+professional role	4
+geological material	4
+scientific time period	4
+geopolitical region	4
+neurotransmitter	4
+product/category	4
+cultural reference/food	4
+page range	4
+political system	4
+weather condition	4
+educational tool	4
+military strategy	4
+phone number	4
+architectural concept	4
+cultural/religious event	4
+biological product	4
+economic problem	4
+diagnostic imaging	4
+social program	4
+biological sample	4
+art form	4
+legal framework	4
+product feature	4
+educational context	4
+medical discipline	4
+transportation infrastructure	4
+fungi	4
+identifier	4
+surgical procedure	4
+parasite	4
+food source	4
+medical facility	4
+military term	4
+service type	4
+legal doctrine	4
+plant-based ingredient	4
+regulatory requirement	4
+archaeological structure	4
+instrumentation	4
+agricultural technique	4
+biological tissue	4
+statistical method	4
+plant family	4
+plant type	4
+type of dog training	4
+academic program	4
+biochemical parameter	4
+ecological region	4
+religious event	4
+commercial resource	4
+percentage/statistic	4
+cultural symbol	4
+dietary regimen	4
+educational institution type	4
+historical name	4
+pest	4
+person/animal	4
+ethical principle	4
+design concept	4
+cultural reference/term	4
+industry/management discipline	4
+military aircraft	4
+reservoir	4
+psychotherapeutic approach	4
+imaging test	4
+environmental practice	4
+teaching method	4
+regulatory function	4
+geological time period	4
+social impact	4
+walking robot	4
+common object	4
+human need	4
+geographical category	4
+curriculum name	4
+chemical symbol	4
+wine appellation	4
+wildlife	4
+taxonomic suborder	4
+poetry style	4
+cultural/spiritual concept	4
+star system	4
+mining technique	4
+religious reference	4
+funding identifier	4
+theoretical concept	4
+brain area	4
+physical concept	4
+social factor	4
+health concern	4
+type of sexual violence	4
+computing approach	4
+program model	4
+variety	4
+charting technique	4
+musical note	4
+site/concept	4
+event/challenge	4
+user	3
+entrepreneur	3
+insurgent	3
+researcher	3
+discipline	3
+lawgiver	3
+astronaut	3
+husband	3
+determination	3
+learner	3
+enemy	3
+culture_medium	3
+museum	3
+future	3
+teammate	3
+dwelling	3
+residence	3
+career	3
+philosophy	3
+thing	3
+end	3
+death	3
+cash	3
+profit	3
+artillery	3
+gun	3
+transaction	3
+painter	3
+venue	3
+commission	3
+casualty	3
+couple	3
+qualification	3
+warrior	3
+occasion	3
+airplane	3
+impact	3
+moment	3
+network	3
+broadcasting	3
+effect	3
+celestial_body	3
+trophy	3
+explosion	3
+aggression	3
+destruction	3
+sound	3
+mission	3
+feature	3
+text_file	3
+resident	3
+inmate	3
+marketplace	3
+cancer	3
+reformer	3
+dialect	3
+ball	3
+headliner	3
+citizenry	3
+nonfiction	3
+press	3
+pope	3
+client	3
+fish	3
+clique	3
+king	3
+hotel	3
+error	3
+playing_field	3
+battalion	3
+refugee	3
+price	3
+public_transport	3
+alteration	3
+headman	3
+confederation	3
+base	3
+lobbyist	3
+rate	3
+farmer	3
+sovereign	3
+foreign_country	3
+effort	3
+accusation	3
+programmer	3
+trader	3
+novel	3
+argument	3
+public	3
+science	3
+cell	3
+accident	3
+passage	3
+rocket	3
+center	3
+girlfriend	3
+seat	3
+native	3
+mountain	3
+adjudicator	3
+comedian	3
+bomb	3
+detective	3
+thought	3
+thinking	3
+representation	3
+terrorism	3
+index	3
+value	3
+boy	3
+thrower	3
+interview	3
+adversity	3
+screenplay	3
+priest	3
+news_agency	3
+anniversary	3
+millionaire	3
+railroad_track	3
+dollar	3
+forum	3
+rise	3
+ascent	3
+raise	3
+target	3
+destination	3
+line	3
+operator	3
+car	3
+motor_vehicle	3
+court	3
+father	3
+speed	3
+challenge	3
+referee	3
+reason	3
+remedy	3
+executive_officer	3
+body_of_water	3
+lake	3
+proceeding	3
+tribe	3
+album	3
+support	3
+group_action	3
+editor	3
+perceiver	3
+finding	3
+letter	3
+political group	3
+government institution	3
+article/publication	3
+terrain	3
+exhibit	3
+quantitative concept	3
+tv show	3
+treatment method	3
+dedication	3
+healthcare facility type	3
+age measurement	3
+media title	3
+behavioural change	3
+religious organization	3
+codename	3
+animal type	3
+industrial facility	3
+biological family	3
+legal statute	3
+dynasty	3
+meteorological term	3
+economic classification	3
+policy document	3
+political alliance	3
+stakeholders	3
+religious term	3
+bacterial species	3
+body of water	3
+cultural term	3
+political philosophy	3
+research type	3
+religious practice	3
+artificial intelligence	3
+educational qualification	3
+architectural work	3
+missile type	3
+warhead type	3
+botanical term	3
+email address	3
+military alliance	3
+web resource	3
+musical term	3
+certification	3
+financial amount	3
+organizations	3
+behavior	3
+software version	3
+statistical figure	3
+monetary amount	3
+biological pathway	3
+reference	3
+neuroscience concept	3
+geographical entity	3
+technology/application	3
+organization/product	3
+process/concept	3
+animal farming system	3
+botanical species	3
+cultural event	3
+monitoring technique	3
+renewable energy source	3
+genetic resistance mechanism	3
+literary term	3
+life stage	3
+software/framework	3
+biochemical process	3
+ct scanner	3
+attribute	3
+health facility	3
+acronym for endoplasmic reticulum	3
+economic figure	3
+subject area	3
+economic condition	3
+market type	3
+temperature measurement	3
+gender	3
+medical equipment	3
+chemical class	3
+behavioral issue	3
+article title	3
+survey dataset	3
+acronym for magnet schools assistance program	3
+geological formation	3
+land use type	3
+financial asset	3
+political division	3
+educational system	3
+culinary ingredient	3
+research topic	3
+metaphor	3
+metabolic fuel	3
+fortress	3
+financial statistic	3
+scientific taxonomy	3
+alternative fuel	3
+economic factor	3
+pollutant	3
+medical reference	3
+political body	3
+spreadsheet software	3
+dental condition	3
+educational standards	3
+regulation/standard	3
+mental health issue	3
+mental health concept	3
+format	3
+academic department	3
+academic qualification	3
+racial group	3
+biblical verse	3
+religious structure	3
+volume number	3
+technological system	3
+dietary component	3
+military vehicle	3
+homeopathic potency	3
+isotope	3
+investment option	3
+breed	3
+cat name	3
+diagnostic test	3
+average salary	3
+infrastructure project	3
+alternate name	3
+location / ancient civilization	3
+technology/medical	3
+content type	3
+historical movement	3
+family relation	3
+regulatory document	3
+role/profession	3
+cognitive process	3
+guideline	3
+color model	3
+atomic number	3
+insect species	3
+scientific experiment	3
+brain structure	3
+viral disease	3
+cultural observance	3
+state of consciousness	3
+citation	3
+time period/grade	3
+technology/project	3
+brand/hotel	3
+funding program	3
+time measurement	3
+group of animals	3
+psychological state	3
+thematic category	3
+legal provision	3
+social media	3
+poetic form	3
+national entity	3
+dinosaur group	3
+plant genus	3
+biological cells	3
+dinosaur family	3
+diagnostic technology	3
+project/initiative	3
+policy concept	3
+software application	3
+digital currency	3
+psychiatric reference	3
+fashion item	3
+transportation technology	3
+testing method	3
+mythical location	3
+biblical text	3
+biomass crop	3
+site/project	3
+planetary classification	3
+nuclear reactor	3
+wheat variety	3
+network technology	3
+cognitive function	3
+scientific research	3
+cloud computing model	3
+militant	2
+medal	2
+attacker	2
+rank	2
+membership	2
+honor	2
+goddess	2
+waiter	2
+senate	2
+foe	2
+critic	2
+successor	2
+separation	2
+factory	2
+complex	2
+yard	2
+essay	2
+literature	2
+ledger	2
+anchor	2
+computer_game	2
+net_income	2
+economics	2
+output	2
+bystander	2
+break	2
+fault	2
+quality	2
+captain	2
+completion	2
+navy	2
+highway	2
+foreigner	2
+scene	2
+two	2
+learning	2
+god	2
+parade	2
+procession	2
+strategy	2
+scheme	2
+presence	2
+gunman	2
+informant	2
+industrialist	2
+world	2
+earth	2
+recognition	2
+fact	2
+general	2
+convoy	2
+blast	2
+noise	2
+emergency	2
+poet	2
+supervision	2
+surveillance	2
+grouping	2
+word	2
+terminology	2
+handbook	2
+manual	2
+host	2
+equity	2
+exercise	2
+assistant	2
+strategist	2
+aid	2
+decrease	2
+football	2
+suggestion	2
+presentation	2
+guitarist	2
+gentleman	2
+list	2
+headquarters	2
+deadline	2
+craft	2
+boat	2
+booklet	2
+diary	2
+payment	2
+vertebrate	2
+arena	2
+ritual	2
+nazi	2
+nurse	2
+figure	2
+morning	2
+dawn	2
+delegate	2
+hurricane	2
+cyclone	2
+storm	2
+youth	2
+pupil	2
+cabinet	2
+golf_course	2
+golf_club	2
+commander_in_chief	2
+elder	2
+grandparent	2
+deliberation	2
+train	2
+reform	2
+transformation	2
+voter	2
+item	2
+worry	2
+whole	2
+audio	2
+queen	2
+schedule	2
+charge	2
+win	2
+victory	2
+street	2
+passageway	2
+federation	2
+secretary	2
+press_conference	2
+announcement	2
+summit	2
+lecture	2
+appearance	2
+travel	2
+responsibility	2
+tension	2
+merging	2
+physics	2
+possibility	2
+command	2
+recession	2
+answer	2
+round	2
+cycle	2
+workman	2
+janitor	2
+informer	2
+training	2
+correctional_institution	2
+prison	2
+camp	2
+jail	2
+fall	2
+descent	2
+drop	2
+wage	2
+payer	2
+paperwork	2
+neighbor	2
+fire	2
+office	2
+sibling	2
+prince	2
+guru	2
+prophet	2
+cable	2
+airport	2
+visit	2
+today	2
+resort	2
+friendship	2
+missile	2
+boom	2
+enforcement	2
+festival	2
+claim	2
+offer	2
+objection	2
+disorder	2
+pitcher	2
+liquid	2
+explanation	2
+vegetation	2
+nature	2
+gain	2
+resistance	2
+confrontation	2
+landmass	2
+display	2
+cardinal	2
+bureaucrat	2
+mayor	2
+reviewer	2
+television_program	2
+financing	2
+air_force	2
+employer	2
+superior	2
+instrumentality	2
+banker	2
+advantage	2
+environment	2
+guy	2
+school_year	2
+trade	2
+commerce	2
+defeat	2
+tragedy	2
+caretaker	2
+lift	2
+motorist	2
+society	2
+evaluation	2
+attraction	2
+railway_station	2
+terminal	2
+captive	2
+web_site	2
+panel	2
+judiciary	2
+rescuer	2
+evaluator	2
+phase	2
+stage	2
+recording	2
+port	2
+harbor	2
+charity	2
+passenger	2
+insight	2
+perception	2
+boxer	2
+journey	2
+weekend	2
+batter	2
+poll	2
+preventive	2
+hearing	2
+beginning	2
+paper	2
+crash	2
+felon	2
+workweek	2
+estimate	2
+tree	2
+shop	2
+supermarket	2
+grocery_store	2
+institute	2
+conceptualization	2
+duty	2
+cooperation	2
+hand	2
+biologist	2
+rock_group	2
+research	2
+migrant	2
+immigrant	2
+violence	2
+step	2
+increase	2
+paint	2
+historian	2
+patron	2
+viewer	2
+baby	2
+myth	2
+legend	2
+plaza	2
+scale	2
+circumstance	2
+trial	2
+presenter	2
+delivery	2
+restriction	2
+monument	2
+safety	2
+suit	2
+discovery	2
+settlement	2
+session	2
+designation	2
+mining method	2
+technology/model	2
+religious institution	2
+statistical quantity	2
+religious sect	2
+cultural designation	2
+field of science	2
+department/field	2
+environmental condition	2
+historical organization	2
+cultural reference/media	2
+quality of life	2
+clinical case	2
+descriptor	2
+globular cluster	2
+astronomical phenomenon	2
+research concept	2
+dietary recommendation	2
+psychometric test	2
+person/organization	2
+industry/market	2
+animal model	2
+distance measurement	2
+organization/brand	2
+cultural item	2
+research study title	2
+religious entity	2
+social entity	2
+economic statistic	2
+hybrid animal	2
+ocean	2
+mountain range	2
+nutritional element	2
+course code	2
+botanical reference	2
+mental health factor	2
+method of execution	2
+university/organization	2
+international organization	2
+experiment condition	2
+ethical issue	2
+nutritional category	2
+furniture	2
+weapon system	2
+location/religious	2
+location/city	2
+date/time period	2
+report title	2
+research program	2
+biological model	2
+genetic disorder	2
+industry/manufacturing	2
+educational evaluation	2
+cultural reference/class	2
+astronomical entity	2
+diagnostic procedure	2
+medical instrument	2
+botanical feature	2
+botanical concept	2
+general category	2
+business entity	2
+fraction	2
+socioeconomic system	2
+postal code	2
+social policy	2
+group type	2
+military campaign	2
+economic group	2
+clinical symptom	2
+energy resource	2
+regulatory framework	2
+artistic concept	2
+scientific initiative	2
+historical context	2
+historical artifact	2
+geographical term	2
+art concept	2
+context	2
+energy system	2
+space shuttle	2
+ethnicity	2
+astronomical structure	2
+psychological trait	2
+explosive device	2
+acronym for alzheimer's disease	2
+acronym for parkinson's disease	2
+acronym for amyloid-β	2
+investment strategy	2
+artefact	2
+cat breed	2
+animal behavior	2
+vitamin	2
+project type	2
+government initiative	2
+gourmet dish	2
+astronomical system	2
+emergency service	2
+app	2
+fungal pathogen	2
+chronic disease	2
+program/concept	2
+registry	2
+healthcare model	2
+neurodevelopmental condition	2
+energy efficiency measurement	2
+energy measurement	2
+license	2
+therapeutic practice	2
+historical agreement	2
+element/chemical	2
+measurement/quantity	2
+acronym for emergency school aid act	2
+stimulant	2
+product condition	2
+business type	2
+group of people	2
+habitat type	2
+soil type	2
+plant structure	2
+storm classification	2
+book title	2
+political regime	2
+financial program	2
+measurement scale	2
+control group	2
+medical phenomenon	2
+descriptive term	2
+psychological intervention	2
+academic position	2
+accession number	2
+supreme being	2
+legal institution	2
+course title	2
+health initiative	2
+clinical test	2
+biological fluid	2
+academic title	2
+physical constant	2
+international agreement	2
+named lunar module spacecraft	2
+space probes	2
+academic institution	2
+water source	2
+currency/price	2
+subfamily	2
+biochemical compounds	2
+mythical being	2
+health status	2
+research design	2
+dietary program	2
+health program	2
+web development software	2
+mythological concept	2
+hashtag	2
+environmental management	2
+legal right	2
+nutrient/supplement	2
+therapeutic process	2
+children's program	2
+military logistics	2
+medical specialty	2
+emergency number	2
+measurement/statistic	2
+music album	2
+music genre	2
+research organization	2
+business sector	2
+program/organization	2
+digital asset	2
+document identifier	2
+pages	2
+voting requirement	2
+government entity	2
+cultural reference/document	2
+age category	2
+educational strategy	2
+hebrew term	2
+religious artifact	2
+sustainable development goal	2
+category	2
+literary chapter	2
+term/latin	2
+event/historical conflict	2
+computational concept	2
+television program	2
+temperature range	2
+biological marker	2
+health problem	2
+culture/people	2
+programming paradigm	2
+chemical (riot control agent)	2
+detector	2
+benchmarking tool	2
+food/plant	2
+lineage	2
+processor	2
+storage technology	2
+antidepressant	2
+anticonvulsant	2
+employee benefit	2
+field of education	2
+organization / location	2
+literary database	2
+statistical percentage	2
+policy/legislation	2
+role/occupation	2
+product/platform	2
+organization/natural park	2
+emotional concept	2
+prevention strategy	2
+design pattern	2
+medical imaging technology	2
+aviation technology	2
+aviation component	2
+concept/infrastructure	2
+therapy/intervention	2
+educational process	2
+document size	2
+id number	2
+cognitive mechanism	2
+viral disease abbreviation	2
+liturgical season	2
+economic status	2
+biblical reference	2
+study/event	2
+geological era	2
+scientific model	2
+temporal scale	2
+location/geological formation	2
+clade	2
+altitude measurement	2
+healthcare system	2
+project title	2
+tax type	2
+property type	2
+historical policy	2
+research field	2
+psychological metric	2
+geophysical phenomenon	2
+industrial process	2
+parable	2
+health crisis/event	2
+genus of flowers	2
+biological trait	2
+emotional state	2
+military decoy model	2
+community membership	2
+cultural reference/region	2
+cultural activity	2
+clinical outcome	2
+program/service	2
+cited work	2
+tree species	2
+business concept	2
+medical classification	2
+stock exchange identifier	2
+political agreement	2
+mathematical equation	2
+historical era	2
+educational entities	2
+civil right	2
+fungus	2
+labor concept	2
+wildlife resource	2
+quantitative data	2
+biological adaptation	2
+prison systems concept	2
+acronym for mental health issue	2
+educational grade	2
+cybersecurity threat	2
+electronic instrument	2
+demographic data	2
+rock type	2
+adult-led educational exercise	2
+social system	2
+measurement/concept	2
+legal principle	2
+government document	2
+air pollutant	2
+measurement/index	2
+title/qualification	2
+measurement/scale	2
+scientific publication	2
+astronomical unit	2
+network configuration	2
+security technology	2
+software/product	2
+safety concern	2
+mental illness	2
+cognitive impairment	2
+discussion method	2
+guerrilla	1
+homer	1
+decoration	1
+influence	1
+cabinet_minister	1
+hacker	1
+chart	1
+fame	1
+cinema	1
+restraint	1
+obstruction	1
+border	1
+barrier	1
+boundary	1
+fortune	1
+destiny	1
+unknown	1
+political_system	1
+growing	1
+bloom	1
+natural_process	1
+tennis	1
+possession	1
+belonging	1
+garden	1
+homestead	1
+plot	1
+front_yard	1
+fabric	1
+covering	1
+garment	1
+apparel	1
+clothing	1
+public_servant	1
+consideration	1
+curator	1
+franchise	1
+doctrine	1
+donor	1
+musical_instrument	1
+guitar	1
+accuser	1
+passing	1
+engineering	1
+solo	1
+classical_music	1
+hero	1
+real_property	1
+apartment_building	1
+model	1
+rig	1
+pistol	1
+mediation	1
+divorce	1
+separate	1
+split	1
+home_game	1
+volleyball	1
+expressway	1
+bowler	1
+bowling	1
+tea	1
+foreign_minister	1
+keyboard	1
+insurance_company	1
+direction	1
+misconduct	1
+merchandise	1
+plane	1
+helicopter	1
+valet	1
+station	1
+television_station	1
+broadcaster	1
+feedback	1
+reaction	1
+discharge	1
+blow	1
+bang	1
+knock	1
+bombing	1
+watch	1
+newscaster	1
+black_hole	1
+examination	1
+test	1
+planner	1
+lowering	1
+reduction	1
+sickness	1
+tumor	1
+stead	1
+speech_act	1
+emphasis	1
+accent	1
+giant	1
+demonstration	1
+fellow	1
+companion	1
+boyfriend	1
+deputy	1
+orchestra	1
+distributor	1
+heart_failure	1
+heart_attack	1
+penalty	1
+private_detective	1
+entertainment_center	1
+religious	1
+infantry	1
+photograph	1
+dance	1
+dancing	1
+ballet	1
+bassist	1
+rental	1
+garbage	1
+waste	1
+theorist	1
+mess	1
+spill	1
+golf	1
+killer	1
+shooter	1
+cast	1
+chef	1
+cook	1
+grandfather	1
+aged	1
+interaction	1
+revision	1
+junior	1
+rock	1
+stone	1
+danger	1
+hazard	1
+racing	1
+strike	1
+probe	1
+detention	1
+questioning	1
+ordeal	1
+question	1
+dish	1
+sweet	1
+cake	1
+lobby	1
+manager	1
+spider	1
+archeologist	1
+civilization	1
+guest	1
+visitor	1
+piano_player	1
+menace	1
+wrestling	1
+incumbent	1
+merchant	1
+exporter	1
+biography	1
+burden	1
+guilt	1
+disagreement	1
+controversy	1
+debate	1
+print	1
+insurance	1
+compensation	1
+epidemic	1
+outbreak	1
+chance	1
+variable	1
+ball_game	1
+comment	1
+remark	1
+turn	1
+public_opinion	1
+hunter	1
+use	1
+cleaner	1
+tissue	1
+jump	1
+leap	1
+heading	1
+young	1
+collision	1
+pathway	1
+route	1
+burning	1
+burn	1
+athletics	1
+mutual_fund	1
+count	1
+space_shuttle	1
+shuttle	1
+traffic	1
+time_series	1
+airfield	1
+sheriff	1
+yesterday	1
+survivor	1
+landscape	1
+mountain_climbing	1
+mound	1
+tune	1
+starter	1
+opener	1
+political_party	1
+magistrate	1
+outcome	1
+buddy	1
+residency	1
+bullet	1
+recall	1
+memory	1
+requirement	1
+demand	1
+need	1
+request	1
+set	1
+fuel_cell	1
+offering	1
+outreach	1
+temple	1
+closure	1
+termination	1
+closing	1
+globe	1
+savings_bank	1
+central_bank	1
+angle	1
+market_value	1
+pricing	1
+price_index	1
+hate	1
+terror	1
+rain	1
+water	1
+precipitation	1
+shower	1
+indicator	1
+winnings	1
+conquest	1
+winning	1
+forest	1
+gymnastics	1
+social_science	1
+aide	1
+organizer	1
+hill	1
+peak	1
+cave	1
+shaft	1
+tunnel	1
+entrance	1
+gate	1
+clergy	1
+peer	1
+bureaucracy	1
+congress	1
+petroleum	1
+defender	1
+recipe	1
+picture	1
+salesman	1
+contributor	1
+birthday	1
+monarchy	1
+reign	1
+men	1
+sentence	1
+suspension	1
+dialogue	1
+chat	1
+privilege	1
+proof	1
+channel	1
+atomic_energy	1
+nuclear_weapon	1
+controlled_substance	1
+services	1
+fireman	1
+disk	1
+puck	1
+ice_hockey	1
+briefing	1
+archbishop	1
+feast	1
+meal	1
+dinner	1
+drama	1
+wheel	1
+garrison	1
+baseball_player	1
+room	1
+segment	1
+faith	1
+pace	1
+track	1
+dog	1
+library	1
+tobacco	1
+seed	1
+affirmation	1
+note	1
+signal	1
+gesture	1
+half	1
+prisoner_of_war	1
+dictator	1
+accomplishment	1
+short_story	1
+queen_bee	1
+pickup	1
+truck	1
+jury	1
+tower	1
+peace_process	1
+supreme_court	1
+broadcast	1
+plain	1
+undertaking	1
+chess	1
+lab	1
+consortium	1
+method_acting	1
+lender	1
+credit_union	1
+umpire	1
+flight	1
+stocks	1
+assumption	1
+suspicion	1
+diarist	1
+frustration	1
+denial	1
+sight	1
+view	1
+characteristic	1
+factor	1
+guard	1
+metro	1
+level	1
+general_election	1
+slip	1
+numeral	1
+graduate	1
+video_game	1
+consultant	1
+novelist	1
+chief_executive_officer	1
+light	1
+single	1
+cricketer	1
+voting_system	1
+baseball	1
+clinic	1
+hospital	1
+correspondent	1
+songwriter	1
+appraisal	1
+boss	1
+inspector	1
+rubbish	1
+wreck	1
+remains	1
+ruin	1
+devastation	1
+wreckage	1
+debris	1
+cleric	1
+week	1
+protection	1
+vice_president	1
+complaint	1
+prediction	1
+allocation	1
+budget	1
+projectile	1
+risk	1
+political_scientist	1
+quarter	1
+pause	1
+recess	1
+revival	1
+mammal	1
+sect	1
+setting	1
+soundtrack	1
+approval	1
+understanding	1
+scandal	1
+fraud	1
+update	1
+brotherhood	1
+lead	1
+help	1
+litigant	1
+baron	1
+aristocrat	1
+operating_system	1
+major	1
+surgeon	1
+compromise	1
+harmony	1
+company_man	1
+purpose	1
+objective	1
+substitute	1
+equivalent	1
+replacement	1
+premise	1
+basis	1
+prevention	1
+start	1
+armor	1
+shield	1
+developer	1
+tornado	1
+moral	1
+wave	1
+dominance	1
+homosexual	1
+gay	1
+extremity	1
+certificate	1
+mystery	1
+secret	1
+explorer	1
+proximity	1
+sympathy	1
+prayer	1
+interest	1
+declaration	1
+assertion	1
+eagle	1
+beast	1
+wolf	1
+beach	1
+oversight	1
+concert	1
+stress	1
+example	1
+blockade	1
+theater	1
+past	1
+amendment	1
+higher_education	1
+protesters	1
+taxpayer	1
+generation	1
+hair	1
+neighborhood	1
+vampire	1
+advertiser	1
+promoter	1
+stockbroker	1
+cannon	1
+finish	1
+clay	1
+school_board	1
+pioneer	1
+sum	1
+verdict	1
+inquiry	1
+dancer	1
+mate	1
+civil_war	1
+rebellion	1
+implementation	1
+habit	1
+healthcare	1
+polity	1
+dictatorship	1
+bug	1
+selling	1
+sale	1
+relationship	1
+prime_minister	1
+stockholder	1
+holder	1
+upheaval	1
+conviction	1
+collapse	1
+bankruptcy	1
+chemical_reaction	1
+acid	1
+joy	1
+attitude	1
+spirit	1
+excitement	1
+happiness	1
+injection	1
+muscle	1
+meaning	1
+vice_squad	1
+envoy	1
+villa	1
+insider	1
+clash	1
+expectation	1
+reference_book	1
+tendency	1
+slowdown	1
+finger	1
+first_aid	1
+punishment	1
+transit	1
+hypothesis	1
+guess	1
+computer_system	1
+stop	1
+breakthrough	1
+advance	1
+upgrade	1
+promotion	1
+missionary	1
+repair	1
+care	1
+surgery	1
+workshop	1
+valley	1
+majority	1
+team_sport	1
+presidency	1
+soccer	1
+translator	1
+interpreter	1
+production	1
+asset	1
+worth	1
+grant	1
+scholarship	1
+proposition	1
+bid	1
+tradition	1
+desert	1
+assurance	1
+access	1
+pitch	1
+throw	1
+worsening	1
+expense	1
+parliament	1
+sculpture	1
+assignment	1
+employment	1
+experience	1
+labor	1
+psychologist	1
+city_council	1
+invasion	1
+founder	1
+wind	1
+seminar	1
+type	1
+crater	1
+stock_market	1
+lawn	1
+grass	1
+server	1
+recovery	1
+mechanism	1
+brain	1
+narrator	1
+measure	1
+climate	1
+heat	1
+health	1
+ballot	1
+court_order	1
+commissioner	1
+colony	1
+hamlet	1
+episode	1
+estate	1
+married	1
+cartoon	1
+comic_strip	1
+painting	1
+preview	1
+scientific_research	1
+radio_station	1
+radio	1
+shot	1
+pot	1
+marijuana	1
+leaf	1
+cigarette	1
+kin	1
+due_process	1
+combination	1
+makeup	1
+kohl	1
+volunteer	1
+annual	1
+designer	1
+sportsman	1
+adversary	1
+film_star	1
+china	1
+barrage	1
+pond	1
+run	1
+raceway	1
+poverty_line	1
+fairness	1
+truth	1
+accuracy	1
+resolution	1
+compliance	1
+aviator	1
+pilot	1
+web_page	1
+page	1
+vacationer	1
+fluid	1
+blood	1
+span	1
+length	1
+public_service	1
+community_service	1
+revelation	1
+document/report	1
+legislation/policy	1
+measurement/statistical value	1
+training program	1
+product/patented invention	1
+industry sector	1
+flower	1
+population estimate	1
+physiological function	1
+buddhist temple	1
+artistic style	1
+artistic genre	1
+agricultural method	1
+organization / status	1
+therapeutic approach	1
+former name	1
+heritage designation	1
+numerical concept	1
+evaluation method	1
+exhibition	1
+physical exercise	1
+tax concept	1
+protected area	1
+element/scientific concept	1
+public health statement	1
+observatory	1
+telescope	1
+telescope abbreviation	1
+space telescope	1
+voting method	1
+medical application	1
+scientific group	1
+entity group	1
+service number	1
+military location	1
+event type	1
+military operation	1
+microbe	1
+page number	1
+health crisis	1
+program/strategy	1
+age/time period	1
+health risk	1
+livestock	1
+administrative region	1
+religious denomination	1
+health measurement	1
+political belief	1
+religious service	1
+publication reference	1
+scientific scale	1
+health risk factor	1
+health strategy	1
+academic type	1
+working paper number	1
+document number	1
+price range	1
+material/technology	1
+software development concept	1
+organizational unit	1
+software concept	1
+mobile operating system	1
+philosophical treatise	1
+reference to publication	1
+sociopolitical concept	1
+abstract concept	1
+conceptual term	1
+visitor attraction	1
+media investigation	1
+healthcare sector	1
+report/media	1
+natural object	1
+natural material	1
+material/construction	1
+political institution	1
+religious site	1
+person/artist	1
+chemical/drug	1
+journal/publication	1
+firearm	1
+political initiative	1
+milestone	1
+physiological state	1
+type of seizure	1
+month and year	1
+online resource	1
+advocacy group	1
+design type	1
+organizational concept	1
+religious order	1
+concept/project	1
+product/color	1
+product/brand	1
+location/mansion	1
+script/language	1
+military asset	1
+service duration	1
+botanical type	1
+gps coordinates	1
+ecological feature	1
+residential type	1
+educational policy	1
+group/entity	1
+organization/military	1
+group/ethnic	1
+location/region	1
+legal/religious concept	1
+cultural/religious group	1
+quantity/time frame	1
+historical institution	1
+musical form	1
+data range	1
+scientific article	1
+medical journal	1
+healthcare professional	1
+transportation concept	1
+program/stage	1
+educational benchmark	1
+cultural reference/institution	1
+cultural reference/title	1
+magnitude	1
+measurement system	1
+currency/value	1
+historic route	1
+geometric shape	1
+educational course	1
+business practice	1
+legal event	1
+medical method	1
+organization/religious	1
+military group	1
+method/practice	1
+media program	1
+astrophysical region	1
+product/commodity	1
+temporal concept	1
+non-profit organization	1
+podcast	1
+mathematical object	1
+conservation concept	1
+pubmed identifier	1
+research programme	1
+funding agreement	1
+encryption algorithm	1
+data format	1
+quantitative statistic	1
+simulation/model	1
+experiment preparation	1
+software/application	1
+political document	1
+historical political entity	1
+legal body	1
+acronym for water, sanitation and hygiene	1
+cognitive science concept	1
+social science concept	1
+technology/infrastructure	1
+employment role	1
+social institution	1
+financial event	1
+documentary	1
+demographic factor	1
+legal/policy document	1
+blog series	1
+pen name	1
+translation/work	1
+design element	1
+risk classification	1
+technical term	1
+logistics term	1
+type of fuel	1
+film franchise	1
+work of art / book	1
+launch vehicle	1
+cells	1
+astronomical location	1
+nation/group	1
+social measure	1
+historical practice	1
+adjective	1
+cultural genre	1
+health category	1
+media feature	1
+genetic term	1
+software/programming language	1
+software/library	1
+supercomputer	1
+transportation hub	1
+acronym for amyotrophic lateral sclerosis	1
+acronym for amyloid precursor protein	1
+cellular structure	1
+acronym for unfolded-protein response	1
+energy production	1
+decision-making concept	1
+food classification	1
+biological agents	1
+geometric concept	1
+role/function	1
+financial strategy	1
+economic region	1
+financial risk	1
+investor type	1
+investment term	1
+financial metric	1
+algorithm	1
+medical category	1
+wireless protocol	1
+classification system	1
+demographic statistic	1
+cat type	1
+intelligence sharing network	1
+financial activity	1
+quantity / organization	1
+software network	1
+work of art/media	1
+language term	1
+labor force	1
+pet food product	1
+feeding behavior	1
+cultural reference/book	1
+title/professional designation	1
+religious belief	1
+historical vessel	1
+historical settlement	1
+type of aircraft	1
+configuration	1
+gland	1
+medical procedure type	1
+pesticide class	1
+mass measurement	1
+healthcare topic	1
+geographical boundary	1
+environmental organization	1
+food preservation technique	1
+instructional guide	1
+anatomical description	1
+legislative bill	1
+legal reference	1
+health indicator	1
+culinary term	1
+culinary concept	1
+media/show	1
+work of art/book	1
+cultural attire	1
+game component	1
+social condition	1
+agricultural type	1
+management practice	1
+farming practice	1
+agricultural strategy	1
+economic outcome	1
+power measurement	1
+patent number	1
+behavioral condition	1
+art/photography	1
+legislative document	1
+specification	1
+technology/concept	1
+location type	1
+biotic variable	1
+technology/methodology	1
+brand name	1
+illegal activity	1
+influenza type	1
+resistance movement	1
+societal structure	1
+certification/professional title	1
+occupation/field	1
+financial obligation	1
+insurance program	1
+organizational group	1
+physical sensation	1
+religious tradition	1
+religious practices	1
+music programme	1
+accreditation program	1
+comet	1
+astrological sign	1
+physical factor	1
+mechanical concept	1
+metabolic process	1
+environmental incident	1
+acronym for international treaty	1
+public health issue	1
+role/group	1
+medical framework	1
+food safety concern	1
+pharmaceutical category	1
+medical recommendation	1
+lifestyle factor	1
+raw material	1
+spatial reference	1
+technological armament	1
+artillery technology	1
+organizational section	1
+subatomic particle	1
+users	1
+space station	1
+space program	1
+space probe	1
+political/regional group	1
+medical guidelines	1
+sporting event	1
+marine habitat	1
+research consortium	1
+document or policy	1
+energy generation method	1
+emotion	1
+family/organization	1
+clinical trial	1
+report/study	1
+vaccine type	1
+nom de guerre	1
+word processing software	1
+scheduling software	1
+mythical ship	1
+acronym/legislation	1
+plan/strategy	1
+event/analysis	1
+entity/role	1
+anatomical concept	1
+anatomical part	1
+economic issue	1
+statistical range	1
+natural landmark	1
+economic program	1
+political process	1
+financial commitment	1
+employment statistic	1
+legal sentence	1
+approximate date	1
+military event	1
+campaign/initiative	1
+rights/concept	1
+online education platform	1
+job category	1
+program/proposal	1
+event/stage	1
+delivery method	1
+medical/scientific term	1
+educational material	1
+translation	1
+media channel	1
+soap opera	1
+children's program translation	1
+provider	1
+military theatre	1
+hebrew word	1
+astronomical region	1
+transportation system	1
+healthcare policy	1
+television show	1
+historical route	1
+education subject	1
+taxonomic group	1
+chemical/pesticide	1
+radio station	1
+media entity	1
+music record	1
+date/time	1
+nutritional concept	1
+lyrics	1
+man-made structure	1
+medical unit	1
+educational classification	1
+measurement tool	1
+astronomical phase	1
+online community	1
+molecule	1
+space observatory	1
+program components	1
+donation/donation program	1
+geographical route	1
+taxonomic class	1
+mythological character	1
+statistical fact	1
+family name	1
+amino acid	1
+oil	1
+financial burden	1
+person/occupation	1
+political/social movement	1
+economic activity/concept	1
+concept/issue	1
+political process/concept	1
+legislative initiative	1
+professional credential	1
+scientific description	1
+medical imaging technique	1
+group/organization	1
+data/statistics	1
+health guideline	1
+therapy	1
+crime	1
+email domain	1
+measurement/material	1
+materials	1
+regulatory approval	1
+issue number	1
+financial status	1
+cosmological concept	1
+textbook	1
+measurement/age	1
+time zone	1
+legal/regulatory concept	1
+organization title	1
+training module	1
+copyright/organization	1
+development goal	1
+astronomical project	1
+scientific instrument	1
+biological order	1
+medical system	1
+transport system	1
+title/role	1
+cancer stage	1
+cybersecurity concept	1
+cryptographic algorithm	1
+nutritional compound	1
+mobile application	1
+mobile device	1
+social media handle	1
+incubation period	1
+fledging period	1
+basic amenity	1
+dance style	1
+visual art	1
+talk show	1
+scientific condition	1
+modeling language	1
+homeopathic remedy	1
+cell line	1
+economic measurement	1
+environmental pollutant	1
+report/database	1
+geographical classification	1
+medical imaging	1
+professional group	1
+life event	1
+proposed acronym	1
+half-life measurement	1
+product/concept	1
+medical complications	1
+physical force	1
+biological specimen	1
+technological device	1
+latin word	1
+cattery name	1
+diagnostic technique	1
+brand/product	1
+chemical category	1
+regulation/guideline	1
+connector type	1
+interface	1
+antidepressant class	1
+medical condition/element	1
+salary range	1
+mean salary	1
+work hours	1
+financial plan	1
+vacation duration	1
+work arrangement	1
+mean wage	1
+lowest average salary	1
+order/regulation	1
+policy initiative	1
+document/regulation	1
+sporting term	1
+event/year	1
+physiological measure	1
+career type	1
+psychological factor	1
+market statistic	1
+contextual significant term	1
+brand/organization	1
+scientific process	1
+product type	1
+cooking term	1
+volcano	1
+royal dynasty	1
+literary creature	1
+future date	1
+creature size reference	1
+research article	1
+human rights concept	1
+environmental measurement	1
+archetype	1
+cellular component	1
+geological region	1
+collective noun	1
+biological cell type	1
+compilation album	1
+military force	1
+religious movement	1
+cultural work	1
+medical intervention	1
+educational theory	1
+collection of works	1
+quantitative expression	1
+seasonal reference	1
+study design	1
+statistical term	1
+developmental domain	1
+age threshold	1
+political right	1
+geographical reference	1
+aviation concept	1
+sociological term	1
+art style	1
+educational structure	1
+lesson structure	1
+study duration	1
+wildlife population	1
+historical place	1
+industry concept	1
+institutional region	1
+journal title	1
+event title	1
+educational group	1
+work of art/report	1
+position/title	1
+demographic trend	1
+insect group	1
+scientific concept/material	1
+financial entity	1
+half-life	1
+proposed element name	1
+document section	1
+historical city	1
+biological reference	1
+biological feature	1
+wine region	1
+military equipment	1
+document/plan	1
+botanical characteristic	1
+shape descriptor	1
+geographical descriptor	1
+word origin	1
+biomarker	1
+document reference	1
+media reference	1
+scientific/academic concept	1
+subject/field	1
+event/time period	1
+action/event	1
+medical treatment option	1
+cultural center	1
+currency/cost	1
+contextual reference	1
+language variant	1
+ecosystem type	1
+quantitative measurement	1
+fictitious ship	1
+toxin	1
+program/methodology	1
+educational setting	1
+notable idea	1
+cultivar	1
+food category	1
+agricultural technology	1
+communication method	1
+type of organization	1
+social phenomenon	1
+material substance	1
+chemical state	1
+power station	1
+density	1
+media platform	1
+protocol	1
+medical protocol	1
+business ranking	1
+research title	1
+organizational policy	1
+team/division	1
+location/organization	1
+scripture reference	1
+education policy	1
+technology/system	1
+public health concept	1
+public health initiative	1
+location/event	1
+numerical system	1
+seasonal event	1
+historical kingdom	1
+jet engine	1
+geographical corridor	1
+person role	1
+profession/field	1
+chemical process	1
+biogeographic region	1
+person/historical figure	1
+scientific concept/legal system	1
+social structure	1
+discussion topic	1
+social influence	1
+study type	1
+criminal activity	1
+social initiative	1
+person/deity	1
+plant/product	1
+specialist/profession	1
+construction concept	1
+skill set	1
+military academy	1
+scientific work	1
+literary reference	1
+brand/program	1
+fitness concept	1
+named shark	1
+documentary title	1
+classification	1
+fossil discovery	1
+dinosaur species	1
+floral trait	1
+process/technique	1
+person/profession	1
+event/period	1
+product/service	1
+educational organization	1
+authors	1
+educational legislation	1
+publication type	1
+educational service	1
+legal act	1
+concepts	1
+currency value	1
+transportation organization	1
+historical text	1
+health system	1
+youtube channel	1
+education grade	1
+educational curriculum	1
+online retailer	1
+date/year	1
+media franchise	1
+measurement concept	1
+law firm	1
+media/product	1
+educational model	1
+logical fallacy	1
+health and safety concept	1
+software product	1
+tool/technique	1
+organization/technology	1
+geographical landmark	1
+religious law	1
+federal program	1
+academic achievement	1
+paper title	1
+equation	1
+noble title	1
+academic grant	1
+medical resource	1
+musical work	1
+academic work	1
+feeding style	1
+general reference	1
+musical instrument type	1
+ratio	1
+economic actor	1
+legal/financial concept	1
+physical quantity	1
+acronym/program	1
+cultural reference/technology	1
+legal system	1
+color descriptor	1
+biological risk	1
+artistic elements	1
+government administration	1
+motto	1
+mythical hero	1
+mythical figure	1
+heavy metal	1
+performance metric	1
+publication/article	1
+project description	1
+public transport system	1
+sociocultural concept	1
+financial aid	1
+artistic technique	1
+temporal reference	1
+aircraft variant	1
+engine	1
+mythical deity	1
+plant cultivar	1
+plant symptoms	1
+negotiation programme	1
+programme	1
+educational stage	1
+project management concept	1
+communication skill	1
+health data	1
+acronym/concept	1
+educational subject	1
+educational assessment	1
+group/population	1
+biological organism	1
+work of art - book	1
+quantity - time period	1
+product/vehicle	1
+genetic variation	1
+grant number	1
+product/prize	1
+department/division	1
+religious role	1
+dental concept	1
+product/technology	1
+technology/scientific concept	1
+frequency	1
+academic paper	1
+astronomical class	1
+type of cancer	1
+educational game	1
+global network	1
+anonymity network	1
+software release policy	1
+user interface	1
+religious work	1
+field of medicine	1
+communication tool	1
+training method	1
+fishing gear	1
+anatomical term	1
+behavioral factor	1
+academic course	1
+pricing model	1
+government policy	1
+government plan	1
+government committee	1
+government review	1
+research report	1
+biological genus	1
+legislative act	1
+early christian document	1
+financial practice	1
+biblical book	1
+insurance data	1
+safety concept	1
+color description	1
+climate event	1
+geological epoch	1
+subgenus	1
+market/industry	1
+educational technique	1
+technology/program	1
+writing model	1
+botanical name	1
+sun exposure	1
+soil ph	1

@@ -1,0 +1,48 @@
+{
+  "n_types": 3460,
+  "n_mentions": 61671,
+  "pct_types_tail": 75.95,
+  "tail_thresh": 5,
+  "top10": [
+    [
+      "location",
+      8123
+    ],
+    [
+      "person",
+      6255
+    ],
+    [
+      "organization",
+      5345
+    ],
+    [
+      "scientific concept",
+      2923
+    ],
+    [
+      "date",
+      2402
+    ],
+    [
+      "cultural reference",
+      1771
+    ],
+    [
+      "product",
+      1460
+    ],
+    [
+      "quantity",
+      1162
+    ],
+    [
+      "event",
+      1145
+    ],
+    [
+      "technology",
+      1141
+    ]
+  ]
+}

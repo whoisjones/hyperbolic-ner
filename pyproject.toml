@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sparse-ner"
+version = "0.2.0"
+description = "Hyperbolic bi-encoder for long-tail fine-grained entity typing"
+requires-python = ">=3.12"
+dependencies = [
+    "torch>=2.2.0",
+    "transformers>=4.40.0",
+    "datasets>=2.18.0",
+    "tokenizers>=0.19.0",
+    "numpy>=1.26.0",
+    "scipy>=1.13.0",
+    "accelerate>=0.29.0",
+    "wandb>=0.16.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sparse_ner"]
+
+[tool.ruff]
+line-length = 100
