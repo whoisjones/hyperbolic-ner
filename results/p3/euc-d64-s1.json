@@ -1,0 +1,37 @@
+{
+  "config": {
+    "geometry": "euclidean",
+    "dim": 64,
+    "encoder": "bert-base-uncased",
+    "epochs": 25,
+    "batch_size": 32,
+    "lr_encoder": 2e-05,
+    "lr_head": 0.001,
+    "pos_weight": 10.0,
+    "seed": 1,
+    "split_seed": 7,
+    "held_lo": 1,
+    "held_hi": 50,
+    "min_test": 2,
+    "print_split": false,
+    "out": "results/p3/euc-d64-s1.json"
+  },
+  "split": {
+    "n_seen": 2133,
+    "n_held": 386,
+    "held_train_mentions_removed": 2698
+  },
+  "zeroshot_heldout": {
+    "map": 0.0724827018693877,
+    "p_at_1": 0.030868628858578606,
+    "r_at_5": 0.07486240762604798,
+    "n_eval": 1393
+  },
+  "generalized_heldout": {
+    "map": 0.07247411932738644,
+    "p_at_1": 0.030868628858578606,
+    "r_at_5": 0.07486240762604798,
+    "n_eval": 1393
+  },
+  "runtime_s": 234
+}

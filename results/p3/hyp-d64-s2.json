@@ -1,0 +1,37 @@
+{
+  "config": {
+    "geometry": "hyperbolic",
+    "dim": 64,
+    "encoder": "bert-base-uncased",
+    "epochs": 25,
+    "batch_size": 32,
+    "lr_encoder": 2e-05,
+    "lr_head": 0.001,
+    "pos_weight": 10.0,
+    "seed": 2,
+    "split_seed": 7,
+    "held_lo": 1,
+    "held_hi": 50,
+    "min_test": 2,
+    "print_split": false,
+    "out": "results/p3/hyp-d64-s2.json"
+  },
+  "split": {
+    "n_seen": 2133,
+    "n_held": 386,
+    "held_train_mentions_removed": 2698
+  },
+  "zeroshot_heldout": {
+    "map": 0.10941829032293951,
+    "p_at_1": 0.06173725771715721,
+    "r_at_5": 0.12516152258622756,
+    "n_eval": 1393
+  },
+  "generalized_heldout": {
+    "map": 0.03809838916962038,
+    "p_at_1": 0.002871500358937545,
+    "r_at_5": 0.017743479463152124,
+    "n_eval": 1393
+  },
+  "runtime_s": 184
+}

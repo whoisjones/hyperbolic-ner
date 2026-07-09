@@ -1,0 +1,37 @@
+{
+  "config": {
+    "geometry": "euclidean",
+    "dim": 16,
+    "encoder": "bert-base-uncased",
+    "epochs": 25,
+    "batch_size": 32,
+    "lr_encoder": 2e-05,
+    "lr_head": 0.001,
+    "pos_weight": 10.0,
+    "seed": 1,
+    "split_seed": 7,
+    "held_lo": 1,
+    "held_hi": 50,
+    "min_test": 2,
+    "print_split": false,
+    "out": "results/p3/euc-d16-s1.json"
+  },
+  "split": {
+    "n_seen": 2133,
+    "n_held": 386,
+    "held_train_mentions_removed": 2698
+  },
+  "zeroshot_heldout": {
+    "map": 0.06845265748566852,
+    "p_at_1": 0.027279253409906678,
+    "r_at_5": 0.07770997880605683,
+    "n_eval": 1393
+  },
+  "generalized_heldout": {
+    "map": 0.06844956745554419,
+    "p_at_1": 0.027279253409906678,
+    "r_at_5": 0.07770997880605683,
+    "n_eval": 1393
+  },
+  "runtime_s": 226
+}

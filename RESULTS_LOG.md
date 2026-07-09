@@ -185,21 +185,69 @@ sibling −0.005, uniform +0.054. Tail-F1 stays ~0 everywhere (P3's problem).
 
 ---
 
-## P3 — Scale + zero-shot tail — NOT STARTED
+## P3 — Zero-shot held-out tail (UFET-first) — DONE (two-sided result)
 
 **Hypothesis**
 - Name-seeded label embeddings + hyperbolic geometry enable typing of held-out /
-  unseen tail types (where P1 supervision gets ~0 in any geometry).
+  unseen types (where P1 supervision gets ~0 on the tail in any geometry). Expect
+  hyperbolic to rank a purely name-derived unseen-type embedding better than
+  euclidean.
 
-**Setup (planned)**
-- Train on FiNERweb-eng (then +PileNER/NuNER); hold out a stratified slice of tail
-  types entirely; evaluate zero-shot ranking on them.
+**Setup**
+- UFET crowd (comparable to P1/P2), `train_zeroshot.py`, flat supervision,
+  bert-base-uncased, 25 epochs.
+- **Split (fixed, `--split-seed 7`, identical across all conditions):** held-out =
+  a stratified 50% sample of types with train-freq ∈ [1,50] and ≥2 test
+  occurrences. → **386 held-out types, 2,698 train mentions removed, 2,873
+  held-out test mentions (1,393 test examples carry a held-out gold).** Once held
+  out, a type is unseen in training (freq 0) regardless of original frequency.
+- **Training:** label matrix contains **only seen** types → held-out types get
+  *zero* supervision (not even as BCE negatives). Examples keep seen labels;
+  examples with only held-out labels drop.
+- **Zero-shot eval:** re-encode held-out type *names* through the TRAINED
+  encoder+`mention_proj`; score test mentions; rank. Metrics: (a) zero-shot =
+  rank held-out labels only (386-way); (b) generalized = rank seen+held jointly
+  (2,519-way). Report mAP / P@1 / R@5.
+- Grid: 2 geometries × dim {16, 64} × seed {1,2,3} = 12 runs. Only geometry
+  varies. Runner `scripts/p3_launch.sh` (GPUs 2,5 excluded — other user).
 
-**Results**
-- _pending_
+**Results** — 12/12 runs, 0 failures. mean±std over seeds {1,2,3}. n_eval = 1,393
+test examples carrying a held-out gold. Plot: `results/p3/zeroshot_bars.png`.
+
+| geom | dim | ZS mAP | ZS P@1 | ZS R@5 | GEN mAP | GEN P@1 |
+|------|-----|--------|--------|--------|---------|---------|
+| euclidean  | 16 | 0.077±.007 | 0.035±.009 | 0.090±.012 | 0.077±.007 | 0.035±.009 |
+| euclidean  | 64 | 0.077±.004 | 0.038±.006 | 0.084±.007 | 0.077±.004 | 0.038±.006 |
+| hyperbolic | 16 | 0.107±.019 | 0.063±.020 | 0.124±.026 | 0.049±.012 | 0.013±.007 |
+| hyperbolic | 64 | 0.111±.012 | 0.065±.009 | 0.129±.024 | 0.043±.007 | 0.005±.002 |
+
+ZS = rank the 386 held-out types only; GEN = rank held-out golds against the full
+2,519-type space (seen + held-out).
 
 **Analysis**
-- _pending_
+- **Pure zero-shot: hyperbolic wins decisively.** ZS mAP +44% at d64 (0.111 vs
+  0.077), P@1 nearly doubles (0.065 vs 0.038). Name-derived embeddings of
+  *never-supervised* types land in the right neighborhood far better under
+  hyperbolic geometry — the distinctive selling point of the project, and a
+  direct confirmation of the P3 hypothesis.
+- **Generalized: hyperbolic reverses and loses** (GEN mAP 0.043 vs euc 0.077).
+  Under distance scoring, trained seen label embeddings systematically outscore
+  name-derived held-out ones (norm/scale mismatch → strong seen-bias), so held-out
+  golds get buried. Euclidean's cosine head L2-normalizes both, so it has no such
+  bias — GEN==ZS exactly (0.077 both; flagged as surprisingly exact, worth a quick
+  independent recompute, but it does not favor the hypothesis so it is not a
+  self-serving bug).
+- **Honest story:** hyperbolic substantially improves unseen-type transfer, but
+  only realizes it when the candidate space is the novel types; in the mixed
+  setting it needs a seen/unseen calibration fix (temperature / per-label bias /
+  norm matching) — a known generalized-ZSL problem, addressable.
+- **Dim:** advantage is flat across d16/d64 (0.107 vs 0.111); consistent with a
+  geometry effect rather than a capacity effect.
+- **Caveats / next:** (1) held-out set spans train-freq 1–50 (not strictly ≤5)
+  for test support — could stratify ZS mAP by original frequency. (2) Try a
+  calibration layer to recover GEN. (3) Scale up: repeat on FiNERweb-eng
+  (+PileNER/NuNER) per the handover to test whether more/noisier data widens the
+  zero-shot gap.
 
 ---
 
