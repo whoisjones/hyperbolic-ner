@@ -1,0 +1,46 @@
+{
+  "config": {
+    "geometry": "euclidean",
+    "supervision": "flat",
+    "dim": 16,
+    "encoder": "bert-base-uncased",
+    "taxonomy": "results/taxonomy/wordnet_parent.json",
+    "epochs": 25,
+    "batch_size": 32,
+    "lr_encoder": 2e-05,
+    "lr_head": 0.001,
+    "pos_weight": 10.0,
+    "seed": 1,
+    "out": "results/p1_seeds/euc-fla-d16-s1.json"
+  },
+  "selection": {
+    "epoch": 24,
+    "dev_macro_f1": 0.24419410526752472,
+    "dev_map": 0.27887482360590604,
+    "threshold": -0.07730001211166382
+  },
+  "test": {
+    "strict": 0.0035035035035035035,
+    "macro_p": 0.29618480801582336,
+    "macro_r": 0.26429277658462524,
+    "macro_f1": 0.2473333477973938,
+    "micro_p": 0.3091769814491272,
+    "micro_r": 0.23730550706386566,
+    "micro_f1": 0.26851508021354675
+  },
+  "test_map": 0.27989523184849324,
+  "test_tail": {
+    "head_f1": 0.44552290439605713,
+    "head_support": 2812,
+    "mid_f1": 0.07321841269731522,
+    "mid_support": 5086,
+    "tail_f1": 0.0,
+    "tail_support": 2835
+  },
+  "test_hier": {
+    "h_precision": 0.41455385088920593,
+    "h_recall": 0.22545215487480164,
+    "h_f1": 0.29206618666648865
+  },
+  "runtime_s": 353
+}
