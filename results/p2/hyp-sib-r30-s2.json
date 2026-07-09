@@ -1,0 +1,53 @@
+{
+  "config": {
+    "geometry": "hyperbolic",
+    "supervision": "flat",
+    "dim": 64,
+    "encoder": "bert-base-uncased",
+    "taxonomy": "results/taxonomy/wordnet_parent.json",
+    "epochs": 25,
+    "batch_size": 32,
+    "lr_encoder": 2e-05,
+    "lr_head": 0.001,
+    "pos_weight": 10.0,
+    "seed": 2,
+    "noise_rate": 0.3,
+    "noise_mode": "sibling",
+    "out": "results/p2/hyp-sib-r30-s2.json"
+  },
+  "noise_stats": {
+    "corrupted": 3198,
+    "total_pos": 10778,
+    "effective_rate": 0.29671553163852293
+  },
+  "selection": {
+    "epoch": 24,
+    "dev_macro_f1": 0.2594551742076874,
+    "dev_map": 0.33006343299273605,
+    "threshold": -0.8355505466461182
+  },
+  "test": {
+    "strict": 0.001001001001001001,
+    "macro_p": 0.24793478846549988,
+    "macro_r": 0.4106316566467285,
+    "macro_f1": 0.25585782527923584,
+    "micro_p": 0.24187783896923065,
+    "micro_r": 0.41619303822517395,
+    "micro_f1": 0.3059484362602234
+  },
+  "test_map": 0.33147828321321954,
+  "test_tail": {
+    "head_f1": 0.5425640940666199,
+    "head_support": 2812,
+    "mid_f1": 0.2617724537849426,
+    "mid_support": 5086,
+    "tail_f1": 0.010602680034935474,
+    "tail_support": 2835
+  },
+  "test_hier": {
+    "h_precision": 0.30615368485450745,
+    "h_recall": 0.38190174102783203,
+    "h_f1": 0.33985817432403564
+  },
+  "runtime_s": 466
+}

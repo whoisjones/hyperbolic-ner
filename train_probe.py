@@ -108,6 +108,10 @@ def main():
     ap.add_argument("--lr-head", type=float, default=1e-3)
     ap.add_argument("--pos-weight", type=float, default=10.0)
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--noise-rate", type=float, default=0.0,
+                    help="P2: fraction of TRAIN positive labels to corrupt")
+    ap.add_argument("--noise-mode", choices=["sibling", "uniform"], default="sibling",
+                    help="P2: sibling swap (realistic) or uniform-random (control)")
     ap.add_argument("--out", required=True)
     args = ap.parse_args()
 
@@ -122,9 +126,17 @@ def main():
     tax = Taxonomy.load(args.taxonomy)
 
     tok = AutoTokenizer.from_pretrained(args.encoder)
-    ds = {s: SpanTypingDataset(p, tok, type2idx) for s, p in splits.items()}
+    ds = {}
+    for s, p in splits.items():
+        # noise is applied to TRAIN labels only; dev/test stay clean
+        nr = args.noise_rate if s == "train" else 0.0
+        ds[s] = SpanTypingDataset(p, tok, type2idx, noise_rate=nr,
+                                  noise_mode=args.noise_mode, taxonomy=tax,
+                                  noise_seed=1000 + args.seed)
     print(f"vocab={len(vocab)} | train={len(ds['train'])} dev={len(ds['validation'])} "
           f"test={len(ds['test'])}", flush=True)
+    if args.noise_rate > 0.0:
+        print(f"train noise: {ds['train'].noise_stats}", flush=True)
 
     model = BiEncoderTyper(args.encoder, vocab, dim=args.dim,
                            geometry=args.geometry).to(device)
@@ -178,6 +190,7 @@ def main():
     tc = np.array([train_counts.get(t, 0) for t in vocab])
     result = {
         "config": vars(args),
+        "noise_stats": ds["train"].noise_stats,
         "selection": best,
         "test": compute_metrics(preds, test_golds),
         "test_map": mean_average_precision(test_logits, test_golds),

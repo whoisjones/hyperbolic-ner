@@ -92,6 +92,10 @@ class SpanTypingDataset(Dataset):
         max_len: int = 128,
         max_records: int | None = None,
         seed: int = 42,
+        noise_rate: float = 0.0,
+        noise_mode: str = "sibling",
+        taxonomy=None,
+        noise_seed: int = 12345,
     ):
         if isinstance(paths, str):
             paths = [paths]
@@ -105,6 +109,12 @@ class SpanTypingDataset(Dataset):
                 ex = self._process(text, cs, ce, types, max_len)
                 if ex is not None:
                     self.examples.append(ex)
+
+        if noise_rate > 0.0:
+            self.noise_stats = self._corrupt_labels(
+                noise_rate, noise_mode, taxonomy, noise_seed)
+        else:
+            self.noise_stats = {"corrupted": 0, "total_pos": 0}
 
     def _process(self, text, char_start, char_end, types, max_len):
         enc = self.tokenizer(text, max_length=max_len, truncation=True,
@@ -132,6 +142,53 @@ class SpanTypingDataset(Dataset):
             "mention_end": tok_end,
             "labels": label_vec,
         }
+
+    def _corrupt_labels(self, noise_rate, noise_mode, taxonomy, noise_seed):
+        """Inject seeded label noise into TRAIN labels only (per positive label).
+
+        For each gold positive, with probability `noise_rate`, replace it with a
+        wrong type: a taxonomy sibling (realistic) or a uniform-random type
+        (adversarial control). Siblings share the same taxonomy parent; if a type
+        has no in-vocab sibling, we fall back to uniform for that label so the
+        target corruption rate is honored. Multi-label spans are corrupted
+        per-label independently.
+        """
+        if noise_mode not in ("sibling", "uniform"):
+            raise ValueError(f"unknown noise_mode {noise_mode!r}")
+        idx2type = {i: t for t, i in self.type2idx.items()}
+
+        # sibling map: parent -> [child idxs in vocab]
+        children: dict[str, list[int]] = {}
+        if noise_mode == "sibling":
+            if taxonomy is None:
+                raise ValueError("noise_mode='sibling' requires a taxonomy")
+            for t, i in self.type2idx.items():
+                p = taxonomy.parent.get(t)
+                children.setdefault(p, []).append(i)
+
+        rng = random.Random(noise_seed)
+        corrupted = total_pos = 0
+        for ex in self.examples:
+            pos = (ex["labels"] > 0).nonzero(as_tuple=True)[0].tolist()
+            total_pos += len(pos)
+            for k in pos:
+                if rng.random() >= noise_rate:
+                    continue
+                repl = None
+                if noise_mode == "sibling":
+                    parent = taxonomy.parent.get(idx2type[k])
+                    sibs = [j for j in children.get(parent, []) if j != k]
+                    if sibs:
+                        repl = rng.choice(sibs)
+                if repl is None:  # uniform mode, or sibling fallback
+                    repl = rng.randrange(self.num_types)
+                    while repl == k:
+                        repl = rng.randrange(self.num_types)
+                ex["labels"][k] = 0.0
+                ex["labels"][repl] = 1.0
+                corrupted += 1
+        return {"corrupted": corrupted, "total_pos": total_pos,
+                "effective_rate": corrupted / max(total_pos, 1)}
 
     def __len__(self):
         return len(self.examples)
