@@ -1,0 +1,40 @@
+{
+  "config": {
+    "geometry": "euclidean",
+    "dim": 64,
+    "encoder": "bert-base-uncased",
+    "epochs": 12,
+    "batch_size": 64,
+    "lr_encoder": 2e-05,
+    "lr_head": 0.001,
+    "pos_weight": 10.0,
+    "seed": 3,
+    "train_file": "/vol/tmp/goldejon/sparse_ner/data/finerweb_eng_train.jsonl",
+    "test_file": "/vol/tmp/goldejon/sparse_ner/data/finerweb_eng_test.jsonl",
+    "max_len": 256,
+    "split_seed": 7,
+    "held_lo": 1,
+    "held_hi": 50,
+    "min_test": 2,
+    "print_split": false,
+    "out": "results/p3b/euc-d64-s3.json"
+  },
+  "split": {
+    "n_seen": 1929,
+    "n_held": 105,
+    "held_train_mentions_removed": 1562
+  },
+  "zeroshot_heldout": {
+    "map": 0.32513854331855774,
+    "p_at_1": 0.16389548693586697,
+    "r_at_5": 0.5296912114014252,
+    "n_eval": 421
+  },
+  "generalized_heldout": {
+    "map": 0.32510547592459726,
+    "p_at_1": 0.16389548693586697,
+    "r_at_5": 0.5296912114014252,
+    "n_eval": 421
+  },
+  "runtime_s": 3239
+}

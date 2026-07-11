@@ -243,11 +243,57 @@ ZS = rank the 386 held-out types only; GEN = rank held-out golds against the ful
   norm matching) — a known generalized-ZSL problem, addressable.
 - **Dim:** advantage is flat across d16/d64 (0.107 vs 0.111); consistent with a
   geometry effect rather than a capacity effect.
-- **Caveats / next:** (1) held-out set spans train-freq 1–50 (not strictly ≤5)
-  for test support — could stratify ZS mAP by original frequency. (2) Try a
+- **Caveats / next:** (1) held-out set spans train-freq 1..50 (not strictly <=5)
+  for test support, could stratify ZS mAP by original frequency. (2) Try a
   calibration layer to recover GEN. (3) Scale up: repeat on FiNERweb-eng
   (+PileNER/NuNER) per the handover to test whether more/noisier data widens the
-  zero-shot gap.
+  zero-shot gap. [done: see P3b]
+
+---
+
+## P3b — Zero-shot scale-up on FiNERweb-eng — DONE (UFET win does NOT replicate)
+
+**Hypothesis**
+- The P3 zero-shot advantage of hyperbolic should hold, and per the handover
+  possibly widen, when trained on the larger, noisier, distant FiNERweb-eng dump.
+
+**Setup**
+- Same `train_zeroshot.py` protocol as P3, generalized with
+  `--train-file/--test-file/--max-len`. Corpus: FiNERweb-eng
+  (`.../training_jsonl/finerweb/eng.jsonl`), distant, single-tag, 2,034 types,
+  73% tail. Fixed doc-level split via `scripts/p3b_prep_finerweb.py`
+  (split-seed 7): 2,124 train / 374 test docs, written under /vol/tmp.
+- Held-out set (same rule as P3): 105 types, 1,562 train mentions removed,
+  440 held-out test mentions (n_eval=421). Names are clean (natural disaster,
+  planet, currency, job title, ...).
+- Grid: 2 geometries x seed {1,2,3} @ dim 64 = 6 runs (dim fixed: P3 showed the
+  geometry effect is dim-invariant). FiNERweb is ~20x more spans than UFET-crowd,
+  so epochs=12, batch=64, max_len=256. Runner `scripts/p3b_launch.sh`.
+
+**Results** — 6/6 runs, 0 failures. mean+/-std over seeds {1,2,3}.
+
+| geom | ZS mAP | ZS P@1 | ZS R@5 | GEN mAP | GEN P@1 |
+|------|--------|--------|--------|---------|---------|
+| euclidean  | 0.339+/-.011 | 0.195+/-.022 | 0.507+/-.021 | 0.339+/-.011 | 0.195+/-.022 |
+| hyperbolic | 0.310+/-.027 | 0.159+/-.021 | 0.481+/-.036 | 0.201+/-.026 | 0.044+/-.013 |
+
+**Analysis**
+- **The P3 result does not replicate.** Pure zero-shot: hyperbolic is -9%
+  (0.310 vs 0.339), i.e. euclidean is ahead (vs +44% for hyperbolic on UFET).
+  Borderline given seed spread, but not a win.
+- **Generalized: hyperbolic still loses (-41%)**, same seen-bias as P3-UFET.
+- **Likely drivers (confounded, three at once):** (1) ~20x more training spans
+  (43k vs ~2k); hyperbolic's geometric prior helps most in low-data, euclidean
+  catches up with abundant data. (2) Single-tag vs multi-label: no hierarchical
+  co-occurrence for the geometry to exploit. (3) Absolute scores ~4x higher
+  (euc 0.339 vs 0.077), task is easier so the prior is less needed.
+- **Confound to note:** P3b used epochs=12/batch=64 vs P3's 25/32. euc-vs-hyp
+  *within* FiNERweb is clean (identical settings); the cross-corpus comparison to
+  UFET is not perfectly controlled.
+- **Takeaway:** the zero-shot selling point is regime-dependent (low-data,
+  multi-label UFET), not a universal property. Clean disentangler next: a
+  data-scaling ablation on FiNERweb (subsample train toward UFET size, hold
+  epochs/schedule fixed) to separate scale from corpus-type.
 
 ---
 

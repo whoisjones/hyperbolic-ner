@@ -115,6 +115,10 @@ def main():
     ap.add_argument("--lr-head", type=float, default=1e-3)
     ap.add_argument("--pos-weight", type=float, default=10.0)
     ap.add_argument("--seed", type=int, default=42)
+    # corpus (default: UFET crowd). Override for P3b FiNERweb scale-up.
+    ap.add_argument("--train-file", default=f"{DATA}/ufet_crowd_train.jsonl")
+    ap.add_argument("--test-file", default=f"{DATA}/ufet_crowd_test.jsonl")
+    ap.add_argument("--max-len", type=int, default=128)
     # split definition (fixed across conditions)
     ap.add_argument("--split-seed", type=int, default=7)
     ap.add_argument("--held-lo", type=int, default=1, help="min train freq of held-out cand")
@@ -128,10 +132,10 @@ def main():
     np.random.seed(args.seed)
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
-    splits = {s: f"{DATA}/ufet_crowd_{s}.jsonl" for s in ("train", "validation", "test")}
-    full_vocab, _ = build_type_vocab(list(splits.values()))
-    _, train_counts = build_type_vocab([splits["train"]])
-    _, test_counts = build_type_vocab([splits["test"]])
+    train_file, test_file = args.train_file, args.test_file
+    full_vocab, _ = build_type_vocab([train_file, test_file])
+    _, train_counts = build_type_vocab([train_file])
+    _, test_counts = build_type_vocab([test_file])
 
     held = make_split(train_counts, test_counts, args.held_lo, args.held_hi,
                       args.min_test, args.split_seed)
@@ -153,10 +157,10 @@ def main():
 
     tok = AutoTokenizer.from_pretrained(args.encoder)
     # TRAIN: only seen labels exist -> held-out types get zero supervision.
-    train_ds = SpanTypingDataset(splits["train"], tok, seen_t2i)
+    train_ds = SpanTypingDataset(train_file, tok, seen_t2i, max_len=args.max_len)
     # TEST: keep full-vocab labels so we can slice seen/held-out columns at eval.
     full_t2i = {t: i for i, t in enumerate(full_vocab)}
-    test_ds = SpanTypingDataset(splits["test"], tok, full_t2i)
+    test_ds = SpanTypingDataset(test_file, tok, full_t2i, max_len=args.max_len)
     print(f"train(seen-only)={len(train_ds)} test(full)={len(test_ds)}", flush=True)
 
     model = BiEncoderTyper(args.encoder, seen_vocab, dim=args.dim,
