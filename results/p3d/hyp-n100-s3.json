@@ -1,0 +1,57 @@
+{
+  "config": {
+    "geometry": "hyperbolic",
+    "supervision": "flat",
+    "dim": 64,
+    "encoder": "bert-base-uncased",
+    "taxonomy": "results/taxonomy/wordnet_parent.json",
+    "epochs": 25,
+    "batch_size": 64,
+    "lr_encoder": 2e-05,
+    "lr_head": 0.001,
+    "pos_weight": 10.0,
+    "seed": 3,
+    "noise_rate": 0.0,
+    "noise_mode": "sibling",
+    "train_file": "/vol/tmp/goldejon/sparse_ner/data/finerweb_eng_suptrain.jsonl",
+    "dev_file": "/vol/tmp/goldejon/sparse_ner/data/finerweb_eng_val.jsonl",
+    "test_file": "/vol/tmp/goldejon/sparse_ner/data/finerweb_eng_test.jsonl",
+    "max_len": 256,
+    "train_max_records": 100,
+    "out": "results/p3d/hyp-n100-s3.json"
+  },
+  "noise_stats": {
+    "corrupted": 0,
+    "total_pos": 0
+  },
+  "selection": {
+    "epoch": 5,
+    "dev_macro_f1": 0.508118748664856,
+    "dev_map": 0.6000417693079021,
+    "threshold": -1.7814115285873413
+  },
+  "test": {
+    "strict": 0.421453775582216,
+    "macro_p": 0.4944624602794647,
+    "macro_r": 0.6005645990371704,
+    "macro_f1": 0.5237430334091187,
+    "micro_p": 0.3940179646015167,
+    "micro_r": 0.6005645990371704,
+    "micro_f1": 0.4758443534374237
+  },
+  "test_map": 0.6143594201183079,
+  "test_tail": {
+    "head_f1": 0.5294708013534546,
+    "head_support": 5333,
+    "mid_f1": 0.0526735857129097,
+    "mid_support": 1069,
+    "tail_f1": 0.0,
+    "tail_support": 683
+  },
+  "test_hier": {
+    "h_precision": 0.4369262158870697,
+    "h_recall": 0.6365798115730286,
+    "h_f1": 0.5181869268417358
+  },
+  "runtime_s": 641
+}

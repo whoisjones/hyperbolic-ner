@@ -112,6 +112,13 @@ def main():
                     help="P2: fraction of TRAIN positive labels to corrupt")
     ap.add_argument("--noise-mode", choices=["sibling", "uniform"], default="sibling",
                     help="P2: sibling swap (realistic) or uniform-random (control)")
+    # corpus override (default: UFET crowd). P3d: FiNERweb supervised scaling.
+    ap.add_argument("--train-file", default=f"{DATA}/ufet_crowd_train.jsonl")
+    ap.add_argument("--dev-file", default=f"{DATA}/ufet_crowd_validation.jsonl")
+    ap.add_argument("--test-file", default=f"{DATA}/ufet_crowd_test.jsonl")
+    ap.add_argument("--max-len", type=int, default=128)
+    ap.add_argument("--train-max-records", type=int, default=None,
+                    help="P3d: subsample train to N docs (vocab/counts from full file)")
     ap.add_argument("--out", required=True)
     args = ap.parse_args()
 
@@ -119,7 +126,8 @@ def main():
     np.random.seed(args.seed)
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
-    splits = {s: f"{DATA}/ufet_crowd_{s}.jsonl" for s in ("train", "validation", "test")}
+    splits = {"train": args.train_file, "validation": args.dev_file,
+              "test": args.test_file}
     vocab, _ = build_type_vocab(list(splits.values()))
     _, train_counts = build_type_vocab([splits["train"]])
     type2idx = {t: i for i, t in enumerate(vocab)}
@@ -128,11 +136,14 @@ def main():
     tok = AutoTokenizer.from_pretrained(args.encoder)
     ds = {}
     for s, p in splits.items():
-        # noise is applied to TRAIN labels only; dev/test stay clean
+        # noise is applied to TRAIN labels only; dev/test stay clean.
+        # --train-max-records subsamples TRAIN docs only (P3d scaling sweep).
         nr = args.noise_rate if s == "train" else 0.0
-        ds[s] = SpanTypingDataset(p, tok, type2idx, noise_rate=nr,
-                                  noise_mode=args.noise_mode, taxonomy=tax,
-                                  noise_seed=1000 + args.seed)
+        mr = args.train_max_records if s == "train" else None
+        ds[s] = SpanTypingDataset(p, tok, type2idx, max_len=args.max_len,
+                                  max_records=mr, seed=args.seed,
+                                  noise_rate=nr, noise_mode=args.noise_mode,
+                                  taxonomy=tax, noise_seed=1000 + args.seed)
     print(f"vocab={len(vocab)} | train={len(ds['train'])} dev={len(ds['validation'])} "
           f"test={len(ds['test'])}", flush=True)
     if args.noise_rate > 0.0:

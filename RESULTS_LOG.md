@@ -349,6 +349,57 @@ ZS = rank the 386 held-out types only; GEN = rank held-out golds against the ful
 
 ---
 
+## P3d — Supervised-F1 scaling on FiNERweb-eng — DONE (unifies the whole project)
+
+**Hypothesis**
+- If the hyperbolic advantage is a data-efficiency effect (P3c), then the
+  *supervised* typing-F1 gap should follow the same scaling law as the zero-shot
+  mAP gap: large at small data, decaying to zero as data grows.
+
+**Setup**
+- Supervised probe `train_probe.py` (full flat-supervision pipeline: dev
+  threshold sweep + best-dev-macro-F1 selection + micro/macro/tail F1 + mAP),
+  generalized with `--train-file/--dev-file/--test-file/--max-len/--train-max-records`.
+- Corpus: FiNERweb-eng. `scripts/p3d_prep_finerweb_val.py` carved a 200-doc dev
+  out of the P3b train pool: 1,924 suptrain / 200 val / 374 test. Vocab/counts
+  from the full suptrain file, so scale varies but the label space does not.
+- **Schedule held CONSTANT** (25 epochs, batch 64, max_len 256, dim 64, flat),
+  same as P3c. Grid: 2 geometries x scale {100,300,1000} docs x seed {1,2,3} = 18.
+- Runner `scripts/p3d_launch.sh` (throttled one-run-per-GPU on a busy cluster,
+  idempotent). Plot: `results/p3d/supervised_scaling_gap.png` (overlays the
+  supervised F1 gap on the P3c zero-shot mAP gap).
+
+**Results** — 18/18 runs, 0 failures. test F1, mean over seeds, n=3.
+Gap = hyperbolic - euclidean.
+
+| ~spans | micro euc | micro hyp | micro gap | macro gap | mAP gap | mid gap | tail gap |
+|--------|-----------|-----------|-----------|-----------|---------|---------|----------|
+| ~2k    | 0.205 | 0.486 | **+0.281** | +0.327 | +0.306 | +0.036 | +0.000 |
+| ~5.5k  | 0.398 | 0.489 | +0.091 | +0.199 | +0.152 | +0.048 | +0.000 |
+| ~18.6k | 0.569 | 0.559 | **-0.009** | -0.031 | -0.017 | +0.053 | +0.015 |
+
+**Analysis**
+- **Same scaling law as zero-shot, confirmed on supervised F1.** The micro-F1 gap
+  decays +0.281 -> +0.091 -> -0.009 and crosses zero around ~18k spans, matching
+  the P3c zero-shot mAP curve. The two curves overlay (see plot).
+- **At small scale the supervised gap is even larger than zero-shot** (+0.28
+  micro-F1 vs +0.12 zero-shot mAP): with ~2k spans euclidean barely learns
+  (micro 0.205) while hyperbolic's prior gives a big head start (0.486).
+- **Rare buckets keep an edge past the crossover:** at 1000 docs, mid-F1 (+0.053)
+  and tail-F1 (+0.015) still favor hyperbolic even though micro/macro have crossed.
+  The geometry helps the tail longest, consistent with P1.
+- **This unifies the project.** P1 (supervised win on small UFET), P3 (zero-shot
+  win on small data), P3b (win gone at scale), P3c (zero-shot scaling law), and now
+  P3d (supervised scaling law) are one finding: hyperbolic geometry is a
+  data-efficient inductive prior for low-resource / long-tail typing. Its
+  advantage is a quantified function of training data, not a fixed property.
+- **Answers the NER-F1 question:** yes, hyperbolic gives better typing F1, but it
+  is a low-data effect that vanishes by ~18k training spans on this corpus.
+- **Caveat:** hierarchical-F1 is not meaningful here (FiNERweb types are not in
+  the UFET WordNet taxonomy); micro/macro/tail F1 and mAP are the metrics to read.
+
+---
+
 ## P4 — Taxonomy-quality ablation — NOT STARTED
 
 **Hypothesis**
