@@ -124,6 +124,8 @@ def main():
     ap.add_argument("--held-lo", type=int, default=1, help="min train freq of held-out cand")
     ap.add_argument("--held-hi", type=int, default=50, help="max train freq of held-out cand")
     ap.add_argument("--min-test", type=int, default=2, help="min test occ for held-out cand")
+    ap.add_argument("--train-max-records", type=int, default=None,
+                    help="P3c: subsample train to N docs (vocab/split from full file)")
     ap.add_argument("--print-split", action="store_true", help="print split stats and exit")
     ap.add_argument("--out")
     args = ap.parse_args()
@@ -157,7 +159,10 @@ def main():
 
     tok = AutoTokenizer.from_pretrained(args.encoder)
     # TRAIN: only seen labels exist -> held-out types get zero supervision.
-    train_ds = SpanTypingDataset(train_file, tok, seen_t2i, max_len=args.max_len)
+    # --train-max-records subsamples docs (seeded) while vocab/split stay fixed
+    # from the full file, so scale varies but the held-out set does not (P3c).
+    train_ds = SpanTypingDataset(train_file, tok, seen_t2i, max_len=args.max_len,
+                                 max_records=args.train_max_records, seed=args.seed)
     # TEST: keep full-vocab labels so we can slice seen/held-out columns at eval.
     full_t2i = {t: i for i, t in enumerate(full_vocab)}
     test_ds = SpanTypingDataset(test_file, tok, full_t2i, max_len=args.max_len)
@@ -236,7 +241,8 @@ def main():
     result = {
         "config": vars(args),
         "split": {"n_seen": len(seen_vocab), "n_held": len(held_vocab),
-                  "held_train_mentions_removed": n_held_train},
+                  "held_train_mentions_removed": n_held_train,
+                  "n_train_spans": len(train_ds)},
         "zeroshot_heldout": zs,
         "generalized_heldout": gen,
         "runtime_s": round(time.time() - t0),

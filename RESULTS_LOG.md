@@ -293,7 +293,59 @@ ZS = rank the 386 held-out types only; GEN = rank held-out golds against the ful
 - **Takeaway:** the zero-shot selling point is regime-dependent (low-data,
   multi-label UFET), not a universal property. Clean disentangler next: a
   data-scaling ablation on FiNERweb (subsample train toward UFET size, hold
-  epochs/schedule fixed) to separate scale from corpus-type.
+  epochs/schedule fixed) to separate scale from corpus-type. [done: see P3c]
+
+---
+
+## P3c — Data-scaling ablation on FiNERweb-eng — DONE (scaling law, confound resolved)
+
+**Hypothesis**
+- The P3b non-replication is driven by SCALE, not by the single-tag corpus type.
+  Subsampling FiNERweb train toward UFET size should recover the hyperbolic
+  zero-shot advantage.
+
+**Setup**
+- Same corpus, split, and held-out set as P3b (fixed, computed from the full
+  file, so only training amount varies). Subsample train via
+  `--train-max-records` (added to `train_zeroshot.py`; subsamples docs only,
+  vocab/split unchanged).
+- **Schedule held CONSTANT at epochs=25, batch=64, max_len=256, dim=64** across
+  all scales, so the comparison is controlled (same passes, different N).
+- Grid: 2 geometries x scale {100, 300, 1000} docs x seed {1,2,3} = 18 runs.
+  Runner `scripts/p3c_launch.sh` (+ `scripts/p3c_retry.sh` for 5 cells that OOM'd
+  when other users grabbed GPUs; re-run one-per-GPU, 0 failures). Plot:
+  `results/p3c/scaling_curve.png`.
+- Note: the ~43k full point is P3b (epochs=12), a slightly different schedule, so
+  treat it as indicative rather than part of the controlled sweep.
+
+**Results** — 18/18 runs, 0 failures. zero-shot held-out mAP, mean+/-std, n=3.
+
+| train docs | ~spans | euclidean | hyperbolic | gap (hyp-euc) | GEN euc | GEN hyp |
+|------------|--------|-----------|------------|---------------|---------|---------|
+| 100        | 1,907  | 0.055+/-.002 | 0.179+/-.038 | **+0.124** | 0.055 | 0.094 |
+| 300        | 5,540  | 0.200+/-.021 | 0.261+/-.034 | +0.061 | 0.200 | 0.185 |
+| 1000       | 18,562 | 0.353+/-.062 | 0.254+/-.029 | **-0.099** | 0.353 | 0.133 |
+| (43k, P3b) | ~43,000| 0.339 | 0.310 | -0.029 | 0.339 | 0.201 |
+
+**Analysis**
+- **Confound resolved: it is SCALE, not corpus type.** On the same single-tag
+  FiNERweb corpus, at UFET size (~1.9k spans) hyperbolic wins by +0.124, even
+  larger than the +0.034 it won by on UFET itself. So single-tag data is not the
+  reason the P3b win vanished.
+- **A clean scaling law.** The hyperbolic-minus-euclidean gap decays monotonically
+  with training data (+0.124 -> +0.061 -> -0.099) and crosses zero between ~5.5k
+  and ~18.6k spans. With enough data euclidean learns the mention geometry
+  directly and overtakes.
+- **Unifying interpretation for the whole project:** hyperbolic geometry is a
+  data-efficient inductive prior for long-tail / low-resource typing, not a
+  universally better model. It substitutes for data; once data is abundant the
+  prior becomes a mild constraint. This reconciles P1 (win on small UFET, tail,
+  low dim), P3 (zero-shot win), and P3b (win gone at scale).
+- **Generalized still loses at every scale** (seen-bias in distance scoring is
+  scale-independent): a calibration problem, the one clear engineering fix.
+- **Caveats:** the 43k point uses a different schedule (P3b, 12 epochs), so it is
+  indicative not controlled; the exact crossover (~5-18k spans) is corpus/task
+  specific and should not be over-generalized.
 
 ---
 
