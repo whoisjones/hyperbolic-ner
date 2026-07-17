@@ -8,6 +8,17 @@ in-vocab hypernym become roots (parent = null).
 This is deliberately mechanical — no manual merging — so it is reproducible
 and defensible. Taxonomy quality is ablated later (P4), not tuned here.
 
+Wrong-sense guard: WordNet's most-frequent sense for common single-word labels
+is often not the entity-typing sense — e.g. "male" resolves to the organism
+sense (hypernym chain -> object), "system" to the abstract-whole sense
+(-> unit), "administration" to the occurrence sense (-> event). These chains
+terminate at a handful of vacuous WordNet "unique beginner" hypernyms that get
+reused across totally unrelated branches (location -> object, activity ->
+event, act -> document), polluting the ancestor closure of everything beneath
+them. BLOCKED_PARENTS excludes these nodes as valid parents; a candidate
+walk that would land on one instead stops and leaves the type rootless, since
+anything beyond a vacuous root is even more abstract, not more useful.
+
 Usage:
     python scripts/build_taxonomy_wordnet.py \
         --paths <train.jsonl> <dev.jsonl> <test.jsonl> \
@@ -22,6 +33,18 @@ from pathlib import Path
 from nltk.corpus import wordnet as wn
 
 from sparse_ner.data import build_type_vocab
+
+# Vacuous / wrong-sense-attractor WordNet "unique beginner" style hypernyms.
+# Identified empirically from P1: these accounted for the largest share of
+# ancestor labels injected into UFET-crowd training targets (object 633x,
+# event 489x, unit 309x on 1,998 train spans), via wrong-sense chains such as
+# male->object, administration->event, system->unit, act->document.
+BLOCKED_PARENTS = {
+    "object", "event", "unit", "document", "part", "concept", "whole",
+    "cause", "beginning", "thing", "entity", "abstraction", "causal agent",
+    "physical entity", "matter", "psychological feature", "measure",
+    "relation", "attribute", "act", "happening", "activity",
+}
 
 
 def head_word(t: str) -> str:
@@ -46,10 +69,13 @@ def build_parent_map(vocab: list[str], counts) -> dict[str, str | None]:
             continue
         # walk rootward: immediate hypernyms first. A candidate parent must be
         # at least as frequent as the child (generality ~ frequency); this
-        # prunes wrong-sense jumps like person -> cause -> event.
+        # prunes wrong-sense jumps like person -> cause -> event. If the
+        # nearest in-vocab hypernym is a blocked vacuous root, stop the search
+        # entirely rather than accept it or search past it.
         frontier = syn.hypernyms()
         seen = set()
-        while frontier:
+        blocked_hit = False
+        while frontier and not blocked_hit:
             nxt = []
             for h in frontier:
                 if h in seen:
@@ -57,14 +83,18 @@ def build_parent_map(vocab: list[str], counts) -> dict[str, str | None]:
                 seen.add(h)
                 for lemma in h.lemma_names():
                     cand = lemma.replace("_", " ").lower()
-                    if (cand in vocab_set and cand != t
-                            and counts.get(cand, 0) >= counts.get(t, 1)):
+                    if cand == t or cand not in vocab_set:
+                        continue
+                    if cand in BLOCKED_PARENTS:
+                        blocked_hit = True
+                        break
+                    if counts.get(cand, 0) >= counts.get(t, 1):
                         parent[t] = cand
                         break
-                if parent[t] is not None:
+                if parent[t] is not None or blocked_hit:
                     break
                 nxt.extend(h.hypernyms())
-            if parent[t] is not None:
+            if parent[t] is not None or blocked_hit:
                 break
             frontier = nxt
     return parent

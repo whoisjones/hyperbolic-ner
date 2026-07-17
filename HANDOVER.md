@@ -46,10 +46,17 @@ correct supertypes), and specifically whether hierarchy-aware supervision
     `spans_char → tag` (single label).
   - `src/sparse_ner/data.py` normalizes both schemas to per-span examples.
 - **Taxonomy:** `results/taxonomy/wordnet_parent.json` — mechanical WordNet
-  hypernym linking over the 2,519 UFET-crowd types, with a frequency filter
-  (parent must be ≥ as frequent as its child) that prunes wrong-sense chains
-  like `person → cause → event`. Rebuild with
-  `scripts/build_taxonomy_wordnet.py`.
+  hypernym linking over the 2,519 UFET-crowd types, with two guards: (1) a
+  frequency filter (parent must be ≥ as frequent as its child), and (2) a
+  blocklist of vacuous WordNet "unique beginner" nodes (`object`, `event`,
+  `unit`, `document`, `act`, `activity`, ... — full list in
+  `BLOCKED_PARENTS`) that can never be accepted as a parent; a hypernym walk
+  that would land on one stops there and the type becomes a root instead.
+  This exists because the naive version linked common labels through the
+  wrong WordNet sense — e.g. `male → object` (organism sense, not the
+  entity-typing sense), `system → unit`, `administration → event` — and those
+  three alone accounted for ~23% of all ancestor labels injected into
+  training targets. Rebuild with `scripts/build_taxonomy_wordnet.py`.
 
 ## Fair-comparison protocol (non-negotiable, encoded in `train_probe.py`)
 
@@ -68,8 +75,28 @@ fixed threshold biases the comparison:
 
 ### P1 — geometry probe (DONE, gate passed)
 2 geometries × {flat, ancestor} supervision × dim {16, 64, 128} × 4 seeds on
-UFET crowd. Runners: `train_probe.py`, `scripts/p1_launch_{grid,seeds}.sh`;
-outputs in `results/p1*/`. This was the go/no-go for the whole thesis.
+UFET crowd. Runners: `train_probe.py`, `scripts/p1_launch_{grid,seeds}.sh`,
+`scripts/p1_rerun_ancestor.sh`; outputs in `results/p1*/` (`results/p1_anc_v2/`
+is the ancestor cell rerun after the taxonomy fix below — use those numbers,
+not `results/p1_seeds/*anc*` or `results/p1/*anc*`, which reflect the
+polluted taxonomy). This was the go/no-go for the whole thesis; it passed.
+
+Test-set numbers, dim 64, mean±std over 4 seeds:
+
+| supervision | geometry | macroF1 | mAP | mid F1 | hierF1 |
+|---|---|---|---|---|---|
+| flat | hyperbolic | 0.269 | 0.357 | 0.278 | 0.360 |
+| flat | euclidean | 0.252 | 0.277 | 0.082 | 0.298 |
+| ancestor | hyperbolic | 0.251±0.002 | 0.304±0.004 | 0.238±0.010 | 0.331±0.006 |
+| ancestor | euclidean | 0.219±0.002 | 0.260±0.001 | 0.059±0.005 | 0.264±0.002 |
+
+Hyperbolic beats Euclidean at every dim, under both supervision regimes;
+the mid-frequency (rare-type) gap is the headline result — roughly 3–4× in
+favor of hyperbolic. Ancestor supervision underperforms flat on standard
+metrics in both geometries by construction (predicted supertypes count as
+false positives against flat gold) — that is expected, not a bug. See
+`hierarchical_f1` caveat in Known Issues below before reading hierF1 numbers
+across the taxonomy-fix boundary.
 
 ### P2 — controlled noise robustness (NEXT, start here)
 **Hypothesis:** hyperbolic degrades more gracefully under label noise, because
@@ -122,6 +149,20 @@ FiNERweb dumps.
 3. Ancestor propagation **lowers flat F1 by construction** (predicted
    supertypes count as false positives) — always read it against hierarchical
    F1, never flat F1 alone.
-4. Anything under `/vol/tmp/goldejon/multilingual_ner/finerweb_artifacts` is
+4. **hierF1 is not comparable across taxonomy versions.** `hierarchical_f1()`
+   grants partial credit using whatever taxonomy is passed in, so a taxonomy
+   with more (even wrong) edges produces higher hierF1 by construction — more
+   chances for a predicted label to coincidentally overlap the ancestor
+   closure. After the blocklist fix (fewer, correct edges: 97.1%→85.2% linked
+   on the UFET-crowd vocab, mean depth 7.9→1.74), hierF1 *dropped* for both
+   geometries even though every other metric improved. That drop is the
+   taxonomy getting more honest, not the model getting worse — don't compare
+   hierF1 before/after a taxonomy change without re-deriving both sides on
+   the same taxonomy.
+5. Anything under `/vol/tmp/goldejon/multilingual_ner/finerweb_artifacts` is
    off-limits per prior guidance; the training data is the `training_jsonl`
    folders.
+6. `results/p2_launch.out`, `results/p3*_launch.out`, and
+   `results/presentation/` predate this taxonomy fix and were not touched by
+   it — they belong to separate P2/P3 work in progress; check their own
+   provenance before trusting numbers there against the corrected taxonomy.
