@@ -1,0 +1,1842 @@
+{
+  "config": {
+    "geometry": "euclidean",
+    "dim": 64,
+    "encoder": "bert-base-uncased",
+    "epochs": 25,
+    "batch_size": 32,
+    "lr_encoder": 2e-05,
+    "lr_head": 0.001,
+    "pos_weight": 10.0,
+    "seed": 2,
+    "taxonomy": "results/taxonomy/wordnet_parent.json",
+    "out": "results/c2/euc-d64-s2.json"
+  },
+  "n_labels_observed": 2519,
+  "spearman_freq_vs_fneg_share": {
+    "rho": 0.3834390543247234,
+    "p": 5.009281315318486e-89
+  },
+  "buckets": {
+    "head": {
+      "n_labels": 14,
+      "mean_fneg_grad_share": 0.015279824645943041,
+      "mean_fneg_to_pos_ratio": 0.02850647053881725,
+      "mean_cos_pos_fneg": -0.98921826422526
+    },
+    "mid": {
+      "n_labels": 307,
+      "mean_fneg_grad_share": 0.0023220883018202753,
+      "mean_fneg_to_pos_ratio": 0.00470022674331654,
+      "mean_cos_pos_fneg": -0.7308832603156838
+    },
+    "tail": {
+      "n_labels": 2198,
+      "mean_fneg_grad_share": 0.00022918164558283227,
+      "mean_fneg_to_pos_ratio": 18198.363188980213,
+      "mean_cos_pos_fneg": -0.45771123519962953
+    }
+  },
+  "per_label": [
+    {
+      "label": "person",
+      "train_freq": 824,
+      "n_steps_with_fneg": 1122,
+      "fneg_grad_share": 0.017225244467817945,
+      "pos_grad_share": 0.7227273697442365,
+      "fneg_to_pos_ratio": 0.023833668391324003,
+      "mean_cos_pos_fneg": -0.973935727076522
+    },
+    {
+      "label": "organization",
+      "train_freq": 248,
+      "n_steps_with_fneg": 1324,
+      "fneg_grad_share": 0.030400828224005715,
+      "pos_grad_share": 0.5353339545133381,
+      "fneg_to_pos_ratio": 0.05678852979098352,
+      "mean_cos_pos_fneg": -0.9918716109771932
+    },
+    {
+      "label": "adult",
+      "train_freq": 194,
+      "n_steps_with_fneg": 1305,
+      "fneg_grad_share": 0.03010909505767411,
+      "pos_grad_share": 0.5321351536165342,
+      "fneg_to_pos_ratio": 0.05658166887311348,
+      "mean_cos_pos_fneg": -0.9951966213801551
+    },
+    {
+      "label": "event",
+      "train_freq": 181,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.530157002643928,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "leader",
+      "train_freq": 181,
+      "n_steps_with_fneg": 1113,
+      "fneg_grad_share": 0.02170722092069881,
+      "pos_grad_share": 0.525901605283003,
+      "fneg_to_pos_ratio": 0.04127620205497856,
+      "mean_cos_pos_fneg": -0.9950434557045368
+    },
+    {
+      "label": "male",
+      "train_freq": 167,
+      "n_steps_with_fneg": 99,
+      "fneg_grad_share": 0.0011595977324353312,
+      "pos_grad_share": 0.5206971897101715,
+      "fneg_to_pos_ratio": 0.0022270097771812094,
+      "mean_cos_pos_fneg": -0.9969612783855862
+    },
+    {
+      "label": "object",
+      "train_freq": 160,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5266278124943753,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "place",
+      "train_freq": 156,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5212504115567103,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "group",
+      "train_freq": 152,
+      "n_steps_with_fneg": 1465,
+      "fneg_grad_share": 0.04432700678920399,
+      "pos_grad_share": 0.5215220105158741,
+      "fneg_to_pos_ratio": 0.08499546691300147,
+      "mean_cos_pos_fneg": -0.9901841947991364
+    },
+    {
+      "label": "location",
+      "train_freq": 131,
+      "n_steps_with_fneg": 1539,
+      "fneg_grad_share": 0.06537152649222763,
+      "pos_grad_share": 0.5170225284254698,
+      "fneg_to_pos_ratio": 0.12643844880668698,
+      "mean_cos_pos_fneg": -0.9919153881366489
+    },
+    {
+      "label": "area",
+      "train_freq": 122,
+      "n_steps_with_fneg": 96,
+      "fneg_grad_share": 0.0010738328598852574,
+      "pos_grad_share": 0.5183682139112632,
+      "fneg_to_pos_ratio": 0.0020715638634221534,
+      "mean_cos_pos_fneg": -0.9868159731229146
+    },
+    {
+      "label": "politician",
+      "train_freq": 122,
+      "n_steps_with_fneg": 162,
+      "fneg_grad_share": 0.0020080061486218563,
+      "pos_grad_share": 0.5215169877697813,
+      "fneg_to_pos_ratio": 0.003850317814591059,
+      "mean_cos_pos_fneg": -0.9931286895716632
+    },
+    {
+      "label": "administration",
+      "train_freq": 110,
+      "n_steps_with_fneg": 25,
+      "fneg_grad_share": 0.0002730724506576198,
+      "pos_grad_share": 0.5216670683024374,
+      "fneg_to_pos_ratio": 0.0005234611637384509,
+      "mean_cos_pos_fneg": -0.9737368947581241
+    },
+    {
+      "label": "man",
+      "train_freq": 109,
+      "n_steps_with_fneg": 25,
+      "fneg_grad_share": 0.000262113899974309,
+      "pos_grad_share": 0.5198093225455283,
+      "fneg_to_pos_ratio": 0.0005042500944206352,
+      "mean_cos_pos_fneg": -0.99261107256538
+    },
+    {
+      "label": "official",
+      "train_freq": 99,
+      "n_steps_with_fneg": 165,
+      "fneg_grad_share": 0.002048917117104631,
+      "pos_grad_share": 0.5203986132367248,
+      "fneg_to_pos_ratio": 0.003937207104302172,
+      "mean_cos_pos_fneg": -0.9904096028698024
+    },
+    {
+      "label": "company",
+      "train_freq": 93,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5195405585084434,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "country",
+      "train_freq": 92,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5201781542735031,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "region",
+      "train_freq": 89,
+      "n_steps_with_fneg": 1537,
+      "fneg_grad_share": 0.05929398100605981,
+      "pos_grad_share": 0.5193282798505882,
+      "fneg_to_pos_ratio": 0.11417437352558349,
+      "mean_cos_pos_fneg": -0.9914140663727993
+    },
+    {
+      "label": "government",
+      "train_freq": 84,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5232321209970399,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "nation",
+      "train_freq": 79,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5198801263348065,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "business",
+      "train_freq": 78,
+      "n_steps_with_fneg": 577,
+      "fneg_grad_share": 0.008469437840345637,
+      "pos_grad_share": 0.5206208643782196,
+      "fneg_to_pos_ratio": 0.016267957010253003,
+      "mean_cos_pos_fneg": -0.9913360790053815
+    },
+    {
+      "label": "institution",
+      "train_freq": 74,
+      "n_steps_with_fneg": 123,
+      "fneg_grad_share": 0.0012830653936277052,
+      "pos_grad_share": 0.5211967106567758,
+      "fneg_to_pos_ratio": 0.0024617680184720963,
+      "mean_cos_pos_fneg": -0.9812513807924782
+    },
+    {
+      "label": "professional",
+      "train_freq": 73,
+      "n_steps_with_fneg": 635,
+      "fneg_grad_share": 0.008809954131471332,
+      "pos_grad_share": 0.5212096831096721,
+      "fneg_to_pos_ratio": 0.016902898040782478,
+      "mean_cos_pos_fneg": -0.989974534644021
+    },
+    {
+      "label": "state",
+      "train_freq": 71,
+      "n_steps_with_fneg": 1417,
+      "fneg_grad_share": 0.036080247744057915,
+      "pos_grad_share": 0.5203799270950245,
+      "fneg_to_pos_ratio": 0.06933443406526602,
+      "mean_cos_pos_fneg": -0.9864287844770505
+    },
+    {
+      "label": "athlete",
+      "train_freq": 70,
+      "n_steps_with_fneg": 25,
+      "fneg_grad_share": 0.00024878830372233315,
+      "pos_grad_share": 0.5220412779383885,
+      "fneg_to_pos_ratio": 0.0004765682604732556,
+      "mean_cos_pos_fneg": -0.9952300567375986
+    },
+    {
+      "label": "concept",
+      "train_freq": 68,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.520712370505256,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "social_group",
+      "train_freq": 68,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5253684202335738,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "spokesperson",
+      "train_freq": 64,
+      "n_steps_with_fneg": 121,
+      "fneg_grad_share": 0.0014916322953797132,
+      "pos_grad_share": 0.5223686406461003,
+      "fneg_to_pos_ratio": 0.0028555165439004206,
+      "mean_cos_pos_fneg": -0.9924278058014907
+    },
+    {
+      "label": "authority",
+      "train_freq": 63,
+      "n_steps_with_fneg": 50,
+      "fneg_grad_share": 0.0006207866096875224,
+      "pos_grad_share": 0.5234929695482652,
+      "fneg_to_pos_ratio": 0.0011858547216464324,
+      "mean_cos_pos_fneg": -0.9738382254328046
+    },
+    {
+      "label": "female",
+      "train_freq": 63,
+      "n_steps_with_fneg": 50,
+      "fneg_grad_share": 0.000584447818821434,
+      "pos_grad_share": 0.5204967696069348,
+      "fneg_to_pos_ratio": 0.0011228654104093543,
+      "mean_cos_pos_fneg": -0.9946313053369522
+    },
+    {
+      "label": "player",
+      "train_freq": 62,
+      "n_steps_with_fneg": 25,
+      "fneg_grad_share": 0.00025419920632442747,
+      "pos_grad_share": 0.521204582857265,
+      "fneg_to_pos_ratio": 0.0004877148334554101,
+      "mean_cos_pos_fneg": -0.9904113326753888
+    },
+    {
+      "label": "time",
+      "train_freq": 62,
+      "n_steps_with_fneg": 163,
+      "fneg_grad_share": 0.001932451965454217,
+      "pos_grad_share": 0.5251742846530388,
+      "fneg_to_pos_ratio": 0.0036796393538783205,
+      "mean_cos_pos_fneg": -0.9874222698035063
+    },
+    {
+      "label": "corporation",
+      "train_freq": 60,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.519541863833814,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "idea",
+      "train_freq": 60,
+      "n_steps_with_fneg": 319,
+      "fneg_grad_share": 0.003928815973741539,
+      "pos_grad_share": 0.5231385055217397,
+      "fneg_to_pos_ratio": 0.007510087543304097,
+      "mean_cos_pos_fneg": -0.9888461009050027
+    },
+    {
+      "label": "woman",
+      "train_freq": 55,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5223123843845074,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "city",
+      "train_freq": 54,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.520247889140449,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "enterprise",
+      "train_freq": 51,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5239420854362942,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "team",
+      "train_freq": 51,
+      "n_steps_with_fneg": 191,
+      "fneg_grad_share": 0.0021773124905042885,
+      "pos_grad_share": 0.521926979640124,
+      "fneg_to_pos_ratio": 0.00417168028371627,
+      "mean_cos_pos_fneg": -0.9813215535715085
+    },
+    {
+      "label": "agency",
+      "train_freq": 47,
+      "n_steps_with_fneg": 25,
+      "fneg_grad_share": 0.000293934703285255,
+      "pos_grad_share": 0.5222107551399168,
+      "fneg_to_pos_ratio": 0.0005628660466912456,
+      "mean_cos_pos_fneg": -0.9531810358166695
+    },
+    {
+      "label": "firm",
+      "train_freq": 47,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5236046219679173,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "performer",
+      "train_freq": 43,
+      "n_steps_with_fneg": 555,
+      "fneg_grad_share": 0.00790695540476269,
+      "pos_grad_share": 0.5219280464485057,
+      "fneg_to_pos_ratio": 0.015149512386939346,
+      "mean_cos_pos_fneg": -0.9872742281510279
+    },
+    {
+      "label": "president",
+      "train_freq": 42,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5243245588079073,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "expert",
+      "train_freq": 41,
+      "n_steps_with_fneg": 163,
+      "fneg_grad_share": 0.0022986998103850706,
+      "pos_grad_share": 0.5247955131900842,
+      "fneg_to_pos_ratio": 0.004380181904399146,
+      "mean_cos_pos_fneg": -0.9825878835776273
+    },
+    {
+      "label": "position",
+      "train_freq": 39,
+      "n_steps_with_fneg": 645,
+      "fneg_grad_share": 0.009736296133326328,
+      "pos_grad_share": 0.5216355575363822,
+      "fneg_to_pos_ratio": 0.01866493952082102,
+      "mean_cos_pos_fneg": -0.9779615846547214
+    },
+    {
+      "label": "representative",
+      "train_freq": 39,
+      "n_steps_with_fneg": 95,
+      "fneg_grad_share": 0.0013875719342738588,
+      "pos_grad_share": 0.5249669139462969,
+      "fneg_to_pos_ratio": 0.002643160735298843,
+      "mean_cos_pos_fneg": -0.978092810511589
+    },
+    {
+      "label": "contestant",
+      "train_freq": 38,
+      "n_steps_with_fneg": 168,
+      "fneg_grad_share": 0.002097369596049998,
+      "pos_grad_share": 0.520153206926519,
+      "fneg_to_pos_ratio": 0.004032215063025247,
+      "mean_cos_pos_fneg": -0.9892669767141342
+    },
+    {
+      "label": "communicator",
+      "train_freq": 37,
+      "n_steps_with_fneg": 1232,
+      "fneg_grad_share": 0.03026875308170243,
+      "pos_grad_share": 0.5208168676774436,
+      "fneg_to_pos_ratio": 0.05811784325781229,
+      "mean_cos_pos_fneg": -0.9900871458920566
+    },
+    {
+      "label": "spokesman",
+      "train_freq": 37,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5225224388054514,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "municipality",
+      "train_freq": 36,
+      "n_steps_with_fneg": 321,
+      "fneg_grad_share": 0.0057584723672176345,
+      "pos_grad_share": 0.5180660930847362,
+      "fneg_to_pos_ratio": 0.011115323786063266,
+      "mean_cos_pos_fneg": -0.9822340833418297
+    },
+    {
+      "label": "town",
+      "train_freq": 34,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5171611564700619,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "worker",
+      "train_freq": 33,
+      "n_steps_with_fneg": 1166,
+      "fneg_grad_share": 0.027008022203881946,
+      "pos_grad_share": 0.5238533765215856,
+      "fneg_to_pos_ratio": 0.05155645341682563,
+      "mean_cos_pos_fneg": -0.971347236080675
+    },
+    {
+      "label": "artist",
+      "train_freq": 31,
+      "n_steps_with_fneg": 353,
+      "fneg_grad_share": 0.0051182584853711995,
+      "pos_grad_share": 0.5276253046033192,
+      "fneg_to_pos_ratio": 0.009700555376545527,
+      "mean_cos_pos_fneg": -0.9587338098149368
+    },
+    {
+      "label": "businessman",
+      "train_freq": 31,
+      "n_steps_with_fneg": 25,
+      "fneg_grad_share": 0.00024967378381556373,
+      "pos_grad_share": 0.5236163967986278,
+      "fneg_to_pos_ratio": 0.00047682575515598907,
+      "mean_cos_pos_fneg": -0.9313446482022604
+    },
+    {
+      "label": "businessperson",
+      "train_freq": 31,
+      "n_steps_with_fneg": 232,
+      "fneg_grad_share": 0.0031042118484260702,
+      "pos_grad_share": 0.519020694253235,
+      "fneg_to_pos_ratio": 0.005980901884639491,
+      "mean_cos_pos_fneg": -0.9762019479131124
+    },
+    {
+      "label": "serviceman",
+      "train_freq": 31,
+      "n_steps_with_fneg": 610,
+      "fneg_grad_share": 0.009034885917549328,
+      "pos_grad_share": 0.5172977387344951,
+      "fneg_to_pos_ratio": 0.01746554303456276,
+      "mean_cos_pos_fneg": -0.9892055245155984
+    },
+    {
+      "label": "writer",
+      "train_freq": 31,
+      "n_steps_with_fneg": 50,
+      "fneg_grad_share": 0.0007482347304185651,
+      "pos_grad_share": 0.5167841445091369,
+      "fneg_to_pos_ratio": 0.001447867041527115,
+      "mean_cos_pos_fneg": -0.9609631697336832
+    },
+    {
+      "label": "criminal",
+      "train_freq": 30,
+      "n_steps_with_fneg": 94,
+      "fneg_grad_share": 0.0012485883252772254,
+      "pos_grad_share": 0.5253844935768164,
+      "fneg_to_pos_ratio": 0.002376522985626848,
+      "mean_cos_pos_fneg": -0.9448462037309524
+    },
+    {
+      "label": "township",
+      "train_freq": 30,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5165097148790154,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "day",
+      "train_freq": 29,
+      "n_steps_with_fneg": 116,
+      "fneg_grad_share": 0.0015811719641324517,
+      "pos_grad_share": 0.5263362576100359,
+      "fneg_to_pos_ratio": 0.003004109903642524,
+      "mean_cos_pos_fneg": -0.9594271141797939
+    },
+    {
+      "label": "party",
+      "train_freq": 29,
+      "n_steps_with_fneg": 319,
+      "fneg_grad_share": 0.003464765559864986,
+      "pos_grad_share": 0.5218965480622031,
+      "fneg_to_pos_ratio": 0.006638797617515631,
+      "mean_cos_pos_fneg": -0.9557004258967936
+    },
+    {
+      "label": "actor",
+      "train_freq": 28,
+      "n_steps_with_fneg": 123,
+      "fneg_grad_share": 0.0017707360800282728,
+      "pos_grad_share": 0.5261039874699827,
+      "fneg_to_pos_ratio": 0.0033657530111940157,
+      "mean_cos_pos_fneg": -0.978615988703335
+    },
+    {
+      "label": "consequence",
+      "train_freq": 28,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5245022259393738,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "organism",
+      "train_freq": 28,
+      "n_steps_with_fneg": 608,
+      "fneg_grad_share": 0.00842130354257733,
+      "pos_grad_share": 0.5262533894504864,
+      "fneg_to_pos_ratio": 0.016002373973060494,
+      "mean_cos_pos_fneg": -0.9378731764888312
+    },
+    {
+      "label": "space",
+      "train_freq": 28,
+      "n_steps_with_fneg": 97,
+      "fneg_grad_share": 0.0013242317151154267,
+      "pos_grad_share": 0.5222882357734889,
+      "fneg_to_pos_ratio": 0.002535442356181525,
+      "mean_cos_pos_fneg": -0.9477098509669304
+    },
+    {
+      "label": "unit",
+      "train_freq": 28,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5268771871346345,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "localization",
+      "train_freq": 27,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5188431286237837,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "period",
+      "train_freq": 27,
+      "n_steps_with_fneg": 601,
+      "fneg_grad_share": 0.009118983009690756,
+      "pos_grad_share": 0.5238715950060208,
+      "fneg_to_pos_ratio": 0.0174069048534421,
+      "mean_cos_pos_fneg": -0.9836894768109253
+    },
+    {
+      "label": "speaker",
+      "train_freq": 26,
+      "n_steps_with_fneg": 25,
+      "fneg_grad_share": 0.0003342920206759517,
+      "pos_grad_share": 0.5196665956221476,
+      "fneg_to_pos_ratio": 0.0006432817184944042,
+      "mean_cos_pos_fneg": -0.9688453120844704
+    },
+    {
+      "label": "association",
+      "train_freq": 25,
+      "n_steps_with_fneg": 143,
+      "fneg_grad_share": 0.0017082054912337069,
+      "pos_grad_share": 0.5241185649871871,
+      "fneg_to_pos_ratio": 0.003259196688206354,
+      "mean_cos_pos_fneg": -0.9456807616594676
+    },
+    {
+      "label": "scientist",
+      "train_freq": 25,
+      "n_steps_with_fneg": 308,
+      "fneg_grad_share": 0.004957144512212018,
+      "pos_grad_share": 0.5277951491354709,
+      "fneg_to_pos_ratio": 0.00939217520345124,
+      "mean_cos_pos_fneg": -0.8581003468661081
+    },
+    {
+      "label": "musician",
+      "train_freq": 24,
+      "n_steps_with_fneg": 124,
+      "fneg_grad_share": 0.0016486672735041101,
+      "pos_grad_share": 0.5227184111092131,
+      "fneg_to_pos_ratio": 0.0031540256445255553,
+      "mean_cos_pos_fneg": -0.9185401317146089
+    },
+    {
+      "label": "activity",
+      "train_freq": 23,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5324582020853202,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "citizen",
+      "train_freq": 23,
+      "n_steps_with_fneg": 25,
+      "fneg_grad_share": 0.0002728003693857133,
+      "pos_grad_share": 0.5336445004470932,
+      "fneg_to_pos_ratio": 0.0005112024374975439,
+      "mean_cos_pos_fneg": -0.9121348791652255
+    },
+    {
+      "label": "entertainer",
+      "train_freq": 23,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5226260002561498,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "military",
+      "train_freq": 23,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5224685204637395,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "administrator",
+      "train_freq": 22,
+      "n_steps_with_fneg": 478,
+      "fneg_grad_share": 0.008560882111765046,
+      "pos_grad_share": 0.5276111890294558,
+      "fneg_to_pos_ratio": 0.01622574026057492,
+      "mean_cos_pos_fneg": -0.8769892153866363
+    },
+    {
+      "label": "reporter",
+      "train_freq": 22,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5198830881476268,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "structure",
+      "train_freq": 22,
+      "n_steps_with_fneg": 706,
+      "fneg_grad_share": 0.011932140430065387,
+      "pos_grad_share": 0.524093928415858,
+      "fneg_to_pos_ratio": 0.02276717928431614,
+      "mean_cos_pos_fneg": -0.8165150163885282
+    },
+    {
+      "label": "action",
+      "train_freq": 21,
+      "n_steps_with_fneg": 852,
+      "fneg_grad_share": 0.016255818554385355,
+      "pos_grad_share": 0.5263733877016787,
+      "fneg_to_pos_ratio": 0.030882675557295302,
+      "mean_cos_pos_fneg": -0.8791731215670517
+    },
+    {
+      "label": "building",
+      "train_freq": 21,
+      "n_steps_with_fneg": 189,
+      "fneg_grad_share": 0.0025662779940434505,
+      "pos_grad_share": 0.52469209796414,
+      "fneg_to_pos_ratio": 0.004891017044092862,
+      "mean_cos_pos_fneg": -0.8041722473311932
+    },
+    {
+      "label": "celebrity",
+      "train_freq": 21,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5298836419692319,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "conflict",
+      "train_freq": 21,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5255858866841601,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "date",
+      "train_freq": 21,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5222192501697038,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "director",
+      "train_freq": 21,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5260266538560572,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "employee",
+      "train_freq": 21,
+      "n_steps_with_fneg": 247,
+      "fneg_grad_share": 0.004492429242823215,
+      "pos_grad_share": 0.5287420424179814,
+      "fneg_to_pos_ratio": 0.008496447950836218,
+      "mean_cos_pos_fneg": -0.8026268248374645
+    },
+    {
+      "label": "point",
+      "train_freq": 21,
+      "n_steps_with_fneg": 733,
+      "fneg_grad_share": 0.014749157053890797,
+      "pos_grad_share": 0.5055612805499008,
+      "fneg_to_pos_ratio": 0.029173826440680124,
+      "mean_cos_pos_fneg": -0.932531174919415
+    },
+    {
+      "label": "club",
+      "train_freq": 20,
+      "n_steps_with_fneg": 25,
+      "fneg_grad_share": 0.00026988846992911843,
+      "pos_grad_share": 0.5247827175986733,
+      "fneg_to_pos_ratio": 0.000514286124291759,
+      "mean_cos_pos_fneg": -0.7000888458320073
+    },
+    {
+      "label": "gathering",
+      "train_freq": 20,
+      "n_steps_with_fneg": 555,
+      "fneg_grad_share": 0.007770147111193485,
+      "pos_grad_share": 0.5276970873578496,
+      "fneg_to_pos_ratio": 0.014724635207099941,
+      "mean_cos_pos_fneg": -0.7757910103315399
+    },
+    {
+      "label": "army",
+      "train_freq": 19,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5132464626586954,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "document",
+      "train_freq": 19,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5320078147137774,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "force",
+      "train_freq": 19,
+      "n_steps_with_fneg": 844,
+      "fneg_grad_share": 0.013749750255726275,
+      "pos_grad_share": 0.5169870684248166,
+      "fneg_to_pos_ratio": 0.02659592685290899,
+      "mean_cos_pos_fneg": -0.8904842245578766
+    },
+    {
+      "label": "individual",
+      "train_freq": 19,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5013449249060972,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "officer",
+      "train_freq": 19,
+      "n_steps_with_fneg": 295,
+      "fneg_grad_share": 0.0042851162101428565,
+      "pos_grad_share": 0.5264138156964311,
+      "fneg_to_pos_ratio": 0.008140204687587398,
+      "mean_cos_pos_fneg": -0.8515735083902386
+    },
+    {
+      "label": "analyst",
+      "train_freq": 18,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5172901930722448,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "arrangement",
+      "train_freq": 18,
+      "n_steps_with_fneg": 337,
+      "fneg_grad_share": 0.003992740718480382,
+      "pos_grad_share": 0.5163499998216283,
+      "fneg_to_pos_ratio": 0.00773262461481488,
+      "mean_cos_pos_fneg": -0.8674304794116192
+    },
+    {
+      "label": "scholar",
+      "train_freq": 18,
+      "n_steps_with_fneg": 49,
+      "fneg_grad_share": 0.0007054978788919502,
+      "pos_grad_share": 0.524356894219185,
+      "fneg_to_pos_ratio": 0.0013454536150277964,
+      "mean_cos_pos_fneg": -0.7378969192504883
+    },
+    {
+      "label": "act",
+      "train_freq": 17,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5024553872925648,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "committee",
+      "train_freq": 17,
+      "n_steps_with_fneg": 98,
+      "fneg_grad_share": 0.0016887491282307782,
+      "pos_grad_share": 0.5174371140441391,
+      "fneg_to_pos_ratio": 0.003263679937900091,
+      "mean_cos_pos_fneg": -0.7367402386665344
+    },
+    {
+      "label": "contest",
+      "train_freq": 17,
+      "n_steps_with_fneg": 164,
+      "fneg_grad_share": 0.0023151459394905836,
+      "pos_grad_share": 0.5082158345372966,
+      "fneg_to_pos_ratio": 0.004555438422335661,
+      "mean_cos_pos_fneg": -0.7661919227013221
+    },
+    {
+      "label": "game",
+      "train_freq": 17,
+      "n_steps_with_fneg": 122,
+      "fneg_grad_share": 0.001455969610553953,
+      "pos_grad_share": 0.5109820078810755,
+      "fneg_to_pos_ratio": 0.0028493559227095355,
+      "mean_cos_pos_fneg": -0.8989463345757847
+    },
+    {
+      "label": "master",
+      "train_freq": 17,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5332169584097223,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "meeting",
+      "train_freq": 17,
+      "n_steps_with_fneg": 97,
+      "fneg_grad_share": 0.0011894147006374471,
+      "pos_grad_share": 0.5242264388528451,
+      "fneg_to_pos_ratio": 0.0022688949135038303,
+      "mean_cos_pos_fneg": -0.8342692310159857
+    },
+    {
+      "label": "report",
+      "train_freq": 17,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5312871060374134,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "writing",
+      "train_freq": 17,
+      "n_steps_with_fneg": 598,
+      "fneg_grad_share": 0.01025192311406506,
+      "pos_grad_share": 0.5315309916190446,
+      "fneg_to_pos_ratio": 0.019287535958792696,
+      "mean_cos_pos_fneg": -0.7303502888001244
+    },
+    {
+      "label": "happening",
+      "train_freq": 16,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5115096323974847,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "home",
+      "train_freq": 16,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.4966511496551756,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "information",
+      "train_freq": 16,
+      "n_steps_with_fneg": 466,
+      "fneg_grad_share": 0.0068470633332211464,
+      "pos_grad_share": 0.5234443248951827,
+      "fneg_to_pos_ratio": 0.013080786260491485,
+      "mean_cos_pos_fneg": -0.6987263548746705
+    },
+    {
+      "label": "land",
+      "train_freq": 16,
+      "n_steps_with_fneg": 95,
+      "fneg_grad_share": 0.0019470520341326584,
+      "pos_grad_share": 0.5040330799187094,
+      "fneg_to_pos_ratio": 0.003862944936960644,
+      "mean_cos_pos_fneg": -0.8295685372182301
+    },
+    {
+      "label": "publication",
+      "train_freq": 16,
+      "n_steps_with_fneg": 98,
+      "fneg_grad_share": 0.0011968850131294725,
+      "pos_grad_share": 0.5224087634310655,
+      "fneg_to_pos_ratio": 0.002291089079877979,
+      "mean_cos_pos_fneg": -0.8152903258800507
+    },
+    {
+      "label": "show",
+      "train_freq": 16,
+      "n_steps_with_fneg": 97,
+      "fneg_grad_share": 0.0017627102295936373,
+      "pos_grad_share": 0.5164475201424416,
+      "fneg_to_pos_ratio": 0.003413144919560198,
+      "mean_cos_pos_fneg": -0.838779651456409
+    },
+    {
+      "label": "assembly",
+      "train_freq": 15,
+      "n_steps_with_fneg": 100,
+      "fneg_grad_share": 0.0014309726823910577,
+      "pos_grad_share": 0.5147767151660649,
+      "fneg_to_pos_ratio": 0.0027797929475684067,
+      "mean_cos_pos_fneg": -0.7160200931523976
+    },
+    {
+      "label": "creator",
+      "train_freq": 15,
+      "n_steps_with_fneg": 407,
+      "fneg_grad_share": 0.004887011455478913,
+      "pos_grad_share": 0.5162860916544226,
+      "fneg_to_pos_ratio": 0.009465704256759345,
+      "mean_cos_pos_fneg": -0.6799092705772128
+    },
+    {
+      "label": "friend",
+      "train_freq": 15,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5197906805010163,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "law",
+      "train_freq": 15,
+      "n_steps_with_fneg": 141,
+      "fneg_grad_share": 0.002204193035756346,
+      "pos_grad_share": 0.49579966541044296,
+      "fneg_to_pos_ratio": 0.004445733205430113,
+      "mean_cos_pos_fneg": -0.8389765739440918
+    },
+    {
+      "label": "legislator",
+      "train_freq": 15,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5169415209394753,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "message",
+      "train_freq": 15,
+      "n_steps_with_fneg": 1002,
+      "fneg_grad_share": 0.022438227925739906,
+      "pos_grad_share": 0.5178367604262321,
+      "fneg_to_pos_ratio": 0.04333069731718346,
+      "mean_cos_pos_fneg": -0.680148400477509
+    },
+    {
+      "label": "military_service",
+      "train_freq": 15,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.4813869413961567,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "music",
+      "train_freq": 15,
+      "n_steps_with_fneg": 238,
+      "fneg_grad_share": 0.003160145332526057,
+      "pos_grad_share": 0.5161225479102354,
+      "fneg_to_pos_ratio": 0.006122858505836241,
+      "mean_cos_pos_fneg": -0.7758754627513034
+    },
+    {
+      "label": "placement",
+      "train_freq": 15,
+      "n_steps_with_fneg": 405,
+      "fneg_grad_share": 0.0053850805344961596,
+      "pos_grad_share": 0.5138178589326436,
+      "fneg_to_pos_ratio": 0.010480524257530896,
+      "mean_cos_pos_fneg": -0.8025973383965117
+    },
+    {
+      "label": "record",
+      "train_freq": 15,
+      "n_steps_with_fneg": 75,
+      "fneg_grad_share": 0.0011284274932310706,
+      "pos_grad_share": 0.5121514730654881,
+      "fneg_to_pos_ratio": 0.0022033081081986464,
+      "mean_cos_pos_fneg": -0.656569381909711
+    },
+    {
+      "label": "soldier",
+      "train_freq": 15,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5384278281183428,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "actress",
+      "train_freq": 14,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5149350970388022,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "coach",
+      "train_freq": 14,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5012647371724995,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "defendant",
+      "train_freq": 14,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5010260516872688,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "district",
+      "train_freq": 14,
+      "n_steps_with_fneg": 124,
+      "fneg_grad_share": 0.002721992414670934,
+      "pos_grad_share": 0.5153168146691093,
+      "fneg_to_pos_ratio": 0.005282172708489545,
+      "mean_cos_pos_fneg": -0.6670974148880868
+    },
+    {
+      "label": "policeman",
+      "train_freq": 14,
+      "n_steps_with_fneg": 73,
+      "fneg_grad_share": 0.0011240469232854044,
+      "pos_grad_share": 0.5116978273820381,
+      "fneg_to_pos_ratio": 0.002196700597765449,
+      "mean_cos_pos_fneg": -0.8080086891467755
+    },
+    {
+      "label": "prisoner",
+      "train_freq": 14,
+      "n_steps_with_fneg": 98,
+      "fneg_grad_share": 0.001527096103224578,
+      "pos_grad_share": 0.48879680622756433,
+      "fneg_to_pos_ratio": 0.003124194110453379,
+      "mean_cos_pos_fneg": -0.9052472992947227
+    },
+    {
+      "label": "student",
+      "train_freq": 14,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5329590792229715,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "territory",
+      "train_freq": 14,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5088835563173024,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "diplomat",
+      "train_freq": 13,
+      "n_steps_with_fneg": 25,
+      "fneg_grad_share": 0.00033089013750252106,
+      "pos_grad_share": 0.5183729876922821,
+      "fneg_to_pos_ratio": 0.0006383244215243425,
+      "mean_cos_pos_fneg": -0.6609102971851826
+    },
+    {
+      "label": "site",
+      "train_freq": 13,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.510099686882538,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "sport",
+      "train_freq": 13,
+      "n_steps_with_fneg": 95,
+      "fneg_grad_share": 0.0012230965394384487,
+      "pos_grad_share": 0.4804404649858163,
+      "fneg_to_pos_ratio": 0.0025457816911291127,
+      "mean_cos_pos_fneg": -0.8434080332517624
+    },
+    {
+      "label": "agreement",
+      "train_freq": 12,
+      "n_steps_with_fneg": 25,
+      "fneg_grad_share": 0.00025400071455072517,
+      "pos_grad_share": 0.5321002663075142,
+      "fneg_to_pos_ratio": 0.00047735498482899037,
+      "mean_cos_pos_fneg": -0.3323367238044739
+    },
+    {
+      "label": "book",
+      "train_freq": 12,
+      "n_steps_with_fneg": 50,
+      "fneg_grad_share": 0.0006327357041096722,
+      "pos_grad_share": 0.493821989881505,
+      "fneg_to_pos_ratio": 0.0012813032166945424,
+      "mean_cos_pos_fneg": -0.719527742266655
+    },
+    {
+      "label": "candidate",
+      "train_freq": 12,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.48522301496717624,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "doctor",
+      "train_freq": 12,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5148496776113624,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "journalist",
+      "train_freq": 12,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.48374893676371583,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "match",
+      "train_freq": 12,
+      "n_steps_with_fneg": 350,
+      "fneg_grad_share": 0.00378557110563489,
+      "pos_grad_share": 0.43103746881170196,
+      "fneg_to_pos_ratio": 0.008782464123295534,
+      "mean_cos_pos_fneg": -0.8195793716995804
+    },
+    {
+      "label": "movie",
+      "train_freq": 12,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5078064360287783,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "officeholder",
+      "train_freq": 12,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.505102924321322,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "situation",
+      "train_freq": 12,
+      "n_steps_with_fneg": 697,
+      "fneg_grad_share": 0.013595240374371034,
+      "pos_grad_share": 0.521810084118999,
+      "fneg_to_pos_ratio": 0.026054000848459328,
+      "mean_cos_pos_fneg": -0.5877528684213758
+    },
+    {
+      "label": "song",
+      "train_freq": 12,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5106375041222357,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "spouse",
+      "train_freq": 12,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5317150320703404,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "system",
+      "train_freq": 12,
+      "n_steps_with_fneg": 191,
+      "fneg_grad_share": 0.0029667604656463736,
+      "pos_grad_share": 0.5277838175330732,
+      "fneg_to_pos_ratio": 0.00562116602876037,
+      "mean_cos_pos_fneg": -0.5559364360653691
+    },
+    {
+      "label": "traveler",
+      "train_freq": 12,
+      "n_steps_with_fneg": 263,
+      "fneg_grad_share": 0.004478871717118593,
+      "pos_grad_share": 0.5105976496914031,
+      "fneg_to_pos_ratio": 0.00877182203996738,
+      "mean_cos_pos_fneg": -0.6232431905551089
+    },
+    {
+      "label": "victim",
+      "train_freq": 12,
+      "n_steps_with_fneg": 75,
+      "fneg_grad_share": 0.000800274370234862,
+      "pos_grad_share": 0.5284836578132189,
+      "fneg_to_pos_ratio": 0.0015142840434201308,
+      "mean_cos_pos_fneg": -0.5989406406879425
+    },
+    {
+      "label": "year",
+      "train_freq": 12,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.4786767427627877,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "agent",
+      "train_freq": 11,
+      "n_steps_with_fneg": 168,
+      "fneg_grad_share": 0.0015969901683478577,
+      "pos_grad_share": 0.4968638979367502,
+      "fneg_to_pos_ratio": 0.003214140079364654,
+      "mean_cos_pos_fneg": -0.7939435177379184
+    },
+    {
+      "label": "ballplayer",
+      "train_freq": 11,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.4043907796992232,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "battle",
+      "train_freq": 11,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5063780653992849,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "character",
+      "train_freq": 11,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.49326133938246647,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "conference",
+      "train_freq": 11,
+      "n_steps_with_fneg": 50,
+      "fneg_grad_share": 0.0006638270094098649,
+      "pos_grad_share": 0.48171057987674754,
+      "fneg_to_pos_ratio": 0.0013780619258553848,
+      "mean_cos_pos_fneg": -0.8181811960843893
+    },
+    {
+      "label": "development",
+      "train_freq": 11,
+      "n_steps_with_fneg": 25,
+      "fneg_grad_share": 0.00046559626892768435,
+      "pos_grad_share": 0.5016718610283173,
+      "fneg_to_pos_ratio": 0.0009280892653084311,
+      "mean_cos_pos_fneg": -0.6513198435306549
+    },
+    {
+      "label": "manufacturer",
+      "train_freq": 11,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.41109794392785426,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "religious_leader",
+      "train_freq": 11,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.4371297714658108,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "ruler",
+      "train_freq": 11,
+      "n_steps_with_fneg": 98,
+      "fneg_grad_share": 0.0011521050476056888,
+      "pos_grad_share": 0.5042052840398417,
+      "fneg_to_pos_ratio": 0.0022849920143134615,
+      "mean_cos_pos_fneg": -0.6823021685704589
+    },
+    {
+      "label": "squad",
+      "train_freq": 11,
+      "n_steps_with_fneg": 25,
+      "fneg_grad_share": 0.0002872157823487654,
+      "pos_grad_share": 0.4915967189306601,
+      "fneg_to_pos_ratio": 0.0005842508122786664,
+      "mean_cos_pos_fneg": -0.3966386318206787
+    },
+    {
+      "label": "statement",
+      "train_freq": 11,
+      "n_steps_with_fneg": 446,
+      "fneg_grad_share": 0.00805711524195746,
+      "pos_grad_share": 0.5021780089429632,
+      "fneg_to_pos_ratio": 0.016044341047344785,
+      "mean_cos_pos_fneg": -0.6697085461446217
+    },
+    {
+      "label": "suspect",
+      "train_freq": 11,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5026596400045682,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "wife",
+      "train_freq": 11,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.517475463731278,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "academician",
+      "train_freq": 10,
+      "n_steps_with_fneg": 75,
+      "fneg_grad_share": 0.0012769301402714818,
+      "pos_grad_share": 0.4926249403879203,
+      "fneg_to_pos_ratio": 0.0025920939757251345,
+      "mean_cos_pos_fneg": -0.683935298369481
+    },
+    {
+      "label": "catastrophe",
+      "train_freq": 10,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5051713706215989,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "child",
+      "train_freq": 10,
+      "n_steps_with_fneg": 25,
+      "fneg_grad_share": 0.0003069885719152049,
+      "pos_grad_share": 0.47229636025908156,
+      "fneg_to_pos_ratio": 0.0006499913989318149,
+      "mean_cos_pos_fneg": -0.9586093028386434
+    },
+    {
+      "label": "competition",
+      "train_freq": 10,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5182426398270845,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "congressman",
+      "train_freq": 10,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.5128303295679978,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "decision",
+      "train_freq": 10,
+      "n_steps_with_fneg": 49,
+      "fneg_grad_share": 0.0007985502383849754,
+      "pos_grad_share": 0.5203105398383905,
+      "fneg_to_pos_ratio": 0.001534756990763644,
+      "mean_cos_pos_fneg": -0.580167815917068
+    },
+    {
+      "label": "educator",
+      "train_freq": 10,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.4788468598080207,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "executive",
+      "train_freq": 10,
+      "n_steps_with_fneg": 193,
+      "fneg_grad_share": 0.004319940624933175,
+      "pos_grad_share": 0.4929463233320247,
+      "fneg_to_pos_ratio": 0.008763511198811545,
+      "mean_cos_pos_fneg": -0.6958444884111141
+    },
+    {
+      "label": "film",
+      "train_freq": 10,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.4776661965464262,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "football_player",
+      "train_freq": 10,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.462820842088692,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "investor",
+      "train_freq": 10,
+      "n_steps_with_fneg": 25,
+      "fneg_grad_share": 0.0003551916299532683,
+      "pos_grad_share": 0.5271620983581162,
+      "fneg_to_pos_ratio": 0.0006737806664392942,
+      "mean_cos_pos_fneg": -0.9727703183889389
+    },
+    {
+      "label": "legislation",
+      "train_freq": 10,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.4948478490760333,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "material",
+      "train_freq": 10,
+      "n_steps_with_fneg": 165,
+      "fneg_grad_share": 0.0024829770518535665,
+      "pos_grad_share": 0.5036122253687517,
+      "fneg_to_pos_ratio": 0.004930335140366175,
+      "mean_cos_pos_fneg": -0.5294303043704965
+    },
+    {
+      "label": "money",
+      "train_freq": 10,
+      "n_steps_with_fneg": 119,
+      "fneg_grad_share": 0.0018991057867051876,
+      "pos_grad_share": 0.48408046223258744,
+      "fneg_to_pos_ratio": 0.0039231200902975485,
+      "mean_cos_pos_fneg": -0.6879633149275413
+    },
+    {
+      "label": "negotiator",
+      "train_freq": 10,
+      "n_steps_with_fneg": 25,
+      "fneg_grad_share": 0.0003238997495975004,
+      "pos_grad_share": 0.3671682648650492,
+      "fneg_to_pos_ratio": 0.0008821561681441834,
+      "mean_cos_pos_fneg": -0.9923446178436279
+    },
+    {
+      "label": "operation",
+      "train_freq": 10,
+      "n_steps_with_fneg": 277,
+      "fneg_grad_share": 0.005395632538431404,
+      "pos_grad_share": 0.5117804496133722,
+      "fneg_to_pos_ratio": 0.010542865680991855,
+      "mean_cos_pos_fneg": -0.5711594923117826
+    },
+    {
+      "label": "plan",
+      "train_freq": 10,
+      "n_steps_with_fneg": 210,
+      "fneg_grad_share": 0.0033692289279695265,
+      "pos_grad_share": 0.502777939661898,
+      "fneg_to_pos_ratio": 0.006701226649353837,
+      "mean_cos_pos_fneg": -0.6023549475707114
+    },
+    {
+      "label": "product",
+      "train_freq": 10,
+      "n_steps_with_fneg": 232,
+      "fneg_grad_share": 0.004689088363674199,
+      "pos_grad_share": 0.4907970791217198,
+      "fneg_to_pos_ratio": 0.009554026629631356,
+      "mean_cos_pos_fneg": -0.6704802916840066
+    },
+    {
+      "label": "script",
+      "train_freq": 10,
+      "n_steps_with_fneg": 25,
+      "fneg_grad_share": 0.0005155284017663786,
+      "pos_grad_share": 0.524067552839887,
+      "fneg_to_pos_ratio": 0.000983706010747593,
+      "mean_cos_pos_fneg": -0.6327456831932068
+    },
+    {
+      "label": "spectator",
+      "train_freq": 10,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.47222225428544123,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "teacher",
+      "train_freq": 10,
+      "n_steps_with_fneg": 170,
+      "fneg_grad_share": 0.0018218158687421935,
+      "pos_grad_share": 0.5052860202081088,
+      "fneg_to_pos_ratio": 0.0036055140967324894,
+      "mean_cos_pos_fneg": -0.549639722163027
+    },
+    {
+      "label": "tournament",
+      "train_freq": 10,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.42163519508040914,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "trainer",
+      "train_freq": 10,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.4999923846930742,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "winner",
+      "train_freq": 10,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.4677442541629998,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "advocate",
+      "train_freq": 9,
+      "n_steps_with_fneg": 167,
+      "fneg_grad_share": 0.0028957168791443207,
+      "pos_grad_share": 0.5133178113360182,
+      "fneg_to_pos_ratio": 0.005641177483414427,
+      "mean_cos_pos_fneg": -0.673438174321371
+    },
+    {
+      "label": "animal",
+      "train_freq": 9,
+      "n_steps_with_fneg": 120,
+      "fneg_grad_share": 0.0015130865357516582,
+      "pos_grad_share": 0.4566089707564223,
+      "fneg_to_pos_ratio": 0.003313746843924389,
+      "mean_cos_pos_fneg": -0.3551757749583986
+    },
+    {
+      "label": "campaigner",
+      "train_freq": 9,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.4372473776255803,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "change",
+      "train_freq": 9,
+      "n_steps_with_fneg": 699,
+      "fneg_grad_share": 0.016675680811466812,
+      "pos_grad_share": 0.4960113181176961,
+      "fneg_to_pos_ratio": 0.03361955705919985,
+      "mean_cos_pos_fneg": -0.5997723205847308
+    },
+    {
+      "label": "community",
+      "train_freq": 9,
+      "n_steps_with_fneg": 73,
+      "fneg_grad_share": 0.0017250501714305864,
+      "pos_grad_share": 0.5047253680277773,
+      "fneg_to_pos_ratio": 0.0034177996207546456,
+      "mean_cos_pos_fneg": -0.535674942864312
+    },
+    {
+      "label": "convict",
+      "train_freq": 9,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.49567032808249933,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "crowd",
+      "train_freq": 9,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.477865964735371,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "disaster",
+      "train_freq": 9,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.4982259383039162,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "discussion",
+      "train_freq": 9,
+      "n_steps_with_fneg": 50,
+      "fneg_grad_share": 0.0009702974012224002,
+      "pos_grad_share": 0.5186843334460397,
+      "fneg_to_pos_ratio": 0.0018706896249900773,
+      "mean_cos_pos_fneg": -0.45779161155223846
+    },
+    {
+      "label": "family",
+      "train_freq": 9,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.4725859843961314,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "minister",
+      "train_freq": 9,
+      "n_steps_with_fneg": 99,
+      "fneg_grad_share": 0.0015600709685533343,
+      "pos_grad_share": 0.5008648781564801,
+      "fneg_to_pos_ratio": 0.003114754171415344,
+      "mean_cos_pos_fneg": -0.5647859747211138
+    },
+    {
+      "label": "movement",
+      "train_freq": 9,
+      "n_steps_with_fneg": 25,
+      "fneg_grad_share": 0.00038615700077499626,
+      "pos_grad_share": 0.5078679288630139,
+      "fneg_to_pos_ratio": 0.0007603492538690184,
+      "mean_cos_pos_fneg": -0.5255930628627539
+    },
+    {
+      "label": "name",
+      "train_freq": 9,
+      "n_steps_with_fneg": 75,
+      "fneg_grad_share": 0.0013250768074191234,
+      "pos_grad_share": 0.5111220203690566,
+      "fneg_to_pos_ratio": 0.002592486245187302,
+      "mean_cos_pos_fneg": -0.5746452618728984
+    },
+    {
+      "label": "politics",
+      "train_freq": 9,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.44924450856448567,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    },
+    {
+      "label": "rule",
+      "train_freq": 9,
+      "n_steps_with_fneg": 48,
+      "fneg_grad_share": 0.0007277293525074062,
+      "pos_grad_share": 0.4998940775206781,
+      "fneg_to_pos_ratio": 0.001455767101936317,
+      "mean_cos_pos_fneg": -0.67502581179142
+    },
+    {
+      "label": "singer",
+      "train_freq": 9,
+      "n_steps_with_fneg": 0,
+      "fneg_grad_share": 0.0,
+      "pos_grad_share": 0.4491972617478951,
+      "fneg_to_pos_ratio": 0.0,
+      "mean_cos_pos_fneg": null
+    }
+  ]
+}

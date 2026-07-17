@@ -432,3 +432,106 @@ Gap = hyperbolic - euclidean.
 
 **Analysis**
 - _pending_
+
+---
+
+## C1 — Statistical audit of conflicting training signal — DONE (premise confirmed)
+
+**Hypothesis**
+- Under Zipfian labels, losses that treat non-gold labels as negatives (BCE
+  over the full vocab; InfoNCE with in-batch negatives) systematically push
+  mentions away from labels that are TRUE of them (taxonomy-ancestors of the
+  gold), and this conflict concentrates on head labels.
+
+**Setup**
+- `scripts/c1_conflict_audit.py`, no training. Two views per corpus:
+  - **BCE view** (matches our training): count taxonomy-ancestors of gold with
+    target 0 — false negatives baked into the supervision.
+  - **InfoNCE view**: sample 500 batches per size B ∈ {8..256}; false negative
+    = an in-batch negative that is identical to or an ancestor of the
+    example's gold.
+- Corpora: UFET crowd (multi-label) with the fixed WordNet taxonomy;
+  FiNERweb-eng train (single-tag) with a fresh WordNet taxonomy over its 2,034
+  types (`results/taxonomy/wordnet_parent_finerweb.json`, 50% linked — so all
+  FiNERweb counts are LOWER BOUNDS).
+- Outputs: `results/c1/{ufet,finerweb}.json`.
+
+**Results**
+- **UFET (1,998 spans):** BCE — **68.4%** of examples carry ≥1 ancestor-as-
+  hard-zero, mean **1.84** per example; conflicted labels: location(240),
+  region(216), group(165), state(140), organization(111). InfoNCE — at B=32:
+  **92.5%** of examples have ≥1 false negative (3.1/example); B=256: 98.8%.
+  Head+mid share of false negatives: 87–99% across B.
+- **FiNERweb (43k spans, single-tag):** InfoNCE false negatives hit head
+  labels **94–99.7%** of the time (quantity, group, organization, location);
+  at B=64 (P3b setting) 68.5% of spans have ≥1. BCE view 13.2% (lower bound,
+  50% taxonomy coverage).
+
+**Analysis**
+- Premise established statistically, with zero model confounds: the conflict
+  is pervasive, grows monotonically with batch size, and is almost entirely a
+  head-label phenomenon — the Zipfian shape is what creates it.
+- Single-tag corpora make it maximal in principle (every ancestor is an
+  explicit hard zero); multi-label UFET partially defuses it because
+  annotators often include supertypes. Consistent with P3c's larger small-data
+  hyperbolic gap on FiNERweb (+0.124) than on UFET (+0.034).
+
+---
+
+## C2 — Gradient-level conflict measurement — DONE (mechanism confirmed)
+
+**Hypothesis**
+- The C1 conflict manifests as contradictory gradients on head-label
+  embeddings, and hyperbolic geometry resolves the contradiction while
+  Euclidean cannot.
+
+**Setup**
+- `scripts/c2_gradient_conflict.py`: standard P1 training cell (UFET crowd,
+  flat BCE, pos_weight 10, d64) with the BCE loss decomposed per step via the
+  taxonomy closure into **positive** terms, **false-negative** terms (target 0
+  but label is ancestor-of-gold → push is WRONG), and **true-negative** terms.
+  Each part differentiated w.r.t. the label-embedding matrix only. Per label:
+  gradient-magnitude share of the false-negative part, and cos(g_pos, g_fneg).
+- Naive pos-vs-neg cosine saturates at ≈−1 for every label (anisotropy) and
+  Adam momentum saturates update autocorrelation ≈+0.98 — neither
+  discriminates; the closure-based decomposition is the informative metric.
+- 2 geometries × seeds {1,2,3}, 25 epochs. Outputs: `results/c2/*.json`.
+
+**Results** — mean±std over 3 seeds.
+
+| geometry | bucket | fneg grad share | fneg/pos ratio | cos(g_pos, g_fneg) |
+|----------|--------|-----------------|----------------|--------------------|
+| euclidean  | head | 0.0155±.0001 | 0.029 | **−0.990±.001** |
+| euclidean  | mid  | 0.0024±.0000 | 0.005 | −0.745±.010 |
+| euclidean  | tail | 0.0002±.0000 | — | −0.478±.016 |
+| hyperbolic | head | 0.0105±.0000 | 0.012 | **−0.232±.009** |
+| hyperbolic | mid  | 0.0040±.0000 | 0.006 | −0.548±.004 |
+| hyperbolic | tail | 0.0002±.0000 | — | −0.767±.009 |
+
+Spearman(freq, fneg share): euc ρ=0.383, hyp ρ=0.393 (both p≈0).
+Per-label: `person` (freq 824) fneg share euc 0.0180 vs hyp 0.0045 (4×), cos
+−0.974 vs −0.156. `location`: share 0.066 vs 0.039, cos −0.992 vs −0.257.
+Consistency check: `event`/`object`/`place` have exactly 0 fneg share — they
+are taxonomy roots after the blocklist fix, never anyone's ancestor.
+
+**Analysis**
+- **The tug-of-war is real and Euclidean-specific.** On head labels the
+  false-negative gradient is almost perfectly antiparallel to the positive
+  gradient in Euclidean (cos −0.990): the two signals cancel; the embedding
+  receives the residual of two large opposing forces. In hyperbolic the same
+  false-negative push is close to orthogonal (cos −0.232): pushing a general
+  label away from a descendant's mention is NOT the opposite direction of
+  pulling it toward its own members — the geometry gives the conflict
+  somewhere to go.
+- **Exposure vs response:** the frequency-conflict correlation (ρ≈0.39) is
+  identical across geometries — the *exposure* to false negatives is a
+  property of the data. What differs is the geometric *response*: direction
+  (−0.99 vs −0.23) and magnitude (head fneg share 1.5× smaller, `person` 4×
+  smaller in hyperbolic).
+- Together with C1 this is the mechanistic core of the thesis: Zipfian data
+  + negatives-based CE ⇒ contradictory signal concentrated on head labels
+  (C1, data-level); Euclidean geometry turns it into destructive gradient
+  interference while hyperbolic nearly orthogonalizes it (C2, model-level).
+  C3 (loss-family grid: InfoNCE / masked negatives / soft labels) will test
+  causality: patching the supervision should mostly fix Euclidean but barely
+  move hyperbolic.

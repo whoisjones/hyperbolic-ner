@@ -1,8 +1,8 @@
 {
-  "n_types": 2519,
-  "linked": 2145,
-  "pct_linked": 85.2,
-  "roots": 374,
-  "max_depth": 7,
-  "mean_depth": 1.74
+  "n_types": 2034,
+  "linked": 1016,
+  "pct_linked": 50.0,
+  "roots": 1018,
+  "max_depth": 4,
+  "mean_depth": 0.74
 }

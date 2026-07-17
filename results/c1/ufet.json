@@ -1,0 +1,134 @@
+{
+  "train_file": "/vol/tmp/goldejon/sparse_ner/data/ufet_crowd_train.jsonl",
+  "taxonomy": "results/taxonomy/wordnet_parent.json",
+  "n_spans": 1998,
+  "n_types": 1639,
+  "bce_view": {
+    "n_examples": 1998,
+    "pct_examples_with_conflict": 68.42,
+    "mean_conflicts_per_example": 1.837,
+    "conflict_share_by_bucket": {
+      "head": 21.6,
+      "mid": 56.8,
+      "tail": 21.6
+    },
+    "top_conflicted_labels": [
+      [
+        "location",
+        240
+      ],
+      [
+        "region",
+        216
+      ],
+      [
+        "group",
+        165
+      ],
+      [
+        "state",
+        140
+      ],
+      [
+        "organization",
+        111
+      ],
+      [
+        "adult",
+        107
+      ],
+      [
+        "communicator",
+        95
+      ],
+      [
+        "worker",
+        82
+      ],
+      [
+        "leader",
+        76
+      ],
+      [
+        "person",
+        76
+      ],
+      [
+        "message",
+        62
+      ],
+      [
+        "process",
+        57
+      ],
+      [
+        "communication",
+        56
+      ],
+      [
+        "condition",
+        54
+      ],
+      [
+        "force",
+        48
+      ]
+    ]
+  },
+  "infonce_view": {
+    "8": {
+      "pct_examples_with_false_negative": 72.72,
+      "mean_false_negatives_per_example": 1.456,
+      "fn_share_by_bucket": {
+        "head": 71.9,
+        "mid": 27.5,
+        "tail": 0.6
+      }
+    },
+    "16": {
+      "pct_examples_with_false_negative": 85.36,
+      "mean_false_negatives_per_example": 2.253,
+      "fn_share_by_bucket": {
+        "head": 63.1,
+        "mid": 35.9,
+        "tail": 1.0
+      }
+    },
+    "32": {
+      "pct_examples_with_false_negative": 92.53,
+      "mean_false_negatives_per_example": 3.121,
+      "fn_share_by_bucket": {
+        "head": 54.8,
+        "mid": 43.5,
+        "tail": 1.7
+      }
+    },
+    "64": {
+      "pct_examples_with_false_negative": 95.89,
+      "mean_false_negatives_per_example": 3.979,
+      "fn_share_by_bucket": {
+        "head": 46.0,
+        "mid": 51.5,
+        "tail": 2.5
+      }
+    },
+    "128": {
+      "pct_examples_with_false_negative": 97.55,
+      "mean_false_negatives_per_example": 4.709,
+      "fn_share_by_bucket": {
+        "head": 38.7,
+        "mid": 57.2,
+        "tail": 4.1
+      }
+    },
+    "256": {
+      "pct_examples_with_false_negative": 98.8,
+      "mean_false_negatives_per_example": 5.439,
+      "fn_share_by_bucket": {
+        "head": 33.6,
+        "mid": 59.6,
+        "tail": 6.8
+      }
+    }
+  }
+}
