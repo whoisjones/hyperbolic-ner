@@ -1,5 +1,12 @@
 # Results Log — Hyperbolic Bi-Encoders for Long-Tail Entity Typing
 
+> **Note (repo reorg 2026-07):** experiment launch scripts referenced below as
+> `scripts/p1_launch_*.sh`, `scripts/c3_launch.sh`, etc. now live in
+> `archive/phase1_symmetric_bienc/launchers/`. Reusable tools
+> (`c1_conflict_audit.py`, `c2_gradient_conflict.py`, `build_taxonomy_wordnet.py`)
+> remain in `scripts/`. Raw outputs are unchanged under `results/` (see
+> `results/INDEX.md`). This log is Phase 1; the pivot is in `SYNTHESIS.md`.
+
 One entry per experiment. Each: **Hypothesis · Setup · Results · Analysis**.
 Numbers are pasted from `results/` JSONs; mAP is threshold-free and is the
 metric to trust (F1-only wins can be calibration artifacts).
