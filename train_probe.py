@@ -26,7 +26,7 @@ from torch.utils.data import DataLoader
 from transformers import AutoTokenizer
 
 from sparse_ner.data import SpanTypingDataset, build_type_vocab, collate_fn
-from sparse_ner.losses import bce_loss
+from sparse_ner.losses import bce_loss, infonce_loss, soft_bce_loss
 from sparse_ner.metrics import compute_metrics, hierarchical_f1, tail_stratified_f1
 from sparse_ner.model import BiEncoderTyper
 from sparse_ner.taxonomy import Taxonomy
@@ -99,6 +99,13 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--geometry", choices=["euclidean", "hyperbolic"], required=True)
     ap.add_argument("--supervision", choices=["flat", "ancestor"], required=True)
+    ap.add_argument("--loss", default="bce",
+                    choices=["bce", "infonce", "infonce-masked", "soft-bce"],
+                    help="C3: loss family. infonce = in-batch label negatives "
+                         "(conflict maximized); infonce-masked = ancestors of "
+                         "gold removed from candidates; soft-bce = ancestors "
+                         "get target soft-alpha instead of 0")
+    ap.add_argument("--soft-alpha", type=float, default=0.5)
     ap.add_argument("--dim", type=int, required=True)
     ap.add_argument("--encoder", default="bert-base-uncased")
     ap.add_argument("--taxonomy", default="results/taxonomy/wordnet_parent.json")
@@ -152,7 +159,9 @@ def main():
     model = BiEncoderTyper(args.encoder, vocab, dim=args.dim,
                            geometry=args.geometry).to(device)
 
-    C = closure_matrix(vocab, tax).to(device) if args.supervision == "ancestor" else None
+    needs_closure = (args.supervision == "ancestor"
+                     or args.loss in ("infonce-masked", "soft-bce"))
+    C = closure_matrix(vocab, tax).to(device) if needs_closure else None
 
     enc_params = list(model.encoder.parameters())
     enc_ids = {id(p) for p in enc_params}
@@ -172,11 +181,22 @@ def main():
         for batch in loader:
             batch = {k: v.to(device) for k, v in batch.items()}
             targets = batch["labels"]
-            if C is not None:
-                targets = (targets @ C).clamp_max_(1.0)
+            closure_t = (targets @ C).clamp(max=1.0) if C is not None else None
+            if args.supervision == "ancestor":
+                targets = closure_t
             logits = model(batch["input_ids"], batch["attention_mask"],
                            batch["mention_starts"], batch["mention_ends"])
-            loss = bce_loss(logits, targets, args.pos_weight)
+            if args.loss == "bce":
+                loss = bce_loss(logits, targets, args.pos_weight)
+            elif args.loss == "infonce":
+                loss = infonce_loss(logits, targets)
+            elif args.loss == "infonce-masked":
+                loss = infonce_loss(logits, targets,
+                                    fneg_mask=closure_t - targets)
+            elif args.loss == "soft-bce":
+                loss = soft_bce_loss(logits, targets, closure_t,
+                                     alpha=args.soft_alpha,
+                                     pos_weight=args.pos_weight)
             opt.zero_grad()
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)

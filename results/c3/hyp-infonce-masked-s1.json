@@ -1,0 +1,59 @@
+{
+  "config": {
+    "geometry": "hyperbolic",
+    "supervision": "flat",
+    "loss": "infonce-masked",
+    "soft_alpha": 0.5,
+    "dim": 64,
+    "encoder": "bert-base-uncased",
+    "taxonomy": "results/taxonomy/wordnet_parent.json",
+    "epochs": 25,
+    "batch_size": 32,
+    "lr_encoder": 2e-05,
+    "lr_head": 0.001,
+    "pos_weight": 10.0,
+    "seed": 1,
+    "noise_rate": 0.0,
+    "noise_mode": "sibling",
+    "train_file": "/vol/tmp/goldejon/sparse_ner/data/ufet_crowd_train.jsonl",
+    "dev_file": "/vol/tmp/goldejon/sparse_ner/data/ufet_crowd_validation.jsonl",
+    "test_file": "/vol/tmp/goldejon/sparse_ner/data/ufet_crowd_test.jsonl",
+    "max_len": 128,
+    "train_max_records": null,
+    "out": "results/c3/hyp-infonce-masked-s1.json"
+  },
+  "noise_stats": {
+    "corrupted": 0,
+    "total_pos": 0
+  },
+  "selection": {
+    "epoch": 2,
+    "dev_macro_f1": 0.15866857767105103,
+    "dev_map": 0.34384617989797833,
+    "threshold": -9.405341148376465
+  },
+  "test": {
+    "strict": 0.02052052052052052,
+    "macro_p": 0.33214253187179565,
+    "macro_r": 0.16036257147789001,
+    "macro_f1": 0.16071085631847382,
+    "micro_p": 0.024045957252383232,
+    "micro_r": 0.13220907747745514,
+    "micro_f1": 0.04069108888506889
+  },
+  "test_map": 0.34281369695982616,
+  "test_tail": {
+    "head_f1": 0.4112870693206787,
+    "head_support": 2812,
+    "mid_f1": 0.06691618263721466,
+    "mid_support": 5086,
+    "tail_f1": 0.003964144270867109,
+    "tail_support": 2835
+  },
+  "test_hier": {
+    "h_precision": 0.025227706879377365,
+    "h_recall": 0.14440256357192993,
+    "h_f1": 0.04295159503817558
+  },
+  "runtime_s": 191
+}

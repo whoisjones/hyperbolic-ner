@@ -535,3 +535,70 @@ are taxonomy roots after the blocklist fix, never anyone's ancestor.
   C3 (loss-family grid: InfoNCE / masked negatives / soft labels) will test
   causality: patching the supervision should mostly fix Euclidean but barely
   move hyperbolic.
+
+---
+
+## C3 — Causal loss-family grid — DONE (predictions FALSIFIED; major reframe needed)
+
+**Hypothesis (registered in advance, incl. in the paper draft)**
+- Supervision-side patches for the false-negative conflict (taxonomy-masked
+  negatives, soft ancestor labels) should substantially repair Euclidean but
+  barely move hyperbolic; euclidean+InfoNCE (in-batch negatives) should be the
+  worst Euclidean cell; hyperbolic+naive-BCE >= euclidean+best-patched.
+
+**Setup**
+- 2 geometries x {bce, infonce, infonce-masked, soft-bce} x seeds, UFET crowd,
+  d64, flat supervision, standard P1 protocol. BCE cells reused from p1_seeds.
+- New losses in `src/sparse_ner/losses.py` (`infonce_loss` with optional
+  false-negative candidate masking; `soft_bce_loss` alpha=0.5); `--loss` flag
+  in `train_probe.py`. Runner `scripts/c3_launch.sh`; outputs `results/c3/`.
+
+**Results** — test mAP (threshold-free), mean±std.
+
+| geometry | bce | infonce | infonce-masked | soft-bce |
+|---|---|---|---|---|
+| euclidean  | 0.280±.002 | **0.420±.004** | **0.423±.001** | 0.274±.002 |
+| hyperbolic | 0.353±.002 | 0.372±.006 | 0.365±.016 | 0.324±.003 |
+
+Checked: not a model-selection artifact (per-epoch dev mAP maxima show the
+same ordering). hyperbolic+infonce macro/mid F1 collapse (0.15/0.09) —
+threshold calibration of InfoNCE-trained distance scores is genuinely poor,
+but its mAP ceiling is real (~0.37).
+
+**Analysis — every registered prediction failed:**
+1. euclidean+InfoNCE is not the worst Euclidean cell; it is the BEST cell in
+   the entire grid (0.420), beating hyperbolic+anything.
+2. Masking the false negatives from the candidate set changes nothing
+   (+0.004, within noise). The C1/C2 conflict, though real as a phenomenon,
+   is NOT the binding constraint on Euclidean performance under InfoNCE.
+3. Soft ancestor labels do not help either geometry (-0.006 euc, -0.029 hyp).
+4. hyp+naive-bce (0.353) < euc+best (0.423).
+
+**Honest interpretation:**
+- The dominant factor is the LOSS FAMILY, not the geometry: listwise softmax
+  over in-batch candidates is a far better ranking objective than
+  full-vocabulary BCE with pos_weight. Under the better loss, Euclidean wins.
+- The earlier P1 "geometry gap" (0.353 vs 0.280) is real but appears to be a
+  gap in how the two geometries cope with a POOR loss (full-vocab BCE), not a
+  fundamental superiority: hyperbolic was compensating for BCE's deficiency,
+  and InfoNCE fixes that deficiency directly, more cheaply, and without a
+  taxonomy.
+- C1 (false negatives exist, Zipf-concentrated) and C2 (euclidean gradient
+  tug-of-war at cos -0.99 vs hyp -0.23) remain valid observations, but the
+  causal chain "conflict -> performance gap" is broken: removing the conflict
+  (masking) does not move performance.
+- Open questions before final verdict: (a) is hyperbolic+InfoNCE handicapped
+  by scale/temperature parameterization (unbounded negative distances in a
+  softmax)? worth one tuning pass before concluding geometry loses under
+  InfoNCE; (b) does the low-data prior story (P3c/P3d) survive under InfoNCE?
+  i.e. rerun the scaling sweep with the better loss; (c) batch-size
+  dose-response (C5) may still show the conflict matters at larger B.
+
+**Paper impact:** the draft's conclusion registers exactly the predictions
+this experiment falsified. The mechanism sections (C1/C2) stand as
+observations; the causal framing and the "hyperbolic resolution" title do
+not survive C3 as-is. Reframe options: (i) loss-centric paper ("BCE's
+deficiency, not geometry, drives the gap — InfoNCE is the fix; hyperbolic is
+a BCE-regime patch"), (ii) low-data prior paper if P3c/d survives under
+InfoNCE, (iii) negative-result / analysis paper on why gradient-level
+conflict does not translate to task performance.
