@@ -549,7 +549,7 @@ are taxonomy roots after the blocklist fix, never anyone's ancestor.
 **Setup**
 - 2 geometries x {bce, infonce, infonce-masked, soft-bce} x seeds, UFET crowd,
   d64, flat supervision, standard P1 protocol. BCE cells reused from p1_seeds.
-- New losses in `src/sparse_ner/losses.py` (`infonce_loss` with optional
+- New losses in `src/hyperbolic_ner/losses.py` (`infonce_loss` with optional
   false-negative candidate masking; `soft_bce_loss` alpha=0.5); `--loss` flag
   in `train_probe.py`. Runner `scripts/c3_launch.sh`; outputs `results/c3/`.
 

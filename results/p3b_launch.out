@@ -1,0 +1,7 @@
+launched euc-d64-s1 on gpu 0
+launched hyp-d64-s1 on gpu 1
+launched euc-d64-s2 on gpu 3
+launched hyp-d64-s2 on gpu 4
+launched euc-d64-s3 on gpu 6
+launched hyp-d64-s3 on gpu 7
+p3b done (fail=0)

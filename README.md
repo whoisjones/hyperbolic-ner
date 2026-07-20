@@ -29,7 +29,7 @@ optimizer suffices — no Riemannian optimizer or extra dependency.
 ## Layout
 
 ```
-src/sparse_ner/
+src/hyperbolic_ner/
   geometry.py   Poincaré-ball ops + GeometryHead (euclidean | hyperbolic)
   model.py      BiEncoderTyper: span pooling + label embeddings + head
   data.py       Unified loader for UFET and distant-NER JSONL schemas
@@ -44,8 +44,8 @@ smoke_test.py   End-to-end sanity check (run this first)
 
 ## Data (kept under /vol/tmp/goldejon)
 
-- `sparse_ner/data/` — UFET crowd/distant/ontonotes + FewNERD (multi-label, `spans→type[]`)
-- `sparse_ner/release/ontology/` — `types.txt` (10,331 UFET types), `onto_ontology.txt` (89-node coarse tree, taxonomy skeleton)
+- `hyperbolic_ner/data/` — UFET crowd/distant/ontonotes + FewNERD (multi-label, `spans→type[]`)
+- `hyperbolic_ner/release/ontology/` — `types.txt` (10,331 UFET types), `onto_ontology.txt` (89-node coarse tree, taxonomy skeleton)
 - `multilingual_ner/data/training_jsonl/` — finerweb, finerweb_translated, pilener, nuner, euro_glinerx (distant, single-tag, `spans_char→tag`)
 
 ## Experiment plan
@@ -72,6 +72,6 @@ source /vol/tmp/goldejon/.uv/envs/mm/bin/activate
 export PYTHONPATH=src HF_HUB_OFFLINE=1
 python smoke_test.py
 python scripts/e0_build_vocab_taxonomy.py \
-    --paths /vol/tmp/goldejon/sparse_ner/data/ufet_crowd_train.jsonl \
+    --paths /vol/tmp/goldejon/hyperbolic_ner/data/ufet_crowd_train.jsonl \
     --out results/e0
 ```

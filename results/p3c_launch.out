@@ -1,0 +1,19 @@
+launched euc-n100-s1 on gpu 0
+launched hyp-n100-s1 on gpu 1
+launched euc-n300-s1 on gpu 3
+launched hyp-n300-s1 on gpu 4
+launched euc-n1000-s1 on gpu 6
+launched hyp-n1000-s1 on gpu 7
+launched euc-n100-s2 on gpu 8
+launched hyp-n100-s2 on gpu 9
+launched euc-n300-s2 on gpu 0
+launched hyp-n300-s2 on gpu 1
+launched euc-n1000-s2 on gpu 3
+launched hyp-n1000-s2 on gpu 4
+launched euc-n100-s3 on gpu 6
+launched hyp-n100-s3 on gpu 7
+launched euc-n300-s3 on gpu 8
+launched hyp-n300-s3 on gpu 9
+launched euc-n1000-s3 on gpu 0
+launched hyp-n1000-s3 on gpu 1
+p3c done (fail=1)

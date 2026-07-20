@@ -44,11 +44,11 @@ from transformers import AutoTokenizer
 
 import sys
 sys.path.insert(0, "src")
-from sparse_ner.data import SpanTypingDataset, build_type_vocab, collate_fn  # noqa: E402
-from sparse_ner.model import BiEncoderTyper  # noqa: E402
-from sparse_ner.taxonomy import Taxonomy  # noqa: E402
+from hyperbolic_ner.data import SpanTypingDataset, build_type_vocab, collate_fn  # noqa: E402
+from hyperbolic_ner.model import BiEncoderTyper  # noqa: E402
+from hyperbolic_ner.taxonomy import Taxonomy  # noqa: E402
 
-DATA = "/vol/tmp/goldejon/sparse_ner/data"
+DATA = "/vol/tmp/goldejon/hyperbolic_ner/data"
 
 
 def closure_matrix(vocab: list[str], tax: Taxonomy) -> torch.Tensor:

@@ -3,10 +3,10 @@
 # launch when other users' jobs were on some GPUs). Idempotent: skips any cell
 # that already has a result. One run per GPU on a curated free-GPU list.
 set -u
-cd /vol/fob-vol7/mi18/goldejon/sparse_ner
+cd /vol/fob-vol7/mi18/goldejon/hyperbolic_ner
 source /vol/tmp/goldejon/.uv/envs/mm/bin/activate
 export PYTHONPATH=src HF_HUB_OFFLINE=1 NLTK_DATA=/vol/tmp/goldejon/nltk_data
-D=/vol/tmp/goldejon/sparse_ner/data
+D=/vol/tmp/goldejon/hyperbolic_ner/data
 
 # clear any stragglers from earlier partial launches so cells don't double-run
 for pid in $(pgrep -f train_zeroshot.py); do kill "$pid" 2>/dev/null; done

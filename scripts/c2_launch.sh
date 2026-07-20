@@ -1,7 +1,7 @@
 #!/bin/bash
 # C2 gradient-conflict measurement: 2 geometries x 3 seeds, one job per GPU.
 set -u
-cd /vol/fob-vol7/mi18/goldejon/sparse_ner
+cd /vol/fob-vol7/mi18/goldejon/hyperbolic_ner
 source /vol/tmp/goldejon/.uv/envs/mm/bin/activate
 export PYTHONPATH=src HF_HUB_OFFLINE=1 NLTK_DATA=/vol/tmp/goldejon/nltk_data
 export OMP_NUM_THREADS=8 MKL_NUM_THREADS=8 TOKENIZERS_PARALLELISM=false

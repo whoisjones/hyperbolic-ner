@@ -30,11 +30,11 @@ import torch
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer
 
-from sparse_ner.data import SpanTypingDataset, build_type_vocab, collate_fn
-from sparse_ner.losses import bce_loss
-from sparse_ner.model import BiEncoderTyper
+from hyperbolic_ner.data import SpanTypingDataset, build_type_vocab, collate_fn
+from hyperbolic_ner.losses import bce_loss
+from hyperbolic_ner.model import BiEncoderTyper
 
-DATA = "/vol/tmp/goldejon/sparse_ner/data"
+DATA = "/vol/tmp/goldejon/hyperbolic_ner/data"
 
 
 def make_split(train_counts, test_counts, lo, hi, min_test, split_seed):

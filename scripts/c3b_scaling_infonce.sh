@@ -1,22 +1,23 @@
 #!/bin/bash
-# P3d supervised-F1 scaling sweep on FiNERweb-eng (supervised companion to P3c).
-# Does the SUPERVISED typing-F1 hyperbolic advantage also decay with training
-# data, like the zero-shot mAP gap in P3c? Same corpus, fixed 25-epoch schedule.
-#   geometry {euclidean, hyperbolic} x scale {100,300,1000} docs x seed {1,2,3}.
-# Throttled: the cluster is busy, so each free GPU runs its share SEQUENTIALLY
-# (one run per GPU at a time) to avoid OOM from oversubscription. Idempotent:
-# skips any cell whose JSON already exists, so it is safe to re-run.
+# C3b — does the hyperbolic low-data advantage (P3d) survive under InfoNCE?
+# Exact replica of the P3d supervised scaling sweep on FiNERweb-eng, with the
+# single change --loss infonce. If the small-scale hyperbolic gap (+0.28
+# micro-F1 at ~2k spans under BCE) disappears, the "data-efficient prior"
+# story is a BCE-regime artifact; if it survives, the paper keeps a positive
+# hyperbolic claim under the stronger loss.
+#   geometry {euclidean, hyperbolic} x scale {100,300,1000} docs x seed {1,2,3}
+# Idempotent; one run per GPU at a time.
 set -u
 cd /vol/fob-vol7/mi18/goldejon/hyperbolic_ner
 source /vol/tmp/goldejon/.uv/envs/mm/bin/activate
 export PYTHONPATH=src HF_HUB_OFFLINE=1 NLTK_DATA=/vol/tmp/goldejon/nltk_data
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+export OMP_NUM_THREADS=8 MKL_NUM_THREADS=8 TOKENIZERS_PARALLELISM=false
 D=/vol/tmp/goldejon/hyperbolic_ner/data
 
-mkdir -p results/p3d/logs
-GPUS=(5 6 7)                 # edit to match currently-free GPUs
+mkdir -p results/c3b/logs
+GPUS=(0 1 2 3 4 6 7 8)      # 5 and 9 busy (other users)
 
-# build the job list
 jobs=()
 for seed in 1 2 3; do
   for docs in 100 300 1000; do
@@ -29,19 +30,18 @@ done
 run_one() {  # gpu geom docs seed
   local gpu=$1 geom=$2 docs=$3 seed=$4
   local tag="${geom:0:3}-n${docs}-s${seed}"
-  [ -f "results/p3d/$tag.json" ] && { echo "skip $tag (exists)"; return 0; }
+  [ -f "results/c3b/$tag.json" ] && { echo "skip $tag (exists)"; return 0; }
   echo "start $tag on gpu $gpu"
   CUDA_VISIBLE_DEVICES=$gpu python train_probe.py \
-    --geometry $geom --supervision flat --dim 64 --seed $seed \
+    --geometry $geom --supervision flat --dim 64 --seed $seed --loss infonce \
     --train-file $D/finerweb_eng_suptrain.jsonl \
     --dev-file $D/finerweb_eng_val.jsonl \
     --test-file $D/finerweb_eng_test.jsonl \
     --max-len 256 --batch-size 64 --epochs 25 --train-max-records $docs \
-    --out results/p3d/$tag.json > results/p3d/logs/$tag.log 2>&1
+    --out results/c3b/$tag.json > results/c3b/logs/$tag.log 2>&1
   echo "done  $tag (exit $?)"
 }
 
-# one worker per GPU, each consumes jobs at index i where i % nGPU == slot
 nG=${#GPUS[@]}
 pids=()
 for slot in $(seq 0 $((nG - 1))); do
@@ -58,5 +58,5 @@ for slot in $(seq 0 $((nG - 1))); do
 done
 fail=0
 for p in "${pids[@]}"; do wait "$p" || fail=1; done
-echo "p3d done (fail=$fail)"
+echo "c3b done (fail=$fail)"
 exit $fail

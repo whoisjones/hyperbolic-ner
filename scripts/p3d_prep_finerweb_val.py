@@ -11,8 +11,8 @@ import argparse
 import random
 from pathlib import Path
 
-POOL = "/vol/tmp/goldejon/sparse_ner/data/finerweb_eng_train.jsonl"
-OUT = "/vol/tmp/goldejon/sparse_ner/data"
+POOL = "/vol/tmp/goldejon/hyperbolic_ner/data/finerweb_eng_train.jsonl"
+OUT = "/vol/tmp/goldejon/hyperbolic_ner/data"
 
 
 def main():

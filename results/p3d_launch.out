@@ -1,0 +1,37 @@
+start euc-n100-s1 on gpu 5
+start euc-n300-s1 on gpu 7
+start hyp-n100-s1 on gpu 6
+done  euc-n100-s1 (exit 0)
+start hyp-n300-s1 on gpu 5
+done  hyp-n100-s1 (exit 0)
+start euc-n1000-s1 on gpu 6
+done  euc-n300-s1 (exit 0)
+start hyp-n1000-s1 on gpu 7
+done  hyp-n300-s1 (exit 0)
+start euc-n100-s2 on gpu 5
+done  euc-n100-s2 (exit 0)
+start hyp-n300-s2 on gpu 5
+done  hyp-n300-s2 (exit 0)
+start euc-n100-s3 on gpu 5
+done  euc-n1000-s1 (exit 0)
+start hyp-n100-s2 on gpu 6
+done  euc-n100-s3 (exit 0)
+start hyp-n300-s3 on gpu 5
+done  hyp-n100-s2 (exit 0)
+start euc-n1000-s2 on gpu 6
+done  hyp-n1000-s1 (exit 0)
+start euc-n300-s2 on gpu 7
+done  hyp-n300-s3 (exit 0)
+done  euc-n300-s2 (exit 0)
+start hyp-n1000-s2 on gpu 7
+done  euc-n1000-s2 (exit 0)
+start hyp-n100-s3 on gpu 6
+done  hyp-n100-s3 (exit 0)
+start euc-n1000-s3 on gpu 6
+done  hyp-n1000-s2 (exit 0)
+start euc-n300-s3 on gpu 7
+done  euc-n300-s3 (exit 0)
+start hyp-n1000-s3 on gpu 7
+done  euc-n1000-s3 (exit 0)
+done  hyp-n1000-s3 (exit 0)
+p3d done (fail=0)

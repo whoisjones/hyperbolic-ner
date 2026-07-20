@@ -5,7 +5,7 @@
 #   geometry {euclidean, hyperbolic} x dim {16, 64} x seed {1,2,3} = 12 runs.
 # GPUs 2 and 5 are used by another user -> excluded.
 set -u
-cd /vol/fob-vol7/mi18/goldejon/sparse_ner
+cd /vol/fob-vol7/mi18/goldejon/hyperbolic_ner
 source /vol/tmp/goldejon/.uv/envs/mm/bin/activate
 export PYTHONPATH=src HF_HUB_OFFLINE=1 NLTK_DATA=/vol/tmp/goldejon/nltk_data
 

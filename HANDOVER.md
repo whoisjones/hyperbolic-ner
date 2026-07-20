@@ -22,7 +22,7 @@ correct supertypes), and specifically whether hierarchy-aware supervision
 
 ## Setup (all in place, working)
 
-- **Repo:** `/vol/fob-vol7/mi18/goldejon/sparse_ner` =
+- **Repo:** `/vol/fob-vol7/mi18/goldejon/hyperbolic_ner` =
   github.com/whoisjones/hyperbolic-ner. Run `python smoke_test.py` first — it
   validates geometry math, both model variants, data loading, and metrics
   end-to-end.
@@ -33,18 +33,18 @@ correct supertypes), and specifically whether hierarchy-aware supervision
   ```
   Encoder: `bert-base-uncased` (locally cached). No geoopt needed — label
   embeddings live in tangent space and are mapped onto the ball inside the
-  forward pass, so plain AdamW works (`src/sparse_ner/geometry.py`).
+  forward pass, so plain AdamW works (`src/hyperbolic_ner/geometry.py`).
 - **The only knob between conditions** is `GeometryHead`: Euclidean = scaled
   cosine; hyperbolic = negative Poincaré geodesic distance. Everything else
   (encoder, pooling, data, schedule) is shared — keep it that way; the
   controlled comparison *is* the paper.
 - **Data:**
-  - UFET at `/vol/tmp/goldejon/sparse_ner/data/` (crowd = clean multi-label;
+  - UFET at `/vol/tmp/goldejon/hyperbolic_ner/data/` (crowd = clean multi-label;
     distant/ontonotes = noisy, large). Schema: `spans → type[]`.
   - Distant NER dumps at `/vol/tmp/goldejon/multilingual_ner/data/training_jsonl/`
     (finerweb, finerweb_translated, pilener, nuner, euro_glinerx). Schema:
     `spans_char → tag` (single label).
-  - `src/sparse_ner/data.py` normalizes both schemas to per-span examples.
+  - `src/hyperbolic_ner/data.py` normalizes both schemas to per-span examples.
 - **Taxonomy:** `results/taxonomy/wordnet_parent.json` — mechanical WordNet
   hypernym linking over the 2,519 UFET-crowd types, with two guards: (1) a
   frequency filter (parent must be ≥ as frequent as its child), and (2) a
@@ -124,12 +124,12 @@ cells.
 **Hypothesis to test:** the hyperbolic advantage does *not* hinge on a good
 taxonomy (if it does, that is critical to know).
 **Method:** compare no taxonomy / UFET's 89-node `onto_ontology.txt`
-(in `/vol/tmp/goldejon/sparse_ner/release/ontology/`) / the WordNet map /
+(in `/vol/tmp/goldejon/hyperbolic_ner/release/ontology/`) / the WordNet map /
 optionally a ~1k merged taxonomy. Only build the fancy 1k taxonomy if this
 ablation says taxonomy quality matters.
 
 ### P5 — evaluation contribution
-Frame hierarchical P/R/F1 (`src/sparse_ner/metrics.py:hierarchical_f1`) as a
+Frame hierarchical P/R/F1 (`src/hyperbolic_ner/metrics.py:hierarchical_f1`) as a
 standalone contribution: quantify how much flat evaluation *unfairly penalizes*
 all models, with qualitative `actor → person` examples.
 

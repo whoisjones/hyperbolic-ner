@@ -7,10 +7,10 @@
 # FiNERweb is ~20x more spans than UFET-crowd -> fewer epochs, bigger batch.
 # GPUs 2 and 5 excluded (other user).
 set -u
-cd /vol/fob-vol7/mi18/goldejon/sparse_ner
+cd /vol/fob-vol7/mi18/goldejon/hyperbolic_ner
 source /vol/tmp/goldejon/.uv/envs/mm/bin/activate
 export PYTHONPATH=src HF_HUB_OFFLINE=1 NLTK_DATA=/vol/tmp/goldejon/nltk_data
-D=/vol/tmp/goldejon/sparse_ner/data
+D=/vol/tmp/goldejon/hyperbolic_ner/data
 
 mkdir -p results/p3b/logs
 GPUS=(0 1 3 4 6 7)

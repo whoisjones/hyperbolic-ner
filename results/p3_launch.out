@@ -1,0 +1,13 @@
+launched euc-d16-s1 on gpu 0
+launched euc-d64-s1 on gpu 1
+launched hyp-d16-s1 on gpu 3
+launched hyp-d64-s1 on gpu 4
+launched euc-d16-s2 on gpu 6
+launched euc-d64-s2 on gpu 7
+launched hyp-d16-s2 on gpu 8
+launched hyp-d64-s2 on gpu 9
+launched euc-d16-s3 on gpu 0
+launched euc-d64-s3 on gpu 1
+launched hyp-d16-s3 on gpu 3
+launched hyp-d64-s3 on gpu 4
+p3 done (fail=0)

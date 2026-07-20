@@ -32,7 +32,7 @@ from pathlib import Path
 
 from nltk.corpus import wordnet as wn
 
-from sparse_ner.data import build_type_vocab
+from hyperbolic_ner.data import build_type_vocab
 
 # Vacuous / wrong-sense-attractor WordNet "unique beginner" style hypernyms.
 # Identified empirically from P1: these accounted for the largest share of
@@ -126,7 +126,7 @@ def main():
     linked = sum(1 for p in parent.values() if p is not None)
     roots = n - linked
     # depth stats
-    from sparse_ner.taxonomy import Taxonomy
+    from hyperbolic_ner.taxonomy import Taxonomy
     tax = Taxonomy(parent)
     depths = [tax.depth(t) for t in vocab]
     stats = {

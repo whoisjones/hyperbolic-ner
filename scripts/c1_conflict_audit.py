@@ -39,8 +39,8 @@ import numpy as np
 
 import sys
 sys.path.insert(0, "src")
-from sparse_ner.data import build_type_vocab, normalize_record  # noqa: E402
-from sparse_ner.taxonomy import Taxonomy  # noqa: E402
+from hyperbolic_ner.data import build_type_vocab, normalize_record  # noqa: E402
+from hyperbolic_ner.taxonomy import Taxonomy  # noqa: E402
 
 
 def load_examples(path: str) -> list[list[str]]:

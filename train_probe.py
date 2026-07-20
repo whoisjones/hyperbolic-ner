@@ -25,13 +25,13 @@ import torch
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer
 
-from sparse_ner.data import SpanTypingDataset, build_type_vocab, collate_fn
-from sparse_ner.losses import bce_loss, infonce_loss, soft_bce_loss
-from sparse_ner.metrics import compute_metrics, hierarchical_f1, tail_stratified_f1
-from sparse_ner.model import BiEncoderTyper
-from sparse_ner.taxonomy import Taxonomy
+from hyperbolic_ner.data import SpanTypingDataset, build_type_vocab, collate_fn
+from hyperbolic_ner.losses import bce_loss, infonce_loss, soft_bce_loss
+from hyperbolic_ner.metrics import compute_metrics, hierarchical_f1, tail_stratified_f1
+from hyperbolic_ner.model import BiEncoderTyper
+from hyperbolic_ner.taxonomy import Taxonomy
 
-DATA = "/vol/tmp/goldejon/sparse_ner/data"
+DATA = "/vol/tmp/goldejon/hyperbolic_ner/data"
 
 
 def closure_matrix(vocab: list[str], tax: Taxonomy) -> torch.Tensor:

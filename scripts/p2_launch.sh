@@ -6,7 +6,7 @@
 #   x seed   {1,2,3}
 # Noise corrupts TRAIN labels only (seeded). sibling=realistic, uniform=control.
 set -u
-cd /vol/fob-vol7/mi18/goldejon/sparse_ner
+cd /vol/fob-vol7/mi18/goldejon/hyperbolic_ner
 source /vol/tmp/goldejon/.uv/envs/mm/bin/activate
 export PYTHONPATH=src HF_HUB_OFFLINE=1 NLTK_DATA=/vol/tmp/goldejon/nltk_data
 

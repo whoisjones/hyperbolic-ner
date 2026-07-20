@@ -8,14 +8,14 @@ from __future__ import annotations
 import torch
 from transformers import AutoTokenizer
 
-from sparse_ner import (BiEncoderTyper, SpanTypingDataset, Taxonomy,
+from hyperbolic_ner import (BiEncoderTyper, SpanTypingDataset, Taxonomy,
                         build_type_vocab, collate_fn, evaluate,
                         hierarchical_f1, poincare_distance, expmap0)
-from sparse_ner.metrics import tail_stratified_f1
+from hyperbolic_ner.metrics import tail_stratified_f1
 import numpy as np
 
 ENC = "bert-base-uncased"  # cached locally with a fast tokenizer
-UFET = "/vol/tmp/goldejon/sparse_ner/data/ufet_crowd_train.jsonl"
+UFET = "/vol/tmp/goldejon/hyperbolic_ner/data/ufet_crowd_train.jsonl"
 
 
 def test_geometry():

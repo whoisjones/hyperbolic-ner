@@ -9,7 +9,7 @@ script writes; kept separate so the vocab scan can be inspected first.
 
 Usage:
     python scripts/e0_build_vocab_taxonomy.py \
-        --paths /vol/tmp/goldejon/sparse_ner/data/ufet_crowd_train.jsonl \
+        --paths /vol/tmp/goldejon/hyperbolic_ner/data/ufet_crowd_train.jsonl \
                 /vol/tmp/goldejon/multilingual_ner/data/training_jsonl/finerweb/eng.jsonl \
         --out results/e0
 """
@@ -19,7 +19,7 @@ import argparse
 import json
 from pathlib import Path
 
-from sparse_ner.data import build_type_vocab
+from hyperbolic_ner.data import build_type_vocab
 
 
 def main():

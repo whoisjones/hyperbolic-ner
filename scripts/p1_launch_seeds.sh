@@ -4,7 +4,7 @@
 #   - euclidean/hyperbolic x flat @ d16            (low-dim claim)
 # seed 42 already exists from the initial grid.
 set -u
-cd /vol/fob-vol7/mi18/goldejon/sparse_ner
+cd /vol/fob-vol7/mi18/goldejon/hyperbolic_ner
 source /vol/tmp/goldejon/.uv/envs/mm/bin/activate
 export PYTHONPATH=src HF_HUB_OFFLINE=1 NLTK_DATA=/vol/tmp/goldejon/nltk_data
 

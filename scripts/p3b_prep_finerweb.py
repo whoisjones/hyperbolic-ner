@@ -13,7 +13,7 @@ import random
 from pathlib import Path
 
 SRC = "/vol/tmp/goldejon/multilingual_ner/data/training_jsonl/finerweb/eng.jsonl"
-OUT = "/vol/tmp/goldejon/sparse_ner/data"
+OUT = "/vol/tmp/goldejon/hyperbolic_ner/data"
 
 
 def main():
